@@ -71,6 +71,7 @@ export default {
 <style scoped lang="less">
 @dark_purple: #230042;
 @pink: rgb(255, 180, 209);
+@dark_grey: #404040;
 
 nav {
     background-color: @dark_purple;
@@ -132,7 +133,7 @@ h3 {
 }
 
 section {
-    background-color: @dark_purple;
+    background-color: @dark_grey;
     padding: 1rem;
     box-sizing: border-box;
 
