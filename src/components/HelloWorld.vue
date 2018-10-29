@@ -80,7 +80,7 @@ export default {
 @dark_grey: #404040;
 
 nav {
-    background-color: @dark_purple;
+    background-color: black;
     color: white;
     display: flex;
     flex-direction: row;
@@ -109,11 +109,11 @@ nav {
 }
 
 div.hero {
-    background-color: @pink;
+    background-color: @dark_purple;
     text-align: center;
 
     h2 {
-        color: rgba(0,0,0,0.8);
+        color: white;
         margin: 0;
         padding: 5rem 0;
     }
@@ -144,12 +144,12 @@ h3 {
 }
 
 section {
-    background-color: @dark_grey;
+    background-color: #dadada;
     padding: 1rem;
     box-sizing: border-box;
 
     h1 {
-        color: white;
+        color: rgba(0,0,0,0.4);
     }
 }
 
