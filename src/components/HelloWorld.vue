@@ -10,26 +10,32 @@
     </div>
 
     <div class="neutral">
-        <h1>Benefits</h1>
-        <ul>
-            <li>Type annotated - making it work great with tools like VSCode.</li>
-            <li>Fully tested</li>
-            <li>Built in migration support</li>
-        </ul>
+        <div class="center_wrapper">
+            <h1>Benefits</h1>
+            <ul>
+                <li>Type annotated - making it work great with tools like VSCode.</li>
+                <li>Fully tested</li>
+                <li>Built in migration support</li>
+            </ul>
+        </div>
     </div>
 
     <section class="example" v-for="example in examples" v-bind:key="example[0]">
-        <h1>{{ example[0] }}</h1>
-        <pre v-highlightjs="example[1]"><code class="javascript"></code></pre>
+        <div class="center_wrapper">
+            <h1>{{ example[0] }}</h1>
+            <pre v-highlightjs="example[1]"><code class="javascript"></code></pre>
+        </div>
     </section>
 
     <div class="neutral">
-        <h1>Getting started</h1>
-        <ul>
-            <li>Installation</li>
-            <li>Documentation</li>
-            <li>Discuss</li>
-        </ul>
+        <div class="center_wrapper">
+            <h1>Getting started</h1>
+            <ul>
+                <li>Installation</li>
+                <li>Documentation</li>
+                <li>Discuss</li>
+            </ul>
+        </div>
     </div>
 
 </div>
@@ -68,7 +74,7 @@ export default {
 </script>
 
 
-<style scoped lang="less">
+<style lang="less">
 @dark_purple: #230042;
 @pink: rgb(255, 180, 209);
 @dark_grey: #404040;
@@ -111,6 +117,11 @@ div.hero {
         margin: 0;
         padding: 5rem 0;
     }
+}
+
+div.center_wrapper {
+    max-width: 50rem;
+    margin: 0 auto;
 }
 
 div.neutral {
