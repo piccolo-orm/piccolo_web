@@ -76,6 +76,7 @@ export default {
 
 <style lang="less">
 @dark_purple: #230042;
+@purple: #490188;
 @pink: rgb(255, 180, 209);
 @dark_grey: #404040;
 
@@ -109,7 +110,7 @@ nav {
 }
 
 div.hero {
-    background-color: @dark_purple;
+    background-color: @purple;
     text-align: center;
 
     h2 {
@@ -125,7 +126,7 @@ div.center_wrapper {
 }
 
 div.neutral {
-    background-color: #f0f0f0;
+    background-color: white;
     padding: 3rem 1rem;
     box-sizing: border-box;
 
