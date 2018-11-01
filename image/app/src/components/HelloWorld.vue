@@ -2,7 +2,10 @@
 <div>
     <nav>
         <h1>Piccolo</h1>
-        <ul><li><a href="#"><font-awesome-icon icon="github" /> Github</a></li></ul>
+        <ul>
+            <li><a href="#"><font-awesome-icon icon="github" /> Github</a></li>
+            <li><a href="#"><font-awesome-icon icon="github" /> Blog</a></li>
+        </ul>
     </nav>
 
     <div class="hero">
@@ -99,7 +102,9 @@ nav {
         padding-right: 1rem;
 
         li {
+            display: inline-block;
             list-style: none;
+            padding-left: 1.5rem;
 
             a {
                 color: white;
