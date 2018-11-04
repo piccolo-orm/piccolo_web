@@ -9,6 +9,8 @@ Vue.config.productionTip = false
 /*****************************************************************************/
 
 import { library } from '@fortawesome/fontawesome-svg-core'
+
+import router from './router'
 //import { faGithub } from '@fortawesome/fontawesome-free-brands'
 //import { faGithub } from '@fortawesome/vue-fontawesome'
 
@@ -19,5 +21,6 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 /*****************************************************************************/
 
 new Vue({
+  router,
   render: h => h(App)
 }).$mount('#app')
