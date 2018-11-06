@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Blog from './views/Blog.vue'
+import BlogList from './views/BlogList.vue'
+import BlogSingle from './views/BlogSingle.vue'
 
 Vue.use(Router)
 
@@ -15,7 +16,12 @@ export default new Router({
     {
       path: '/blog',
       name: 'blog',
-      component: Blog
+      component: BlogList
+    },
+    {
+      path: '/blog/:articleName',
+      name: 'blog_single',
+      component: BlogSingle
     },
     {
       path: '/about',
