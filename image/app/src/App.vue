@@ -1,12 +1,16 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <nav>
+        <h1><router-link to="/">Piccolo</router-link></h1>
+        <ul>
+            <li><a href="#"><font-awesome-icon icon="github" /> Github</a></li>
+            <li><router-link to="/blog">Blog</router-link></li>
+        </ul>
+    </nav>
     <router-view/>
   </div>
 </template>
+
 
 <style lang="less">
 #app {
@@ -15,8 +19,45 @@
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+
 body, html {
   padding: 0;
   margin: 0;
+}
+
+nav {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+
+    h1 {
+        display: inline-block;
+        flex-grow: 1;
+        margin: 0;
+        padding: 1rem 2rem;
+
+        a {
+          color: white;
+          text-decoration: none;
+        }
+    }
+
+    ul {
+        display: inline-block;
+        flex-grow: 0;
+        padding-right: 1rem;
+
+        li {
+            display: inline-block;
+            list-style: none;
+            padding-left: 1.5rem;
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
 }
 </style>

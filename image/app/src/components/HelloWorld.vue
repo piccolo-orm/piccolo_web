@@ -1,13 +1,5 @@
 <template>
 <div>
-    <nav>
-        <h1>Piccolo</h1>
-        <ul>
-            <li><a href="#"><font-awesome-icon icon="github" /> Github</a></li>
-            <li><a href="#"><font-awesome-icon icon="github" /> Blog</a></li>
-        </ul>
-    </nav>
-
     <div class="hero">
         <h2>A fast, async ORM for Python, that's easy to learn</h2>
     </div>
@@ -82,37 +74,6 @@ export default {
 @purple: #490188;
 @pink: rgb(255, 180, 209);
 @dark_grey: #404040;
-
-nav {
-    background-color: black;
-    color: white;
-    display: flex;
-    flex-direction: row;
-
-    h1 {
-        display: inline-block;
-        flex-grow: 1;
-        margin: 0;
-        padding: 1rem 2rem;
-    }
-
-    ul {
-        display: inline-block;
-        flex-grow: 0;
-        padding-right: 1rem;
-
-        li {
-            display: inline-block;
-            list-style: none;
-            padding-left: 1.5rem;
-
-            a {
-                color: white;
-                text-decoration: none;
-            }
-        }
-    }
-}
 
 div.hero {
     background-color: @purple;
