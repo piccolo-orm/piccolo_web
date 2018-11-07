@@ -1,22 +1,25 @@
 <template>
     <div>
+        <p><router-link :to="{name: 'blog'}">All posts</router-link></p>
         <h1>This is a blog post ...</h1>
-        {{ html }}
+        <div v-html="html"></div>
     </div>
 </template>
 
 <script>
-import 'axios';
+import axios from 'axios';
 
 // TODO ... need to get the parameters from the router...
 export default {
     data: function() {
-        html: ''
+        return {
+            html: ''
+        }
     },
     created: function() {
         let app = this;
         axios.get('/html/is_async_worthwhile.html').then(
-            response => app.html = response
+            response => app.html = response.data
         )
     }
 }
