@@ -23,9 +23,15 @@ Asyncio provides
 
 ## Does my corner shop's website need asyncio?
 
-Probably not.
+Most small websites won't get enough traffic to stress even the smallest of servers.
 
-Asyncio helps improve throughput, not raw speed.
+However, for building websites or APIs with at least moderate scale, there are real benefits to using non-blocking IO.
+
+Asyncio will help improve the throughput of a Python application. This means that a given VM can handle more traffic, which can result in real cost savings.
+
+## Is asyncio all about speed?
+
+Non-blocking IO won't make your website faster.
 
 However, most frameworks built on top of asyncio have sought to increase performance, but through other means (efficient HTTP parsing, Cython-ising slow parts) ...
 
