@@ -1,7 +1,6 @@
 <template>
-    <div>
+    <div class="center_wrapper">
         <p><router-link :to="{name: 'blog'}">All posts</router-link></p>
-        <h1>This is a blog post ...</h1>
         <div v-html="html"></div>
     </div>
 </template>
