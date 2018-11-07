@@ -10,6 +10,7 @@ import axios from 'axios';
 
 // TODO ... need to get the parameters from the router...
 export default {
+    props: ['articleName'],
     data: function() {
         return {
             html: ''

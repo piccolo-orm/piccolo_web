@@ -21,7 +21,8 @@ export default new Router({
     {
       path: '/blog/:articleName',
       name: 'blog_single',
-      component: BlogSingle
+      component: BlogSingle,
+      props: true
     },
     {
       path: '/about',
