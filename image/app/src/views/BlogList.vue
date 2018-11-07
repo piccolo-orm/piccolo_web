@@ -13,19 +13,11 @@
 export default {
     name: 'blog',
     data: function() {
-        return {
-            posts: [
-                {
-                    title: 'Is Async Worthwhile?',
-                    src: 'is_async_worthwhile.html',
-                    slug: 'is-async-worthwhile'
-                },
-                {
-                    title: 'Why use an ORM?',
-                    src: 'why_use_an_orm.html',
-                    slug: 'why-use-an-orm'
-                }
-            ]
+        return {}
+    },
+    computed: {
+        posts: function() {
+            return this.$store.state.posts
         }
     }
 }

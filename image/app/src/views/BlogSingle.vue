@@ -8,17 +8,25 @@
 <script>
 import axios from 'axios';
 
-// TODO ... need to get the parameters from the router...
 export default {
     props: ['articleName'],
     data: function() {
         return {
-            html: ''
+            html: '',
         }
     },
+    computed: {
+        posts: function() {
+            return this.$store.state.posts
+        },
+    },
     created: function() {
+        let currentPost = this.posts.filter(
+            (element) => element.slug == this.articleName
+        )[0]
+
         let app = this;
-        axios.get('/html/is_async_worthwhile.html').then(
+        axios.get('/html/' + currentPost.src).then(
             response => app.html = response.data
         )
     }
