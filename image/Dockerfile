@@ -7,10 +7,15 @@ WORKDIR /app
 RUN npm install
 
 ADD app/src /app/src
-ADD app/tsconfig.json /app/tsconfig.json
 ADD app/public /app/public
-ADD app/.env.production /app/.env.production
-ADD app/vue.config.js /app/vue.config.js
+
+ADD app/md /app/
+
+ADD app/.prerender-spa.json /app/
+ADD app/babel.config.js /app/
+ADD app/gulpfile.js /app/
+
+RUN npm run gulp
 
 ENV NODE_ENV=production
 RUN npm run build
