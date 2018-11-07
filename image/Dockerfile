@@ -11,7 +11,6 @@ ADD app/public /app/public
 
 ADD app/md /app/
 
-ADD app/.prerender-spa.json /app/
 ADD app/babel.config.js /app/
 ADD app/gulpfile.js /app/
 
