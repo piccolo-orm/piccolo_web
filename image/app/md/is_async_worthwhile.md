@@ -17,6 +17,9 @@ An event loop is one approach to concurrency. The others are:
  * greenlets (lightweight, non-system threads)
  * implicit yielding (gevent, and eventlet)
 
+Traditionally, each unit of work which needs to operate concurrently would be assigned to a separate process or thread. Threads and processes are operating system constructs, and are expensive to create. It's up to the operating system when it schedules If a program requires thousands of threads ... It's also very easy to trash a program which operates this way - each connection takes up operating system resources, making a DOS attack trivial.
+
+
 ## What does asyncio give us?
 
 Asyncio provides
@@ -47,7 +50,7 @@ Python isn't a fast language, but basic Python operations take in the order of m
 
 So there is time for Python to do meaningful work when waiting for a database response. The question becomes how much?
 
-This is dependent on the overhead that asyncio imposes. If the asyncio event loop, and associated Python code required to schedule coroutines, is slow - it'll defeat the purpose.
+This is dependent on the overhead that asyncio imposes. If the asyncio event loop, and associated Python code required to schedule coroutines, is slow then it'll defeat the purpose.
 
 Libraries such as uvloop are important in this regard, since they offer a faster event loop implemention, which is still compatible with asyncio.
 

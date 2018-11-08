@@ -15,6 +15,16 @@ export default new Vuex.Store({
                 title: 'Why use an ORM?',
                 src: 'why_use_an_orm.html',
                 slug: 'why-use-an-orm'
+            },
+            {
+                title: 'Why choose Piccolo?',
+                src: 'why_choose_piccolo.html',
+                slug: 'why-choose-piccolo'
+            },
+            {
+                title: 'Introduction to ASGI',
+                src: 'introduction_to_asgi.html',
+                slug: 'introduction-to-asgi'
             }
         ]
     },
