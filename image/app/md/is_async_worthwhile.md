@@ -31,13 +31,25 @@ Asyncio will help improve the throughput of a Python application. This means tha
 
 ## Is asyncio all about speed?
 
-Non-blocking IO won't make your website faster.
+Non-blocking IO won't make your website faster when under small load. For example, when only dealing with one sequential request at a time.
 
-However, most frameworks built on top of asyncio have sought to increase performance, but through other means (efficient HTTP parsing, Cython-ising slow parts) ...
+However, it does improve the throughput of a website, so under high load, a user's request will be queued for less time, and they'll receive a response faster.
+
+An interesting side effect of asyncio is it got library authors thinking about performance. By using efficient HTTP parsing, and Cython-ising slow parts, many asyncio libraries are actually faster than synchronous alternatives, but this isn't due to asyncio itself.
 
 ## How much time does Python spend waiting on a database?
 
-...
+Even a simple database operation takes in the order of milliseconds (10^-3) to execute.
+
+This doesn't include the network lag when talking to a remote database, and also additional overhead such as authentication and encryption.
+
+Python isn't a fast language, but basic Python operations take in the order of microseconds (10^-6).
+
+So there is time for Python to do meaningful work when waiting for a database response. The question becomes how much?
+
+This is dependent on the overhead that asyncio imposes. If the asyncio event loop, and associated Python code required to schedule coroutines, is slow - it'll defeat the purpose.
+
+Libraries such as uvloop are important in this regard, since they offer a faster event loop implemention, which is still compatible with asyncio.
 
 ## Why use this, and not Node or Go?
 
