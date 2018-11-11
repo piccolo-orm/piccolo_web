@@ -1,6 +1,6 @@
 # Should I use Python instead of Golang or Node?
 
-In recent years the go-to solution for high performance web services has been Node JS and Golang.
+In recent years the go-to solution for high performance web services has been Node JS or Golang.
 
 Both of them have strong concurrency support. In the case of Node, it used to be callbacks, and is now promises with async / await, on top of a single threaded event loop. With Golang it's goroutines, which are automatically scheduled onto threads by the Golang runtime.
 
