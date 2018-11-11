@@ -53,4 +53,4 @@ An ORM by itself isn't sufficient, so the following batteries are included:
 * A user model
 * Test runner
 
-Piccolo supports the [asyncpg](https://github.com/MagicStack/asyncpg) database driver, which is exceptionally fast.
+Piccolo also supports the [asyncpg](https://github.com/MagicStack/asyncpg) database driver, which is exceptionally fast.

@@ -33,6 +33,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="less">
+h2 {
+    margin-top: 2.5rem;
+}
 </style>

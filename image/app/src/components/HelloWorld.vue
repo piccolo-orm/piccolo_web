@@ -106,10 +106,6 @@ div.neutral {
     }
 }
 
-h3 {
-  margin: 40px 0 0;
-}
-
 section {
     background-color: #dadada;
     padding: 1rem;

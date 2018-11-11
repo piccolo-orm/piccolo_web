@@ -15,10 +15,20 @@ An event loop is one approach to concurrency. The others are:
  * threads
  * processes
  * greenlets (lightweight, non-system threads)
- * implicit yielding (gevent, and eventlet)
 
-Traditionally, each unit of work which needs to operate concurrently would be assigned to a separate process or thread. Threads and processes are operating system constructs, and are expensive to create. It's up to the operating system when it schedules If a program requires thousands of threads ... It's also very easy to trash a program which operates this way - each connection takes up operating system resources, making a DOS attack trivial.
+Traditionally, each unit of work which needs to operate concurrently would be assigned to a separate process or thread. Threads and processes are operating system constructs, and are expensive to create. It's up to the operating system when it schedules them to run, not the program. If a program requires thousands of threads, the constant switching between them can result in poor system performance.
 
+One solution is to use green threads instead, which are managed by the program itself, and not the operating system. Popular implementations of this approach are gevent and eventlet. Your code is run in greenlets, and the Python socket library is patched, so whenever your program is blocked on a network request it'll switch to another greenlet, and run that instead.
+
+The benefits of green threads, is you can make a traditional synchronous program work asyncronously with little effort. Sometimes you'll get unexpected behaviour, where a third party library doesn't play nice with the patched socket library. It also depends on your preference for implicit vs explicit code. With asyncio, you'll have a bunch of async / await statements, but it makes it clearer when context switches are happening, which does align with the [Zen of Python](https://www.python.org/dev/peps/pep-0020/) - 'Explicit is better than implicit'.
+
+implicit yielding
+
+An example of a thread and process based based program is the Apache web server.
+
+## What are the problems with asyncio?
+
+...
 
 ## What does asyncio give us?
 
@@ -53,7 +63,3 @@ So there is time for Python to do meaningful work when waiting for a database re
 This is dependent on the overhead that asyncio imposes. If the asyncio event loop, and associated Python code required to schedule coroutines, is slow then it'll defeat the purpose.
 
 Libraries such as uvloop are important in this regard, since they offer a faster event loop implemention, which is still compatible with asyncio.
-
-## Why use this, and not Node or Go?
-
-Up until ...
