@@ -30,6 +30,11 @@ export default new Vuex.Store({
                 title: 'Should I use Python instead of Golang or Node?',
                 src: 'should_i_use_python_instead_of_golang_or_node.html',
                 slug: 'should-i-use-python-instead-of-golang-or-node'
+            },
+            {
+                title: 'Why is an event loop useful?',
+                src: 'why_is_an_event_loop_useful.html',
+                slug: 'why-is-an-event-loop-useful'
             }
         ]
     },

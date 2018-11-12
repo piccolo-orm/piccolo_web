@@ -88,6 +88,8 @@ div.hero {
 
 div.center_wrapper {
     max-width: 50rem;
+    box-sizing: border-box;
+    padding: 1rem;
     margin: 0 auto;
 }
 
