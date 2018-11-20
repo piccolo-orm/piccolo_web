@@ -22,3 +22,27 @@ export default {
     }
 }
 </script>
+
+
+<style lang="less" scoped>
+@purple: #490188;
+
+ul {
+    padding: 0;
+
+    li {
+        font-size: 1.2rem;
+        list-style: none;
+        padding: 0.5rem 0;
+
+        a {
+            color: rgba(0,0,0,0.8);
+            text-decoration: none;
+
+            &:hover {
+                color: @purple;
+            }
+        }
+    }
+}
+</style>
