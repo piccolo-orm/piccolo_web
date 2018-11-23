@@ -37,4 +37,7 @@ export default {
 h2 {
     margin-top: 2.5rem;
 }
+p, li {
+    font-size: 1.1rem;
+}
 </style>

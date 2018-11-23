@@ -36,12 +36,9 @@ ul {
         padding: 0.5rem 0;
 
         a {
-            color: rgba(0,0,0,0.8);
+            font-size: 1.3rem;
+            font-weight: bolder;
             text-decoration: none;
-
-            &:hover {
-                color: @purple;
-            }
         }
     }
 }

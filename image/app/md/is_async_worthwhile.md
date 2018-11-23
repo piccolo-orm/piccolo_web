@@ -28,9 +28,7 @@ An interesting side effect of asyncio is it got library authors thinking about p
 
 ## How much time does Python spend waiting on a database?
 
-Even a simple database operation takes in the order of milliseconds (10^-3) to execute.
-
-This doesn't include the network lag when talking to a remote database, and also additional overhead such as authentication and encryption.
+Even a simple database operation takes in the order of milliseconds (10^-3) to execute. This doesn't include the network lag when talking to a remote database, and also additional overhead such as authentication and encryption.
 
 Python isn't a fast language, but basic Python operations take in the order of microseconds (10^-6).
 

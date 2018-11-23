@@ -13,8 +13,10 @@
 
 
 <style lang="less">
+@purple: #490188;
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Source Sans Pro', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
@@ -23,6 +25,10 @@
 body, html {
   padding: 0;
   margin: 0;
+}
+
+a {
+    color: lighten(@purple, 15%);
 }
 
 nav {
