@@ -19,7 +19,7 @@
     <section class="example" v-for="example in examples" v-bind:key="example[0]">
         <div class="center_wrapper">
             <h1>{{ example[0] }}</h1>
-            <pre v-highlightjs="example[1]"><code class="javascript"></code></pre>
+            <pre v-highlightjs="example[1]"><code class="python"></code></pre>
         </div>
     </section>
 
