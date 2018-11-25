@@ -78,7 +78,7 @@ However, the differences aren't as large when using asyncio. Uvicorn + Starlette
 
 ### + Error tracking
 
-One place where Python absolutely shines is in error handling. In Golang, errors are just strings. With Python, you can throw exceptions, and get a nice stack trace. It makes debugging Python web service very simple, especially when used in conjunction with a logging service like Sentry. It's easy to take this stuff for granted, but it's a huge win.
+One place where Python absolutely shines is in error handling. In Golang, errors are just strings. With Python, you can throw exceptions, and get a nice stack trace. It makes debugging Python web services very simple, especially when used in conjunction with a logging service like Sentry. It's easy to take this stuff for granted, but it's a huge win.
 
 ### + Typing support
 

@@ -8,7 +8,8 @@
         <div class="center_wrapper">
             <h1>Benefits</h1>
             <ul>
-                <li>Type annotated - making it work great with tools like VSCode.</li>
+                <li>Supports asyncio</li>
+                <li>Type annotated, making it work great with tools like VSCode</li>
                 <li>Fully tested</li>
                 <li>Built in migration support</li>
             </ul>
@@ -48,19 +49,19 @@ export default {
             examples: [
                 [
                     'Select',
-                    "await Pokemon.select('name').where(Pokemon.power > 100).run()"
+                    "await Band.select('name').where(Band.popularity > 100).run()"
                 ],
                 [
                     'Join',
-                    "await Pokemon.select('trainer.name', 'name').run()"
+                    "await Band.select('name', 'manager.name').run()"
                 ],
                 [
                     'Delete',
-                    "await Pokemon.delete().where(Pokemon.color == 'red' & Trainer.name == 'Bob').run()"
+                    "await Band.delete().where(Band.band_members == 0 || Manager.status == 'disabled').run()"
                 ],
                 [
                     'Update',
-                    "await Pokemon.delete().where(Pokemon.color == 'red' & Trainer.name == 'Bob').run()"
+                    "await Band.update(band_members=5).where(Band.name == 'Pythonistas').run()"
                 ]
             ]
         }

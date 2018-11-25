@@ -3,7 +3,7 @@
     <nav>
         <h1><router-link to="/">Piccolo</router-link></h1>
         <ul>
-            <li><a href="#">Github</a></li>
+            <li><a href="https://github.com/telerytech/piccolo">Github</a></li>
             <li><router-link to="/blog">Blog</router-link></li>
         </ul>
     </nav>

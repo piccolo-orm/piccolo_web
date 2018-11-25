@@ -4,26 +4,36 @@
 
 ### Convenience
 
-...
+A good ORM should make a developer's life easier. It should take care of the tedious things, like escaping values. An ORM can also have a more compact syntax than SQL. This is most obvious with joins.
+
+```python
+query = Band.select('name', 'genre.name')
+
+query.__str__()
+
+SELECT name, genre.name FROM band JOIN genre ON band.genre = genre.id
+```
+
+### Batteries included
+
+One of the most useful things an ORM comes bundled with is migrations. Handling migrations manually can be tedious and error prone.
+
+ORMs often include other tools and features which make a developer's life easier. Examples include test runners, data fixtures etc.
 
 ### Passing around partial queries
 
 With Piccolo, you can pass around queries, and keep on chaining methods onto it.
 
 ```python
-query = Pokemon.select('name')
+query = Band.select('name')
 
-if some_param == True:
-    query = query.where(Pokemon.power >= 100)
+if rock == True:
+    query = query.where(Band.genre == 'rock')
 
 results = await query.run()
 ```
 
 Doing this with raw SQL strings quickly becomes unmanageable.
-
-### Migrations
-
-One of the most useful things an ORM comes bundled with is migrations. Handling migrations manually can be tedious and error prone.
 
 ## Downsides of an ORM
 
