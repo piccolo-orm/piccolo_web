@@ -6,13 +6,13 @@
 
 A good ORM should make a developer's life easier. It should take care of the tedious things, like escaping values. An ORM can also have a more compact syntax than SQL. This is most obvious with joins.
 
-```python
+<pre><code class="python">
 query = Band.select('name', 'genre.name')
 
 query.__str__()
 
 SELECT name, genre.name FROM band JOIN genre ON band.genre = genre.id
-```
+</code></pre>
 
 ### Batteries included
 
