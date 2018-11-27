@@ -24,14 +24,14 @@ ORMs often include other tools and features which make a developer's life easier
 
 With Piccolo, you can pass around queries, and keep on chaining methods onto it.
 
-```python
+<pre><code class="python">
 query = Band.select('name')
 
 if rock == True:
     query = query.where(Band.genre == 'rock')
 
 results = await query.run()
-```
+</code></pre>
 
 Doing this with raw SQL strings quickly becomes unmanageable.
 

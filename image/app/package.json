@@ -17,6 +17,7 @@
     "gulp": "^3.9.1",
     "gulp-markdown": "^3.0.0",
     "gulp-rename": "^1.4.0",
+    "highlight.js": "^9.13.1",
     "i": "^0.3.6",
     "npm": "^6.4.1",
     "vue": "^2.5.17",
@@ -27,6 +28,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-service": "^3.0.5",
+    "gulp-highlight": "^2.1.0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.17"
