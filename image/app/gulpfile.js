@@ -5,7 +5,7 @@ var highlight = require('gulp-highlight');
 
 
 gulp.task('md', function() {
-    gulp.src('md/*.md')
+    gulp.src('md/**/*.md')
     .pipe(markdown())
     .pipe(highlight())
     .pipe(rename({extname: ".html"}))
@@ -14,7 +14,7 @@ gulp.task('md', function() {
 
 
 gulp.task("watch", function() {
-    gulp.watch("md/*.md", ['md'])
+    gulp.watch("md/**/*.md", ['md'])
 })
 
 

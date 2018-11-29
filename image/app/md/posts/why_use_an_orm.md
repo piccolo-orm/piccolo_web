@@ -12,6 +12,7 @@ query = Band.select('name', 'genre.name')
 query.__str__()
 
 SELECT name, genre.name FROM band JOIN genre ON band.genre = genre.id
+
 </code></pre>
 
 ### Batteries included
@@ -31,6 +32,7 @@ if rock == True:
     query = query.where(Band.genre == 'rock')
 
 results = await query.run()
+
 </code></pre>
 
 Doing this with raw SQL strings quickly becomes unmanageable.
