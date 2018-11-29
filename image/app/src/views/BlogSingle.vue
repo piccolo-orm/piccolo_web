@@ -26,7 +26,7 @@ export default {
         )[0]
 
         let app = this;
-        axios.get('/html/' + currentPost.src).then(function(response) {
+        axios.get('/html/posts' + currentPost.src).then(function(response) {
             app.html = response.data
         })
     }
