@@ -10,7 +10,7 @@ One of the better known programs using an event loop is Nginx, which was origina
 
 In order for an event loop to work, you need to be able to suspend tasks while they're blocked on IO. In Python, this is possible due to generators. Generators have existed in Python for a long time, and conveniently are functions which can be suspended.
 
-<pre><code class="python">
+<pre><code class="language-python">
 def counter():
     i = 0
     while True:
@@ -33,7 +33,7 @@ As well as performance advantages, an event loop also provides some nice abstrac
 
 One of my favourite features that asyncio provides is the gather function:
 
-<pre><code class="python">
+<pre><code class="language-python">
 import asyncio
 
 async def hello(name):

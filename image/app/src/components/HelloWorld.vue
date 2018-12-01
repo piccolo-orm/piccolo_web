@@ -16,8 +16,11 @@
         </div>
     </div>
 
-    <section class="example">
-        <div class="center_wrapper" v-html="examplesHTML"></div>
+    <section class="example" v-for="example in examples" v-bind:key="example[0]">
+        <div class="center_wrapper">
+            <h1>{{ example[0] }}</h1>
+            <pre><code class="language-python" v-html="example[1]"></code></pre>
+        </div>
     </section>
 
     <div class="neutral">
@@ -36,8 +39,6 @@
 
 
 <script>
-import axios from 'axios'
-
 export default {
     name: 'HelloWorld',
     props: {
@@ -45,15 +46,26 @@ export default {
     },
     data: function() {
         return {
-            examplesHTML: ''
+            examples: [
+                [
+                    'Select',
+                    "await Band.select('name').where(Band.popularity > 100).run()"
+                ],
+                [
+                    'Join',
+                    "await Band.select('name', 'manager.name').run()"
+                ],
+                [
+                    'Delete',
+                    "await Band.delete().where(Band.band_members == 0 || Manager.status == 'disabled').run()"
+                ],
+                [
+                    'Update',
+                    "await Band.update(band_members=5).where(Band.name == 'Pythonistas').run()"
+                ]
+            ]
         }
     },
-    created: function() {
-        let app = this
-        axios.get('/html/code/examples.html').then(
-            response => app.examplesHTML = response.data
-        )
-    }
 }
 </script>
 
