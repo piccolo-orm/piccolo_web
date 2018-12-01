@@ -119,10 +119,6 @@ section {
     }
 }
 
-pre {
-    font-size: 1.5rem;
-}
-
 ul {
     li {
         list-style: square;
