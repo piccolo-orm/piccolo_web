@@ -39,6 +39,26 @@
 
 
 <script>
+
+const selectExample = `await Band.select(
+    'name'
+).where(
+    Band.popularity > 100
+).run()`
+
+const joinExample = `await Band.select(
+    'name',
+    'manager.name'
+).run()`
+
+const deleteExample = `await Band.delete().where(
+    Band.band_members == 0 | Manager.status == 'disabled'
+).run()`
+
+const updateExample = `await Band.update(band_members=5).where(
+    Band.name == 'Pythonistas'
+).run()`
+
 export default {
     name: 'HelloWorld',
     props: {
@@ -49,19 +69,19 @@ export default {
             examples: [
                 [
                     'Select',
-                    "await Band.select('name').where(Band.popularity > 100).run()"
+                    selectExample
                 ],
                 [
                     'Join',
-                    "await Band.select('name', 'manager.name').run()"
+                    joinExample
                 ],
                 [
                     'Delete',
-                    "await Band.delete().where(Band.band_members == 0 || Manager.status == 'disabled').run()"
+                    deleteExample
                 ],
                 [
                     'Update',
-                    "await Band.update(band_members=5).where(Band.name == 'Pythonistas').run()"
+                    updateExample
                 ]
             ]
         }
