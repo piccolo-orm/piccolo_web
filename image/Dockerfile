@@ -1,7 +1,6 @@
 FROM node:9-alpine
 
 RUN apk add --no-cache nginx
-ADD nginx/piccolo.conf /etc/nginx/conf.d/
 
 RUN mkdir /app
 ADD app/package.json /app/package.json
@@ -17,6 +16,8 @@ ADD app/babel.config.js /app/
 ADD app/gulpfile.js /app/
 
 RUN npm run gulp
+
+ADD nginx/piccolo.conf /etc/nginx/conf.d/
 
 ENV NODE_ENV=production
 RUN npm run build
