@@ -42,6 +42,4 @@ Libraries such as uvloop are important in this regard, since they offer a faster
 
 ## Conclusions
 
-The performance benefits of asyncio are real. The problem with asyncio is the ecosystem is less mature. For small websites where performance isn't critical, using existing synchronous solutions is the smart move, unless the developer wants to experiment with the latest technologies.
-
-For websites where performance is critical, then asyncio makes much more sense.
+The performance benefits of asyncio are real. The asyncio ecosystem is maturing fast, and for websites where performance is critical, asyncio makes a lot of sense.

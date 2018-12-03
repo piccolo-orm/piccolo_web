@@ -58,4 +58,4 @@ asyncio.run(hello_everyone())
 
 With asyncio.gather it makes it very easy to wait until a bunch of tasks have all finished. It's an example of the sorts of nice features which can be built on top of the event loop abstraction.
 
-Single threaded performance - the GIL. Other abstractions ... like transports and protocols ...
+And last but not least, event loops make a lot of sense in Python due to the Global Interpretter Lock (GIL), which limits the effectiveness of multi-threaded programs. This makes event loops, which provides concurrency using a single thread, more attractive.
