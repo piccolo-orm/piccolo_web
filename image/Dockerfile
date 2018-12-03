@@ -1,6 +1,8 @@
 FROM node:9-alpine
 
-RUN npm install -g http-server
+RUN apk add --no-cache nginx
+ADD nginx/piccolo.conf /etc/nginx/conf.d/
+
 RUN mkdir /app
 ADD app/package.json /app/package.json
 WORKDIR /app
