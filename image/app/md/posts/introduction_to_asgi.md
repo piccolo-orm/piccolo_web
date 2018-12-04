@@ -16,11 +16,17 @@ An ASGI application is a double callable. This double callable can be implemente
 
 <pre><code class="language-python">
 class ASGIApp():
-    def __init__(self, environ):
-        self.environ = environ
+    def __init__(self, some_param):
+        """The first callable. Allows the ASGI app to wrap other ASGI apps."""
+        self.some_param = some_param
 
-    def __call__(self):
+    def __call__(self, scope):
+        """
+        The second callable.
+        """
         pass
 </code></pre>
 
-An ASGI application ...
+What's fascinating about an ASGI application is every component of that app is also ASGI. Middleware is ASGI, views are ASGI. Want to embed another ASGI app, built with a totally different framework, within your ASGI app? No problem.
+
+With WSGI, frameworks often didn't achieve this level of modularity / composability. For example, Django views and middleware aren't WSGI - only the top level app is.
