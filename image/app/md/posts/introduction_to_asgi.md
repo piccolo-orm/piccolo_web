@@ -25,6 +25,7 @@ class ASGIApp():
         The second callable.
         """
         pass
+
 </code></pre>
 
 What's fascinating about an ASGI application is every component of that app is also ASGI. Middleware is ASGI, views are ASGI. Want to embed another ASGI app, built with a totally different framework, within your ASGI app? No problem.
@@ -39,9 +40,10 @@ Either will do fine. In my own testing, I got marginally better performance out 
 
 Hypercorn makes a great development server, because it can automatically reload the server when it detects changes to your application (in the same was the Django dev server does).
 
-```
+<pre><code class="language-bash">
 hypercorn --uvloop --reload --b localhost:8000 views:app
-```
+
+</pre></code>
 
 ## ASGI frameworks
 
