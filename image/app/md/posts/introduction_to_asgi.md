@@ -16,17 +16,42 @@ An ASGI application is a double callable. This double callable can be implemente
 
 <pre><code class="language-python">
 class ASGIApp():
-    def __init__(self, some_param):
-        """The first callable. Allows the ASGI app to wrap other ASGI apps."""
-        self.some_param = some_param
+    def __init__(self, scope):
+        self.scope = scope
+
+    def __call__(self, receive, send):
+        """
+        The second callable.
+        """
+        message = await receive()
+        await send({
+            "type": "http.response.start",
+            "status": 200
+        })
+        await send({'type': 'http.response.body', 'text': 'hello world'})
+</code></pre>
+
+The scope tells the ASGI app about the connection. For a HTTP connection, this will include things like headers, the path, query parameters etc. The receive and send
+
+Middleware modifies the scope passed to ASGI apps, or can do things like return a 403 error if no auth token if provided.
+
+<pre><code class="language-python">
+class ASGIMiddleware():
+    def __init__(self, asgi_app):
+        self.asgi_app = asgi_app
 
     def __call__(self, scope):
         """
         The second callable.
         """
-        pass
+        scope['some_param'] = True
+        return self.asgi_app(scope)
+
+app = ASGIMiddleware(ASGIApp)
 
 </code></pre>
+
+## ASGI all the way down
 
 What's fascinating about an ASGI application is every component of that app is also ASGI. Middleware is ASGI, views are ASGI. Want to embed another ASGI app, built with a totally different framework, within your ASGI app? No problem.
 
@@ -58,3 +83,7 @@ Sanic has a large community behind it, but I'm personally hesistant to use any a
 Starlette is my current favourite. I'm not personally invested in Flask, so don't care about compatibility. It also feels the most like a pure ASGI framework. Every component is ASGI, so it delivers on the promise of composability and modularity that I find so appealing. It can be used as a framework in its own right, or you can use it as a source of building blocks, and build your own framework on top of it ([Responder](https://github.com/kennethreitz/responder) is one example).
 
 There are countless others, but some seem to have stalled or been abandoned (Japronto, Vibora), or don't have appealing APIs.
+
+## Conclusions
+
+ASGI is an important pillar in the world of async Python. I hope to show some examples in the future incorporating Piccolo with an ASGI framework.
