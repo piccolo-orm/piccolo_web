@@ -26,9 +26,13 @@ class ASGIApp():
         message = await receive()
         await send({
             "type": "http.response.start",
-            "status": 200
+            "status": 200,
+            "headers": []
         })
-        await send({'type': 'http.response.body', 'text': 'hello world'})
+        await send({
+            'type': 'http.response.body',
+            'body': bytes('hello world', 'utf-8')
+        })
 </code></pre>
 
 The scope tells the ASGI app about the connection. For a HTTP connection, this will include things like headers, the path, query parameters etc. The receive and send
