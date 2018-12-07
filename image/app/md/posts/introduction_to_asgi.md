@@ -12,6 +12,8 @@ WSGI doesn't work for async frameworks though, because it ties a single request 
 
 To solve this problem, [ASGI](https://asgi.readthedocs.io/en/latest/) (Asynchronous Server Gateway Interface) was proposed.
 
+## ASGI App
+
 An ASGI application is a double callable. This double callable can be implemented how you like, but here's one example.
 
 <pre><code class="language-python">
@@ -20,9 +22,6 @@ class ASGIApp():
         self.scope = scope
 
     def __call__(self, receive, send):
-        """
-        The second callable.
-        """
         message = await receive()
         await send({
             "type": "http.response.start",
@@ -35,7 +34,11 @@ class ASGIApp():
         })
 </code></pre>
 
-The scope tells the ASGI app about the connection. For a HTTP connection, this will include things like headers, the path, query parameters etc. The receive and send
+The first callable accepts a scope argument, which tells the ASGI app about the connection. For a HTTP connection, this will include things like headers, the path, query parameters etc.
+
+The second callable acccepts receive and send arguments, which is how the ASGI app receives/sends data.
+
+## ASGI Middleware
 
 Middleware modifies the scope passed to ASGI apps, or can do things like return a 403 error if no auth token if provided.
 
@@ -45,9 +48,6 @@ class ASGIMiddleware():
         self.asgi_app = asgi_app
 
     def __call__(self, scope):
-        """
-        The second callable.
-        """
         scope['some_param'] = True
         return self.asgi_app(scope)
 
@@ -57,7 +57,7 @@ app = ASGIMiddleware(ASGIApp)
 
 ## ASGI all the way down
 
-What's fascinating about an ASGI application is every component of that app is also ASGI. Middleware is ASGI, views are ASGI. Want to embed another ASGI app, built with a totally different framework, within your ASGI app? No problem.
+What's interesting about an ASGI application is every component of that app is also ASGI. Routing is ASGI, middleware is ASGI, views are ASGI. Want to embed another ASGI app, built with a totally different framework, within your ASGI app? No problem.
 
 With WSGI, frameworks often didn't achieve this level of modularity / composability. For example, Django views and middleware aren't WSGI - only the top level app is.
 
@@ -90,4 +90,4 @@ There are countless others, but some seem to have stalled or been abandoned (Jap
 
 ## Conclusions
 
-ASGI is an important pillar in the world of async Python. I hope to show some examples in the future incorporating Piccolo with an ASGI framework.
+ASGI is an important pillar in the world of async Python. I'll show some examples in the future incorporating Piccolo with an ASGI framework.
