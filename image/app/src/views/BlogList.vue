@@ -1,19 +1,27 @@
 <template>
-    <div class="center_wrapper">
-        <h1>Blog</h1>
-        <ul>
-            <li v-for="post in posts" v-bind:key="post.title">
-                <router-link :to="{name: 'blog_single', params: {articleName: post.slug}}">{{ post.title }}</router-link>
-            </li>
-        </ul>
+    <div>
+        <div class="center_wrapper">
+            <h1>Blog</h1>
+            <ul>
+                <li v-for="post in posts" v-bind:key="post.title">
+                    <router-link :to="{name: 'blog_single', params: {articleName: post.slug}}">{{ post.title }}</router-link>
+                </li>
+            </ul>
+        </div>
+        <custom-footer></custom-footer>
     </div>
 </template>
 
 <script>
+import Footer from '../components/Footer.vue';
+
 export default {
     name: 'blog',
     data: function() {
         return {}
+    },
+    components: {
+        'custom-footer': Footer
     },
     computed: {
         posts: function() {

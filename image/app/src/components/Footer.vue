@@ -1,6 +1,6 @@
 <template>
 <footer>
-    <p>Created by Daniel Townsend, 2018</p>
+    <p>Made by Daniel Townsend, 2018</p>
 </footer>
 </template>
 
