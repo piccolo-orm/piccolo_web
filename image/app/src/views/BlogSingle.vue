@@ -1,12 +1,16 @@
 <template>
-    <div class="center_wrapper">
-        <p><router-link :to="{name: 'blog'}">All posts</router-link></p>
-        <div v-html="html"></div>
+    <div>
+        <div class="center_wrapper">
+            <p><router-link :to="{name: 'blog'}">All posts</router-link></p>
+            <div v-html="html"></div>
+        </div>
+        <custom-footer></custom-footer>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
+import Footer from '../components/Footer.vue';
 
 export default {
     props: ['articleName'],
@@ -14,6 +18,9 @@ export default {
         return {
             html: '',
         }
+    },
+    components: {
+        'custom-footer': Footer
     },
     computed: {
         posts: function() {
