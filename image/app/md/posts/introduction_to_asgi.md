@@ -21,7 +21,7 @@ class ASGIApp():
     def __init__(self, scope):
         self.scope = scope
 
-    def __call__(self, receive, send):
+    async def __call__(self, receive, send):
         message = await receive()
         await send({
             "type": "http.response.start",
@@ -32,11 +32,20 @@ class ASGIApp():
             'type': 'http.response.body',
             'body': bytes('hello world', 'utf-8')
         })
+
+app = ASGIApp
 </code></pre>
 
 The first callable accepts a scope argument, which tells the ASGI app about the connection. For a HTTP connection, this will include things like headers, the path, query parameters etc.
 
 The second callable acccepts receive and send arguments, which is how the ASGI app receives/sends data.
+
+A double callable sounds fancy, but all it means is the ASGI server can call your application like this:
+
+<pre><code class="language-python">
+asgi = app(scope)
+await asgi(receive, send)
+</code></pre>
 
 ## ASGI Middleware
 
@@ -63,9 +72,9 @@ With WSGI, frameworks often didn't achieve this level of modularity / composabil
 
 ## ASGI servers
 
-There are already two great ASGI servers - [Uvicorn](https://github.com/encode/uvicorn), and [Hypercorn](https://gitlab.com/pgjones/hypercorn).
+There are already three great ASGI servers - [Uvicorn](https://github.com/encode/uvicorn), [Hypercorn](https://gitlab.com/pgjones/hypercorn), and [Daphne](https://github.com/django/daphne).
 
-Either will do fine. In my own testing, I got marginally better performance out of Hypercorn, though this could change over time.
+Any of them will do fine. In my own testing, I got marginally better performance out of Hypercorn, though this could change over time.
 
 Hypercorn makes a great development server, because it can automatically reload the server when it detects changes to your application (in the same was the Django dev server does).
 
@@ -76,17 +85,19 @@ hypercorn --uvloop --reload --b localhost:8000 views:app
 
 ## ASGI frameworks
 
-Quart and Starlette already support ASGI. In a recent episode of [Talk Python to Me](https://talkpython.fm/episodes/show/188/async-for-the-pythonic-web-with-sanic), a Sanic maintainer mentioned that they plan to support ASGI, so expect that soon.
+Quart and Starlette already support ASGI.
+
+In a recent episode of [Talk Python to Me](https://talkpython.fm/episodes/show/188/async-for-the-pythonic-web-with-sanic), a Sanic maintainer mentioned that they plan to support ASGI, so expect that soon.
+
+Django Channels is another ASGI framework, which brings asynchronous capabilities (web sockets, HTTP2) to Django. The author of Django Channels, Andrew Godwin, was also the author of the ASGI spec.
 
 ### Which one should I use?
 
 Quart seeks to be compatible with Flask, a popular WSGI framework. If this is important to you, then it's a sensible choice. The API will be familiar, meaning you don't have to relearn concepts, and many Flask extensions will also still work.
 
-Sanic has a large community behind it, but I'm personally hesistant to use any async framework which doesn't support ASGI, but as previously mentioned, this could change soon.
+Django Channels is perfect if you want to add some async to a Django project.
 
-Starlette is my current favourite. I'm not personally invested in Flask, so don't care about compatibility. It also feels the most like a pure ASGI framework. Every component is ASGI, so it delivers on the promise of composability and modularity that I find so appealing. It can be used as a framework in its own right, or you can use it as a source of building blocks, and build your own framework on top of it ([Responder](https://github.com/kennethreitz/responder) is one example).
-
-There are countless others, but some seem to have stalled or been abandoned (Japronto, Vibora), or don't have appealing APIs.
+Starlette is my current favourite for new projects which don't require Django or Flask interoperability. It also feels the most like a pure ASGI framework. Every component is ASGI, so it delivers on the promise of composability and modularity that I find so appealing. It can be used as a framework in its own right, or you can use it as a source of building blocks, and build your own framework on top of it ([Responder](https://github.com/kennethreitz/responder) is one example).
 
 ## Conclusions
 
