@@ -26,11 +26,19 @@
     <div class="neutral">
         <div class="center_wrapper">
             <h1>Getting started</h1>
-            <ul>
-                <li>Installation</li>
+
+            <h2>Installation</h2>
+
+            <pre><code class="language-bash">pip install piccolo</code></pre>
+
+            <h2>Quick start tutorial</h2>
+
+            <p><a href="#">Learn the basics in 5 minutes.</a></p>
+
+            <!-- <ul>
                 <li>Documentation</li>
                 <li>Discuss</li>
-            </ul>
+            </ul> -->
         </div>
     </div>
 
@@ -121,7 +129,7 @@ div.neutral {
 
     h1 {
         margin: 0;
-        padding: 1rem;
+        padding: 1rem 0;
     }
 
     ul {
