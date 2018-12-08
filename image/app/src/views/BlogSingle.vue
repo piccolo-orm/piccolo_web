@@ -4,13 +4,13 @@
             <p><router-link :to="{name: 'blog'}">All posts</router-link></p>
             <div v-html="html"></div>
         </div>
-        <custom-footer></custom-footer>
+        <MainFooter></MainFooter>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import Footer from '../components/Footer.vue';
+import MainFooter from '@/components/MainFooter.vue';
 
 export default {
     props: ['articleName'],
@@ -20,7 +20,7 @@ export default {
         }
     },
     components: {
-        'custom-footer': Footer
+        MainFooter,
     },
     computed: {
         posts: function() {

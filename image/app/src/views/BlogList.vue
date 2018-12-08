@@ -8,12 +8,12 @@
                 </li>
             </ul>
         </div>
-        <custom-footer></custom-footer>
+        <MainFooter></MainFooter>
     </div>
 </template>
 
 <script>
-import Footer from '../components/Footer.vue';
+import MainFooter from '@/components/MainFooter.vue';
 
 export default {
     name: 'blog',
@@ -21,7 +21,7 @@ export default {
         return {}
     },
     components: {
-        'custom-footer': Footer
+        MainFooter,
     },
     computed: {
         posts: function() {
