@@ -36,6 +36,23 @@ export default new Vuex.Store({
                 src: 'why_is_an_event_loop_useful.html',
                 slug: 'why-is-an-event-loop-useful'
             }
+        ],
+        tutorials: [
+            {
+                title: 'Step 1',
+                src: 'define_schema.html',
+                slug: 'define-schema'
+            },
+            {
+                title: 'Step 2',
+                src: 'add_data.html',
+                slug: 'add-data'
+            },
+            {
+                title: 'Step 3',
+                src: 'query_tables.html',
+                slug: 'query-tables'
+            }
         ]
     },
     mutations: {
