@@ -1,7 +1,7 @@
 <template>
     <ul>
         <li v-for="tutorial in tutorials" :key="tutorial.slug">
-            <a href="#" v-on:click.prevent="navigate">{{ tutorial.title }}</a>
+            <router-link :to="{name: 'tutorial_single', params: {tutorialName: tutorial.slug}}">{{ tutorial.title }}</router-link>
         </li>
     </ul>
 </template>
@@ -11,11 +11,6 @@ export default {
     computed: {
         tutorials: function() {
             return this.$store.state.tutorials
-        }
-    },
-    methods: {
-        navigate: function() {
-            console.log('Navigating ...')
         }
     }
 }

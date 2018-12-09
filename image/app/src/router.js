@@ -30,6 +30,12 @@ export default new Router({
             path: '/tutorial',
             name: 'tutorial',
             component: Tutorial
+        },
+        {
+            path: '/tutorial/:tutorialName',
+            name: 'tutorial_single',
+            component: Tutorial,
+            props: true
         }
     ]
 })
