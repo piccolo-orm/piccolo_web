@@ -33,7 +33,7 @@
 
             <h2>Quick start tutorial</h2>
 
-            <p><a href="#">Learn the basics in 5 minutes.</a></p>
+            <p><router-link to="tutorial">Learn the basics in 5 minutes.</router-link></p>
 
             <!-- <ul>
                 <li>Documentation</li>

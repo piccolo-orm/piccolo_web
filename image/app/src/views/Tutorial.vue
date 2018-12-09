@@ -1,5 +1,7 @@
 <template>
-    <div>
+    <div class="center_wrapper">
+        <h1>Tutorial</h1>
+        <p>Coming soon ...</p>
     </div>
 </template>
 
