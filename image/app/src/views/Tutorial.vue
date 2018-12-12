@@ -51,13 +51,14 @@ export default {
 
 <style lang="less">
 div.column_wrapper {
+    align-items: stretch;
     display: flex;
     flex-direction: row;
-    height: 100%;
+    min-height: 100%;
 
     aside {
         background-color: #490188;
-        height: 100%;
+        min-height: 100%;
         width: 10rem;
     }
 
