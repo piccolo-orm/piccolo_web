@@ -2,11 +2,14 @@
 
 ## Defining the schema
 
-The first step is to define your schema.
+The first step is to define your schema. Create a file called tables.py.
 
 This reflects the tables in your database. Each table consists of several columns.
 
 <pre><code class="language-python">
+"""
+tables.py
+"""
 from piccolo.tables import Table
 from piccolo.columns import Varchar
 

@@ -5,7 +5,7 @@
 Migrations are used to create the tables in the database.
 
 <pre><code class="language-bash">
-migration new
+migration.py new
 
 </code></pre>
 
@@ -40,13 +40,42 @@ At the moment, this migration does nothing when run - we need to populate the fo
 
 <em>In the future, migrations will be populated automatically.</em>
 
+<pre><code class="language-python">
+from ..tables import Band
+
+ID = '2018-09-04T19:44:09'
+
+
+async def forwards():
+    transaction = Band.Meta.db.transaction()
+
+    transaction.add(
+        Band.create_without_columns(),
+
+        Band.alter().add(
+            'name',
+            Varchar(length=100)
+        ),
+    )
+
+    await transaction.run()
+
+
+async def backwards():
+    await Band.drop().run()
+
+</code></pre>
+
 ## Running migration
 
 When the migration is run, the forwards function is executed. To do this:
 
 <pre><code class="language-bash">
 migration.py forwards
+
 </code></pre>
+
+Inspect your database, and a ```band``` table should now exist.
 
 ## Reversing migrations
 
@@ -54,6 +83,7 @@ To reverse the migration, run this:
 
 <pre><code class="language-bash">
 migration.py backwards 2018-09-04T19:44:09
+
 </code></pre>
 
 This executes the backwards function.

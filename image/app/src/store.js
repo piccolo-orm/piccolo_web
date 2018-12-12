@@ -49,9 +49,9 @@ export default new Vuex.Store({
                 slug: 'migrations'
             },
             {
-                title: 'Step 3',
-                src: 'query_tables.html',
-                slug: 'query-tables'
+                title: 'Step 3 - Adding data',
+                src: 'adding_data.html',
+                slug: 'adding-data'
             }
         ]
     },
