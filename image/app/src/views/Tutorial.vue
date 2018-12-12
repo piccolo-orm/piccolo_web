@@ -3,9 +3,12 @@
         <aside>
             <TutorialSidebar></TutorialSidebar>
         </aside>
-        <div>
-            <h1>Tutorial</h1>
-            <div v-html="html"></div>
+        <div class=main_column>
+            <div class="html" v-html="html"></div>
+            <ul class="nav">
+                <li>&larr; Previous</li>
+                <li>Next &rarr;</li>
+            </ul>
         </div>
     </div>
 </template>
@@ -58,8 +61,35 @@ div.column_wrapper {
         width: 10rem;
     }
 
-    div {
+    div.main_column {
         flex: 1;
+
+        div.html {
+            padding: 1rem;
+        }
+
+        ul.nav {
+            margin-bottom: 0;
+            padding: 0;
+
+            li {
+                background-color: #2b2b2b;
+                color: white;
+                display: inline-block;
+                box-sizing: border-box;
+                padding: 2rem;
+                width: 50%;
+                text-align: right;
+
+                &:hover {
+                    background-color: rgba(0,0,0,0.8);
+                }
+
+                &:first-child {
+                    text-align: left;
+                }
+            }
+        }
     }
 }
 </style>
