@@ -14,6 +14,8 @@ class Band(Table):
     name = Varchar(length=100)
 </code></pre>
 
+For a full list of columns, <a href="#">see here</a>.
+
 ## Connecting to the database
 
 In order to create the tables in the database you need to provide Piccolo with your connection details.

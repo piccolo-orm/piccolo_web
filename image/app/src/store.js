@@ -39,14 +39,14 @@ export default new Vuex.Store({
         ],
         tutorials: [
             {
-                title: 'Step 1',
+                title: 'Step 1 - Schema',
                 src: 'define_schema.html',
                 slug: 'define-schema'
             },
             {
-                title: 'Step 2',
-                src: 'add_data.html',
-                slug: 'add-data'
+                title: 'Step 2 - Migrations',
+                src: 'migrations.html',
+                slug: 'migrations'
             },
             {
                 title: 'Step 3',

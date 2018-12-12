@@ -50,6 +50,8 @@ export default {
 </script>
 
 <style lang="less">
+@purple: #490188;
+
 div.column_wrapper {
     align-items: stretch;
     display: flex;
@@ -57,7 +59,7 @@ div.column_wrapper {
     min-height: 100%;
 
     aside {
-        background-color: #490188;
+        background-color: @purple;
         min-height: 100%;
         width: 10rem;
     }
@@ -67,6 +69,24 @@ div.column_wrapper {
 
         div.html {
             padding: 1rem;
+
+            em {
+                background-color: fadeout(@purple, 90%);
+                border: 1px solid @purple;
+                color: @purple;
+                display: block;
+                padding: 0.5rem;
+
+                &::before {
+                    content: "!";
+                    font-weight: bold;
+                    font-style: normal;
+                    padding: 0.1rem 0.7rem;
+                    margin-right: 0.5rem;
+                    border: 1px solid @purple;
+                    border-radius: 1rem;
+                }
+            }
         }
 
         ul.nav {
