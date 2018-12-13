@@ -18,7 +18,9 @@ import axios from 'axios'
 import TutorialSidebar from '@/components/Tutorial/TutorialSidebar.vue'
 
 export default {
-    props: ['tutorialName'],
+    props: {
+        tutorialName: null
+    },
     components: {
         TutorialSidebar
     },
@@ -33,9 +35,13 @@ export default {
         }
     },
     created: function() {
-        let currentTutorial = this.tutorials.filter(
-            (element) => element.slug == this.tutorialName
-        )[0]
+        if (!this.tutorialName) {
+            let currentTutorial = this.tutorials[0]
+        } else {
+            let currentTutorial = this.tutorials.filter(
+                (element) => element.slug == this.tutorialName
+            )[0]
+        }
 
         let app = this;
         axios.get('/html/tutorials/' + currentTutorial.src).then(function(response) {

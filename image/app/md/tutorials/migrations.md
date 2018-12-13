@@ -66,7 +66,7 @@ async def backwards():
 
 </code></pre>
 
-## Running migration
+## Running migrations
 
 When the migration is run, the forwards function is executed. To do this:
 
