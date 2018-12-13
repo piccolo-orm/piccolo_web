@@ -19,7 +19,10 @@ import TutorialSidebar from '@/components/Tutorial/TutorialSidebar.vue'
 
 export default {
     props: {
-        tutorialName: null
+        tutorialName: {
+            type: String,
+            default: ""
+        },
     },
     components: {
         TutorialSidebar
@@ -35,10 +38,10 @@ export default {
         }
     },
     created: function() {
-        if (!this.tutorialName) {
-            let currentTutorial = this.tutorials[0]
-        } else {
-            let currentTutorial = this.tutorials.filter(
+        var currentTutorial = this.tutorials[0]
+
+        if (this.tutorialName != "") {
+            currentTutorial = this.tutorials.filter(
                 (element) => element.slug == this.tutorialName
             )[0]
         }
