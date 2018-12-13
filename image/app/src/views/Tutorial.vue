@@ -76,6 +76,9 @@ export default {
                 this._navigate(this.previousTutorial)
             }
         },
+        scrollToTop: function() {
+            document.documentElement.scrollTop = 0
+        },
         loadHTML: function() {
             var currentTutorial = this.tutorials[0]
 
@@ -90,6 +93,7 @@ export default {
             let app = this;
             axios.get('/html/tutorials/' + currentTutorial.src).then(function(response) {
                 app.html = response.data
+                app.scrollToTop()
                 setTimeout(
                     () => Prism.highlightAll(),
                     0
