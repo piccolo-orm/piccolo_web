@@ -21,15 +21,19 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
-    height: 100%;
-    min-height: 100%;
+    min-height: 100vh;
 }
 
-body, html {
-    height: 100%;
-    min-height: 100%;
-    padding: 0;
-    margin: 0;
+html {
+   margin: 0px;
+   padding: 0px;
+   min-height: 100vh;
+}
+
+body {
+    margin: 0px;
+    min-height: 100vh;
+    position: relative;
 }
 
 a {
@@ -41,6 +45,9 @@ nav {
     color: white;
     display: flex;
     flex-direction: row;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
 
     h1 {
         display: inline-block;

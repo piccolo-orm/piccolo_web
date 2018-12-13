@@ -106,6 +106,7 @@ export default {
 
 div.hero {
     background-color: @purple;
+    padding-top: 4rem;
     text-align: center;
 
     h2 {

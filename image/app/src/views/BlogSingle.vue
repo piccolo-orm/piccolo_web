@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="blog_single">
         <div class="center_wrapper">
             <p><router-link :to="{name: 'blog'}">All posts</router-link></p>
             <div v-html="html"></div>
@@ -45,10 +45,14 @@ export default {
 </script>
 
 <style lang="less">
-h2 {
-    margin-top: 2.5rem;
-}
-p, li {
-    font-size: 1.1rem;
+div.blog_single {
+    padding-top: 4rem;
+
+    h2 {
+        margin-top: 2.5rem;
+    }
+    p, li {
+        font-size: 1.1rem;
+    }
 }
 </style>

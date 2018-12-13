@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="blog">
         <div class="center_wrapper">
             <h1>Blog</h1>
             <ul>
@@ -35,18 +35,24 @@ export default {
 <style lang="less" scoped>
 @purple: #490188;
 
-ul {
-    padding: 0;
+div.blog {
+    min-height: 100vh;
+    padding-top: 4rem;
+    box-sizing: border-box;
 
-    li {
-        font-size: 1.2rem;
-        list-style: none;
-        padding: 0.5rem 0;
+    ul {
+        padding: 0;
 
-        a {
-            font-size: 1.3rem;
-            font-weight: bolder;
-            text-decoration: none;
+        li {
+            font-size: 1.2rem;
+            list-style: none;
+            padding: 0.5rem 0;
+
+            a {
+                font-size: 1.3rem;
+                font-weight: bolder;
+                text-decoration: none;
+            }
         }
     }
 }

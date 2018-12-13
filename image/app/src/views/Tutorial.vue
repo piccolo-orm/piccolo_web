@@ -5,6 +5,7 @@
         </aside>
         <div class=main_column>
             <div class="html" v-html="html"></div>
+            <div class="nav_padding"></div>
             <ul class="nav">
                 <li>
                     <router-link v-if="previousTutorial" :to="{name: 'tutorial_single', params: {tutorialName: previousTutorial.slug}}">&larr; Previous</router-link>
@@ -112,7 +113,9 @@ div.column_wrapper {
     align-items: stretch;
     display: flex;
     flex-direction: row;
-    min-height: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-top: 3.5rem;
 
     aside {
         background-color: @purple;
@@ -121,6 +124,7 @@ div.column_wrapper {
     }
 
     div.main_column {
+        position: relative;
         flex: 1;
 
         div.html {
@@ -145,10 +149,18 @@ div.column_wrapper {
             }
         }
 
+        div.nav_padding {
+            height: 5rem;
+        }
+
         ul.nav {
             background-color: #2b2b2b;
             margin-bottom: 0;
             padding: 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
 
             li {
                 display: inline-block;
