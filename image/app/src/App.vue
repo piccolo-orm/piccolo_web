@@ -4,6 +4,7 @@
         <h1><router-link to="/">Piccolo</router-link></h1>
         <ul>
             <li><a href="https://github.com/telerytech/piccolo">Github</a></li>
+            <li><router-link to="/tutorial">Tutorial</router-link></li>
             <li><router-link to="/blog">Blog</router-link></li>
         </ul>
     </nav>
@@ -20,10 +21,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
+    height: 100%;
     min-height: 100%;
 }
 
 body, html {
+    height: 100%;
     min-height: 100%;
     padding: 0;
     margin: 0;
