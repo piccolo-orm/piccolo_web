@@ -15,6 +15,7 @@ from piccolo.columns import Varchar
 
 class Band(Table):
     name = Varchar(length=100)
+
 </code></pre>
 
 For a full list of columns, <a href="#">see here</a>.
@@ -34,6 +35,7 @@ DB = PostgresEngine({
     'user': 'postgres',
     'password': ''
 })
+
 </code></pre>
 
 Here I'd like to show all of the files at this point ...

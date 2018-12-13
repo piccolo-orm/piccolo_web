@@ -37,7 +37,8 @@ export default {
     data: function() {
         return {
             html: '',
-            currentIndex: 0
+            currentIndex: 0,
+            currentTutorial: null
         }
     },
     computed: {
@@ -64,18 +65,18 @@ export default {
             document.documentElement.scrollTop = 0
         },
         loadHTML: function() {
-            var currentTutorial = this.tutorials[0]
+            this.currentTutorial = this.tutorials[0]
 
             if (this.tutorialName != "") {
-                currentTutorial = this.tutorials.filter(
+                this.currentTutorial = this.tutorials.filter(
                     (element) => element.slug == this.tutorialName
                 )[0]
             }
 
-            this.currentIndex = this.tutorials.indexOf(currentTutorial)
+            this.currentIndex = this.tutorials.indexOf(this.currentTutorial)
 
             let app = this;
-            axios.get('/html/tutorials/' + currentTutorial.src).then(function(response) {
+            axios.get('/html/tutorials/' + this.currentTutorial.src).then(function(response) {
                 app.html = response.data
                 app.scrollToTop()
                 setTimeout(
@@ -88,6 +89,7 @@ export default {
     watch: {
         tutorialName: function(value) {
             this.loadHTML()
+            this.$store.commit('updateActiveTutorial', this.currentTutorial)
         }
     },
     created: function() {

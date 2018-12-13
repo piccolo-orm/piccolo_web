@@ -1,7 +1,11 @@
 <template>
     <ul>
-        <li v-for="tutorial in tutorials" :key="tutorial.slug">
-            <router-link :to="{name: 'tutorial_single', params: {tutorialName: tutorial.slug}}">{{ tutorial.title }}</router-link>
+        <li
+            v-for="tutorial in tutorials"
+            :key="tutorial.slug"
+            :class="{active: isActive(tutorial)}">
+            <router-link
+                :to="{name: 'tutorial_single', params: {tutorialName: tutorial.slug}}">{{ tutorial.title }}</router-link>
         </li>
     </ul>
 </template>
@@ -11,6 +15,14 @@ export default {
     computed: {
         tutorials: function() {
             return this.$store.state.tutorials
+        },
+        activeTutorial: function() {
+            return this.$store.state.activeTutorial
+        }
+    },
+    methods: {
+        isActive: function(tutorial) {
+            return tutorial == this.activeTutorial
         }
     }
 }
@@ -30,6 +42,10 @@ ul {
             display: block;
             padding: 1rem;
             text-decoration: none;
+        }
+
+        &.active {
+            background-color: rgba(255,255,255,0.3);
         }
 
         &:hover {

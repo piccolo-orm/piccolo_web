@@ -55,10 +55,13 @@ export default new Vuex.Store({
                 'adding_data.html',
                 'adding-data'
             )
-        ]
+        ],
+        activeTutorial: null
     },
     mutations: {
-
+        updateActiveTutorial: function(state, tutorial) {
+            state.activeTutorial = tutorial
+        }
     },
     actions: {
 
