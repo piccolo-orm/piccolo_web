@@ -4,7 +4,7 @@
         <h1><router-link to="/">Piccolo</router-link></h1>
         <ul>
             <li><a href="https://github.com/telerytech/piccolo">Github</a></li>
-            <li><router-link to="/tutorial">Tutorial</router-link></li>
+            <li><router-link to="/tutorial">Tutorials</router-link></li>
             <li><router-link to="/blog">Blog</router-link></li>
         </ul>
     </nav>
