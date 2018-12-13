@@ -6,8 +6,18 @@
         <div class=main_column>
             <div class="html" v-html="html"></div>
             <ul class="nav">
-                <li><a href="#" v-on:click.prevent="goToPrevious">&larr; Previous</a></li>
-                <li><a href="#" v-on:click.prevent="goToNext">Next &rarr;</a></li>
+                <li>
+                    <template v-if="previousTutorial">
+                        <router-link :to="{name: 'tutorial_single', params: {tutorialName: previousTutorial.slug}}">&larr; Previous</router-link>
+                    </template>
+                    <template v-else>-</template>
+                </li>
+                <li>
+                    <template v-if="nextTutorial">
+                        <router-link :to="{name: 'tutorial_single', params: {tutorialName: nextTutorial.slug}}">Next &rarr;</router-link>
+                    </template>
+                    <template v-else>-</template>
+                </li>
             </ul>
         </div>
     </div>
@@ -54,28 +64,6 @@ export default {
         }
     },
     methods: {
-        _navigate: function(tutorial) {
-            this.$router.push({
-                name: 'tutorial_single',
-                params: {
-                    tutorialName: tutorial.slug
-                }
-            })
-        },
-        goToNext: function() {
-            if (!this.nextTutorial) {
-                return
-            } else {
-                this._navigate(this.nextTutorial)
-            }
-        },
-        goToPrevious: function() {
-            if (!this.previousTutorial) {
-                return
-            } else {
-                this._navigate(this.previousTutorial)
-            }
-        },
         scrollToTop: function() {
             document.documentElement.scrollTop = 0
         },
