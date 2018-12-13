@@ -7,16 +7,12 @@
             <div class="html" v-html="html"></div>
             <ul class="nav">
                 <li>
-                    <template v-if="previousTutorial">
-                        <router-link :to="{name: 'tutorial_single', params: {tutorialName: previousTutorial.slug}}">&larr; Previous</router-link>
-                    </template>
-                    <template v-else>-</template>
+                    <router-link v-if="previousTutorial" :to="{name: 'tutorial_single', params: {tutorialName: previousTutorial.slug}}">&larr; Previous</router-link>
+                    <span v-else>-</span>
                 </li>
                 <li>
-                    <template v-if="nextTutorial">
-                        <router-link :to="{name: 'tutorial_single', params: {tutorialName: nextTutorial.slug}}">Next &rarr;</router-link>
-                    </template>
-                    <template v-else>-</template>
+                    <router-link v-if="nextTutorial" :to="{name: 'tutorial_single', params: {tutorialName: nextTutorial.slug}}">Next &rarr;</router-link>
+                    <span v-else>-</span>
                 </li>
             </ul>
         </div>
@@ -141,20 +137,30 @@ div.column_wrapper {
         }
 
         ul.nav {
+            background-color: #2b2b2b;
             margin-bottom: 0;
             padding: 0;
 
             li {
-                background-color: #2b2b2b;
-                color: white;
                 display: inline-block;
-                box-sizing: border-box;
-                padding: 2rem;
                 width: 50%;
                 text-align: right;
+                min-height: 100%;
+
+                a, span {
+                    box-sizing: border-box;
+                    color: white;
+                    display: block;
+                    font-size: 1.1rem;
+                    padding: 2rem;
+                }
+
+                a {
+                    text-decoration: none;
+                }
 
                 &:hover {
-                    background-color: rgba(0,0,0,0.8);
+                    background-color: rgba(255,255,255,0.1);
                 }
 
                 &:first-child {
