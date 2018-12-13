@@ -6,8 +6,8 @@
         <div class=main_column>
             <div class="html" v-html="html"></div>
             <ul class="nav">
-                <li>&larr; Previous</li>
-                <li>Next &rarr;</li>
+                <li><a href="#" v-on:click.prevent="goToPrevious">&larr; Previous</a></li>
+                <li><a href="#" v-on:click.prevent="goToNext">Next &rarr;</a></li>
             </ul>
         </div>
     </div>
@@ -16,6 +16,7 @@
 <script>
 import axios from 'axios'
 import TutorialSidebar from '@/components/Tutorial/TutorialSidebar.vue'
+import {Tutorial} from '@/classes.js'
 
 export default {
     props: {
@@ -30,31 +31,80 @@ export default {
     data: function() {
         return {
             html: '',
+            currentIndex: 0
         }
     },
     computed: {
         tutorials: function() {
             return this.$store.state.tutorials
+        },
+        nextTutorial: function() {
+            if (this.currentIndex + 1 == this.tutorials.length) {
+                return null
+            } else {
+                return this.$store.state.tutorials[this.currentIndex + 1]
+            }
+        },
+        previousTutorial: function() {
+            if (this.currentIndex == 0) {
+                return null
+            } else {
+                return this.$store.state.tutorials[this.currentIndex - 1]
+            }
+        }
+    },
+    methods: {
+        _navigate: function(tutorial) {
+            this.$router.push({
+                name: 'tutorial_single',
+                params: {
+                    tutorialName: tutorial.slug
+                }
+            })
+        },
+        goToNext: function() {
+            if (!this.nextTutorial) {
+                return
+            } else {
+                this._navigate(this.nextTutorial)
+            }
+        },
+        goToPrevious: function() {
+            if (!this.previousTutorial) {
+                return
+            } else {
+                this._navigate(this.previousTutorial)
+            }
+        },
+        loadHTML: function() {
+            var currentTutorial = this.tutorials[0]
+
+            if (this.tutorialName != "") {
+                currentTutorial = this.tutorials.filter(
+                    (element) => element.slug == this.tutorialName
+                )[0]
+            }
+
+            this.currentIndex = this.tutorials.indexOf(currentTutorial)
+
+            let app = this;
+            axios.get('/html/tutorials/' + currentTutorial.src).then(function(response) {
+                app.html = response.data
+                setTimeout(
+                    () => Prism.highlightAll(),
+                    0
+                )
+            })
+        }
+    },
+    watch: {
+        tutorialName: function(value) {
+            this.loadHTML()
         }
     },
     created: function() {
-        var currentTutorial = this.tutorials[0]
-
-        if (this.tutorialName != "") {
-            currentTutorial = this.tutorials.filter(
-                (element) => element.slug == this.tutorialName
-            )[0]
-        }
-
-        let app = this;
-        axios.get('/html/tutorials/' + currentTutorial.src).then(function(response) {
-            app.html = response.data
-            setTimeout(
-                () => Prism.highlightAll(),
-                0
-            )
-        })
-    }
+        this.loadHTML()
+    },
 }
 </script>
 
