@@ -37,8 +37,6 @@ export default {
     data: function() {
         return {
             html: '',
-            currentIndex: 0,
-            currentTutorial: null
         }
     },
     computed: {
@@ -46,37 +44,45 @@ export default {
             return this.$store.state.tutorials
         },
         nextTutorial: function() {
-            if (this.currentIndex + 1 == this.tutorials.length) {
+            if (this.activeTutorialIndex + 1 == this.tutorials.length) {
                 return null
             } else {
-                return this.$store.state.tutorials[this.currentIndex + 1]
+                return this.$store.state.tutorials[this.activeTutorialIndex + 1]
             }
         },
         previousTutorial: function() {
-            if (this.currentIndex == 0) {
+            if (this.activeTutorialIndex == 0) {
                 return null
             } else {
-                return this.$store.state.tutorials[this.currentIndex - 1]
+                return this.$store.state.tutorials[this.activeTutorialIndex - 1]
             }
+        },
+        activeTutorial: function() {
+            return this.$store.state.activeTutorial
+        },
+        activeTutorialIndex: function() {
+            return this.$store.state.activeTutorialIndex
         }
     },
     methods: {
         scrollToTop: function() {
             document.documentElement.scrollTop = 0
         },
-        loadHTML: function() {
-            this.currentTutorial = this.tutorials[0]
+        updateActiveTutorial: function() {
+            var activeTutorial = null
 
-            if (this.tutorialName != "") {
-                this.currentTutorial = this.tutorials.filter(
+            if (this.tutorialName == "") {
+                activeTutorial = this.tutorials[0]
+            } else {
+                activeTutorial = this.tutorials.filter(
                     (element) => element.slug == this.tutorialName
                 )[0]
             }
-
-            this.currentIndex = this.tutorials.indexOf(this.currentTutorial)
-
+            this.$store.commit('updateActiveTutorial', activeTutorial)
+        },
+        loadHTML: function() {
             let app = this;
-            axios.get('/html/tutorials/' + this.currentTutorial.src).then(function(response) {
+            axios.get('/html/tutorials/' + this.activeTutorial.src).then(function(response) {
                 app.html = response.data
                 app.scrollToTop()
                 setTimeout(
@@ -88,11 +94,12 @@ export default {
     },
     watch: {
         tutorialName: function(value) {
+            this.updateActiveTutorial()
             this.loadHTML()
-            this.$store.commit('updateActiveTutorial', this.currentTutorial)
         }
     },
-    created: function() {
+    mounted: function() {
+        this.updateActiveTutorial()
         this.loadHTML()
     },
 }

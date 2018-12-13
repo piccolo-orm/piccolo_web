@@ -56,11 +56,13 @@ export default new Vuex.Store({
                 'adding-data'
             )
         ],
-        activeTutorial: null
+        activeTutorial: null,
+        activeTutorialIndex: 0,
     },
     mutations: {
         updateActiveTutorial: function(state, tutorial) {
             state.activeTutorial = tutorial
+            state.activeTutorialIndex = state.tutorials.indexOf(tutorial)
         }
     },
     actions: {
