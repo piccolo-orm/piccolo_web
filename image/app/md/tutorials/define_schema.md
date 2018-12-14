@@ -13,6 +13,7 @@ tables.py
 from piccolo.tables import Table
 from piccolo.columns import Varchar
 
+
 class Band(Table):
     name = Varchar(length=100)
 
@@ -29,9 +30,10 @@ You do this by creating an Engine instance, and providing it to your Table's Met
 <pre><code class="language-python">
 from piccolo.engine.postgres import PostgresEngine
 
+# Replace these with your local DB credentials.
 DB = PostgresEngine({
     'host': 'localhost',
-    'database': 'my_project',
+    'database': 'piccolo_tutorial',
     'user': 'postgres',
     'password': ''
 })
