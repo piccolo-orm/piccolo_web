@@ -1,26 +1,29 @@
 export class Tutorial {
-    constructor(title, slug, steps) {
-        this.title = title
-        this.slug = slug
-        this.steps = steps
+    constructor(config) {
+        this.id = config.id
+        this.title = config.title
+        this.slug = config.slug
     }
 }
 
 
 export class TutorialStep {
-    constructor(title, src, slug) {
-        this.title = title
-        this.src = src
-        this.slug = slug
+
+    constructor(config) {
+        this.id = config.id
+        this.title = config.title
+        this.src = config.src
+        this.slug = config.slug
     }
 }
 
 
 export class Post {
-    constructor(title, src, slug) {
-        this.title = title
-        this.src = src
-        this.slug = slug
+    constructor(config) {
+        this.id = config.id
+        this.title = config.title
+        this.src = config.src
+        this.slug = config.slug
     }
 }
 

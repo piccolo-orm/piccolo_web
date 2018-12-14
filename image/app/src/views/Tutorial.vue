@@ -8,11 +8,15 @@
             <div class="nav_padding"></div>
             <ul class="nav">
                 <li>
-                    <router-link v-if="previousTutorial" :to="{name: 'tutorial_single', params: {tutorialName: previousTutorial.slug}}">&larr; Previous</router-link>
+                    <router-link
+                        v-if="previousTutorial"
+                        :to="{name: 'tutorial_single', params: {tutorialName: previousTutorial.slug}}">&larr; Previous</router-link>
                     <span v-else>-</span>
                 </li>
                 <li>
-                    <router-link v-if="nextTutorial" :to="{name: 'tutorial_single', params: {tutorialName: nextTutorial.slug}}">Next &rarr;</router-link>
+                    <router-link
+                        v-if="nextTutorial"
+                        :to="{name: 'tutorial_single', params: {tutorialName: nextTutorial.slug}}">Next &rarr;</router-link>
                     <span v-else>-</span>
                 </li>
             </ul>
@@ -28,6 +32,10 @@ import {Tutorial} from '@/classes.js'
 export default {
     props: {
         tutorialName: {
+            type: String,
+            default: ""
+        },
+        stepName: {
             type: String,
             default: ""
         },
@@ -74,6 +82,7 @@ export default {
 
             if (this.tutorialName == "") {
                 activeTutorial = this.tutorials[0]
+                //
             } else {
                 activeTutorial = this.tutorials.filter(
                     (element) => element.slug == this.tutorialName

@@ -1,17 +1,21 @@
 <template>
     <ul>
-        <ul class="overlay" :class="{hidden: isHidden}"></ul>
+        <ul class="overlay" :class="{hidden: isHidden}">
+            <li
+                v-for="tutorial in tutorials"
+                :key="tutorial.slug">{{ tutorial.title }}</li>
+        </ul>
         <li class="dark">
             <a
                 href="#"
                 v-on:click.prevent="isHidden = (isHidden && false)">&larr; All Tutorials</a>
         </li>
         <li
-            v-for="tutorial in tutorials"
-            :key="tutorial.slug"
-            :class="{active: isActive(tutorial)}">
+            v-for="step in visibleTutorialSteps"
+            :key="step.slug"
+            :class="{active: (step == activeTutorialStep)}">
             <router-link
-                :to="{name: 'tutorial_single', params: {tutorialName: tutorial.slug}}">{{ tutorial.title }}</router-link>
+                :to="{name: 'tutorial_single', params: {tutorialName: activeTutorial.slug, stepName: step.slug}}">{{ step.title }}</router-link>
         </li>
     </ul>
 </template>
@@ -28,14 +32,15 @@ export default {
             return this.$store.state.tutorials
         },
         activeTutorial: function() {
-            return this.$store.state.activeTutorial
+            return this.$store.activeTutorial
+        },
+        activeTutorialStep: function() {
+            return this.$store.activeTutorialStep
+        },
+        visibleTutorialSteps: function() {
+            return this.$store.visibleTutorialSteps
         }
     },
-    methods: {
-        isActive: function(tutorial) {
-            return tutorial == this.activeTutorial
-        }
-    }
 }
 </script>
 
