@@ -1,4 +1,13 @@
 export class Tutorial {
+    constructor(title, slug, steps) {
+        this.title = title
+        this.slug = slug
+        this.steps = steps
+    }
+}
+
+
+export class TutorialStep {
     constructor(title, src, slug) {
         this.title = title
         this.src = src
@@ -15,4 +24,4 @@ export class Post {
     }
 }
 
-export default {Post, Tutorial}
+export default {Post, Tutorial, TutorialStep}

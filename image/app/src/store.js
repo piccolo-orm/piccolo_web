@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import {Post, Tutorial} from '@/classes'
+import {Post, Tutorial, TutorialStep} from '@/classes'
 
 Vue.use(Vuex)
 
@@ -41,19 +41,25 @@ export default new Vuex.Store({
         ],
         tutorials: [
             new Tutorial(
-                'Step 1 - Schema',
-                'define_schema.html',
-                'define-schema'
-            ),
-            new Tutorial(
-                'Step 2 - Migrations',
-                'migrations.html',
-                'migrations'
-            ),
-            new Tutorial(
-                'Step 3 - Adding data',
-                'adding_data.html',
-                'adding-data'
+                '1',
+                '1',
+                [
+                    new Tutorial(
+                        'Step 1 - Schema',
+                        'define_schema.html',
+                        'define-schema'
+                    ),
+                    new Tutorial(
+                        'Step 2 - Migrations',
+                        'migrations.html',
+                        'migrations'
+                    ),
+                    new Tutorial(
+                        'Step 3 - Adding data',
+                        'adding_data.html',
+                        'adding-data'
+                    )
+                ]
             )
         ],
         activeTutorial: null,

@@ -32,7 +32,7 @@ export default new Router({
             component: Tutorial
         },
         {
-            path: '/tutorial/:tutorialName',
+            path: '/tutorial/:tutorialName/:stepName',
             name: 'tutorial_single',
             component: Tutorial,
             props: true
