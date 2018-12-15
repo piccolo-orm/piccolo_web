@@ -3,7 +3,8 @@
         <ul class="overlay" :class="{hidden: isHidden}">
             <li
                 v-for="tutorial in tutorials"
-                :key="tutorial.slug">{{ tutorial.title }}</li>
+                :key="tutorial.slug"
+                v-on:click.prevent="isHidden = true">{{ tutorial.title }}</li>
         </ul>
         <li class="dark">
             <a
@@ -66,6 +67,10 @@ ul {
         &.hidden {
             left: -100% !important;
             transition: 0.7s left;
+        }
+
+        li {
+            color: white;
         }
     }
 

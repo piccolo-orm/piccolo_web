@@ -53,6 +53,7 @@ export default {
             return this.$store.state.tutorials
         },
         nextTutorial: function() {
+            // TODO Have these are getters
             if (this.activeTutorialIndex + 1 == this.tutorials.length) {
                 return null
             } else {
@@ -67,49 +68,48 @@ export default {
             }
         },
         activeTutorial: function() {
-            return this.$store.state.activeTutorial
+            return this.$store.getters.activeTutorial
         },
-        activeTutorialIndex: function() {
-            return this.$store.state.activeTutorialIndex
+        activeTutorialId: function() {
+            return this.$store.state.activeTutorialId
         }
     },
     methods: {
         scrollToTop: function() {
             document.documentElement.scrollTop = 0
         },
-        updateActiveTutorial: function() {
+        updateActiveTutorialId: function() {
             var activeTutorial = null
 
             if (this.tutorialName == "") {
                 activeTutorial = this.tutorials[0]
-                //
             } else {
                 activeTutorial = this.tutorials.filter(
                     (element) => element.slug == this.tutorialName
                 )[0]
             }
-            this.$store.commit('updateActiveTutorial', activeTutorial)
+            this.$store.commit('updateActiveTutorialId', activeTutorial.id)
         },
         loadHTML: function() {
-            let app = this;
-            axios.get('/html/tutorials/' + this.activeTutorial.src).then(function(response) {
-                app.html = response.data
-                app.scrollToTop()
-                setTimeout(
-                    () => Prism.highlightAll(),
-                    0
-                )
-            })
+            let app = this
+            // axios.get('/html/tutorials/' + this.activeTutorial.src).then(function(response) {
+            //     app.html = response.data
+            //     app.scrollToTop()
+            //     setTimeout(
+            //         () => Prism.highlightAll(),
+            //         0
+            //     )
+            // })
         }
     },
     watch: {
         tutorialName: function(value) {
-            this.updateActiveTutorial()
+            this.updateActiveTutorialId()
             this.loadHTML()
         }
     },
     mounted: function() {
-        this.updateActiveTutorial()
+        this.updateActiveTutorialId()
         this.loadHTML()
     },
 }
@@ -124,7 +124,7 @@ div.column_wrapper {
     flex-direction: row;
     min-height: 100vh;
     box-sizing: border-box;
-    padding-top: 3.5rem;
+    padding-top: 4rem;
 
     aside {
         background-color: @purple;

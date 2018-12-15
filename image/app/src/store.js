@@ -46,10 +46,11 @@ export default new Vuex.Store({
             })
         ],
         tutorials: [
-            new Tutorial(
-                '1',
-                '1',
-            )
+            new Tutorial({
+                id: 1,
+                title: '1',
+                slug: '1'
+            })
         ],
         tutorialSteps: [
             new TutorialStep({
@@ -74,32 +75,32 @@ export default new Vuex.Store({
                 tutorial: 1
             })
         ],
-        activeTutorialIndex: 0,
-        activeTutorialStepIndex: 0,
+        activeTutorialId: undefined,
+        activeTutorialStepId: undefined,
     },
     getters: {
         activeTutorial: function(state) {
             return state.tutorials.filter(
-                element => element.id == state.activeTutorialIndex
+                element => element.id == state.activeTutorialId
             )[0]
         },
         activeTutorialStep: function(state) {
             return state.tutorialSteps.filter(
-                element => element.id == state.activeTutorialStepIndex
+                element => element.id == state.activeTutorialStepId
             )[0]
         },
         visibleTutorialSteps: function(state) {
             return state.tutorialSteps.filter(
-                element => element.tutorial == state.activeTutorialIndex
+                element => element.tutorial == state.activeTutorialId
             )[0]
         },
     },
     mutations: {
-        updateActiveTutorialIndex: function(state, index) {
-            this.state.activeTutorialIndex = index
+        updateActiveTutorialId: function(state, id) {
+            this.state.activeTutorialId = id
         },
-        updateActiveTutorialStepIndex: function(state, index) {
-            this.state.activeTutorialStepIndex = index
+        updateActiveTutorialStepId: function(state, id) {
+            this.state.activeTutorialStepId = id
         },
     },
 })
