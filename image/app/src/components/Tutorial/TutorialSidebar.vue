@@ -1,29 +1,28 @@
 <template>
     <ul>
         <ul class="overlay" :class="{hidden: isHidden}">
-            <!-- Need to hide and be a link ... can do both??? -->
-
+            <li class="dark">
+                <a
+                    href="#"
+                    v-on:click.prevent="isHidden = true">&larr; All Tutorials</a>
+            </li>
             <li
-                v-for="tutorial in tutorials"
-                :key="tutorial.slug"
-                v-on:click="isHidden = true"
-                :class="{active: (tutorial == activeTutorial)}">
-
-                <router-link :to="{name: 'tutorial_single', params: {tutorialName: tutorial.slug, stepName: tutorial.steps[0] ? tutorial.steps[0].slug : ''}}">{{ tutorial.title }}</router-link>
+                v-if="activeTutorial"
+                v-for="step in activeTutorial.steps"
+                :key="step.slug"
+                :class="{active: (step == activeTutorialStep)}">
+                <router-link
+                    :to="{name: 'tutorial_single', params: {tutorialName: activeTutorial.slug, stepName: step.slug}}">{{ step.title }}</router-link>
             </li>
         </ul>
-        <li class="dark">
-            <a
-                href="#"
-                v-on:click.prevent="isHidden = (isHidden && false)">&larr; All Tutorials</a>
-        </li>
+
         <li
-            v-if="activeTutorial"
-            v-for="step in activeTutorial.steps"
-            :key="step.slug"
-            :class="{active: (step == activeTutorialStep)}">
-            <router-link
-                :to="{name: 'tutorial_single', params: {tutorialName: activeTutorial.slug, stepName: step.slug}}">{{ step.title }}</router-link>
+            v-for="tutorial in tutorials"
+            :key="tutorial.slug"
+            v-on:click="isHidden = false"
+            :class="{active: (tutorial == activeTutorial)}">
+
+            <router-link :to="{name: 'tutorial_single', params: {tutorialName: tutorial.slug, stepName: tutorial.steps[0] ? tutorial.steps[0].slug : ''}}">{{ tutorial.title }}</router-link>
         </li>
     </ul>
 </template>
@@ -32,7 +31,7 @@
 export default {
     data: function() {
         return {
-            isHidden: true
+            isHidden: false
         }
     },
     computed: {
