@@ -9,14 +9,14 @@
             <ul class="nav">
                 <li>
                     <router-link
-                        v-if="previousTutorial"
-                        :to="{name: 'tutorial_single', params: {tutorialName: previousTutorial.slug}}">&larr; Previous</router-link>
+                        v-if="previousTutorialStep"
+                        :to="{name: 'tutorial_single', params: {tutorialName: activeTutorial.slug, stepName: previousTutorialStep.slug}}">&larr; Previous</router-link>
                     <span v-else>-</span>
                 </li>
                 <li>
                     <router-link
-                        v-if="nextTutorial"
-                        :to="{name: 'tutorial_single', params: {tutorialName: nextTutorial.slug}}">Next &rarr;</router-link>
+                        v-if="nextTutorialStep"
+                        :to="{name: 'tutorial_single', params: {tutorialName: activeTutorial.slug, stepName: nextTutorialStep.slug}}">Next &rarr;</router-link>
                     <span v-else>-</span>
                 </li>
             </ul>
@@ -52,34 +52,30 @@ export default {
         tutorials: function() {
             return this.$store.state.tutorials
         },
-        nextTutorial: function() {
-            // TODO Have these are getters
-            if (this.activeTutorialIndex + 1 == this.tutorials.length) {
-                return null
-            } else {
-                return this.$store.state.tutorials[this.activeTutorialIndex + 1]
-            }
+        nextTutorialStep: function() {
+            return this.$store.getters.nextTutorialStep
         },
-        previousTutorial: function() {
-            if (this.activeTutorialIndex == 0) {
-                return null
-            } else {
-                return this.$store.state.tutorials[this.activeTutorialIndex - 1]
-            }
+        previousTutorialStep: function() {
+            return this.$store.getters.previousTutorialStep
+        },
+        activeTutorialStep: function() {
+            return this.$store.state.activeTutorialStep
         },
         activeTutorial: function() {
-            return this.$store.getters.activeTutorial
-        },
-        activeTutorialId: function() {
-            return this.$store.state.activeTutorialId
+            return this.$store.state.activeTutorial
         }
     },
     methods: {
         scrollToTop: function() {
             document.documentElement.scrollTop = 0
         },
-        updateActiveTutorialId: function() {
+        updateActiveTutorial: function() {
+            if (!this.tutorials) {
+                return null
+            }
+
             var activeTutorial = null
+            var activeTutorialStep = null
 
             if (this.tutorialName == "") {
                 activeTutorial = this.tutorials[0]
@@ -88,28 +84,40 @@ export default {
                     (element) => element.slug == this.tutorialName
                 )[0]
             }
-            this.$store.commit('updateActiveTutorialId', activeTutorial.id)
+            this.$store.commit('updateActiveTutorial', activeTutorial)
+
+            if (this.stepName == "") {
+                activeTutorialStep = activeTutorial.steps[0]
+            } else {
+                activeTutorialStep = activeTutorial.steps.filter(
+                    (element) => element.slug == this.stepName
+                )[0]
+            }
+            this.$store.commit('updateActiveTutorialStep', activeTutorialStep)
         },
         loadHTML: function() {
+            if (!this.activeTutorialStep) {
+                return
+            }
             let app = this
-            // axios.get('/html/tutorials/' + this.activeTutorial.src).then(function(response) {
-            //     app.html = response.data
-            //     app.scrollToTop()
-            //     setTimeout(
-            //         () => Prism.highlightAll(),
-            //         0
-            //     )
-            // })
+            axios.get('/html/tutorials/' + this.activeTutorialStep.src).then(function(response) {
+                app.html = response.data
+                app.scrollToTop()
+                setTimeout(
+                    () => Prism.highlightAll(),
+                    0
+                )
+            })
         }
     },
     watch: {
-        tutorialName: function(value) {
-            this.updateActiveTutorialId()
+        stepName: function(value) {
+            this.updateActiveTutorial()
             this.loadHTML()
         }
     },
     mounted: function() {
-        this.updateActiveTutorialId()
+        this.updateActiveTutorial()
         this.loadHTML()
     },
 }

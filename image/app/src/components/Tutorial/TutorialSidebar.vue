@@ -1,10 +1,16 @@
 <template>
     <ul>
         <ul class="overlay" :class="{hidden: isHidden}">
+            <!-- Need to hide and be a link ... can do both??? -->
+
             <li
                 v-for="tutorial in tutorials"
                 :key="tutorial.slug"
-                v-on:click.prevent="isHidden = true">{{ tutorial.title }}</li>
+                v-on:click="isHidden = true"
+                :class="{active: (tutorial == activeTutorial)}">
+
+                <router-link :to="{name: 'tutorial_single', params: {tutorialName: tutorial.slug, stepName: tutorial.steps[0] ? tutorial.steps[0].slug : ''}}">{{ tutorial.title }}</router-link>
+            </li>
         </ul>
         <li class="dark">
             <a
@@ -12,7 +18,8 @@
                 v-on:click.prevent="isHidden = (isHidden && false)">&larr; All Tutorials</a>
         </li>
         <li
-            v-for="step in visibleTutorialSteps"
+            v-if="activeTutorial"
+            v-for="step in activeTutorial.steps"
             :key="step.slug"
             :class="{active: (step == activeTutorialStep)}">
             <router-link
@@ -30,17 +37,14 @@ export default {
     },
     computed: {
         tutorials: function() {
-            return this.$store.state.tutorials
+            return this.$store.state.tutorials || []
         },
         activeTutorial: function() {
-            return this.$store.activeTutorial
+            return this.$store.state.activeTutorial
         },
         activeTutorialStep: function() {
-            return this.$store.activeTutorialStep
+            return this.$store.state.activeTutorialStep
         },
-        visibleTutorialSteps: function() {
-            return this.$store.visibleTutorialSteps
-        }
     },
 }
 </script>
