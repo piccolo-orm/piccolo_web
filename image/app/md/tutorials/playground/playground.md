@@ -36,6 +36,8 @@ port: 5432
 
 </code></pre>
 
+You can create a database using [pgAdmin](https://www.pgadmin.org/).
+
 If you want to use different credentials, you can pass them into the `playground` command (TODO).
 
 ## What about other databases?

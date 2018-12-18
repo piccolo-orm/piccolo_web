@@ -147,6 +147,11 @@ div.column_wrapper {
         div.html {
             padding: 1rem;
 
+            h2 {
+                margin-top: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
             em {
                 background-color: fadeout(@purple, 90%);
                 border: 1px solid @purple;
