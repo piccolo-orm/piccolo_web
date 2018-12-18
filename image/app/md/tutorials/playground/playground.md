@@ -11,13 +11,13 @@ It will create an example schema for you, and populate it with data, then launch
 
 You can follow along with the tutorials without first learning advanced concepts like migrations.
 
-It's a nice place to experiment with querying / inserting / data using Piccolo, no matter what stage you're at.
+It's a nice place to experiment with querying / inserting / deleting data using Piccolo, no matter what stage you're at.
 
-<em>Each time you launch the playground it flushes out the existing tables and rebuilds them.</em>
+<em>Each time you launch the playground it flushes out the existing tables and rebuilds them, so don't use it for anything permanent!</em>
 
 ## Installing Postgres
 
-Unfortunately, Playground can't setup Postgres and the database for you, so we need to do that first.
+Playground requires Postgres to be running with the necessary database, so we need to do that first.
 
 ### Mac
 
@@ -26,6 +26,17 @@ The quickest way to get Postgres up and running on the Mac is using [Postgres.ap
 ## Create database
 
 By default the playground expects a local database to exist with the following credentials:
+
+<pre><code class="language-bash">
+host: "localhost"  # or 127.0.0.1
+database_name: "piccolo_playground"
+user: "piccolo"
+password: "piccolo"
+port: 5432
+
+</code></pre>
+
+If you want to use different credentials, you can pass them into the `playground` command (TODO).
 
 ## What about other databases?
 
