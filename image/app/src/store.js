@@ -48,6 +48,17 @@ export default new Vuex.Store({
         ],
         tutorials: [
             new Tutorial({
+                title: 'Playground',
+                slug: 'playground',
+                steps: [
+                    new TutorialStep({
+                        title: 'Playground',
+                        src: 'playground/playground.html',
+                        slug: 'playground',
+                    }),
+                ]
+            }),
+            new Tutorial({
                 title: 'Getting Started',
                 slug: 'getting-started',
                 steps: [
@@ -73,10 +84,20 @@ export default new Vuex.Store({
                 slug: 'querying',
                 steps: [
                     new TutorialStep({
-                        title: 'Querying',
-                        src: 'querying.html',
-                        slug: 'querying'
-                    })
+                        title: 'Select',
+                        src: 'select.html',
+                        slug: 'select'
+                    }),
+                    new TutorialStep({
+                        title: 'Joins',
+                        src: 'joins.html',
+                        slug: 'joins'
+                    }),
+                    new TutorialStep({
+                        title: 'Objects',
+                        src: 'objects.html',
+                        slug: 'objects'
+                    }),
                 ]
             })
         ],
