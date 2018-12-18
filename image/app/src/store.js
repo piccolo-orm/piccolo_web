@@ -52,6 +52,11 @@ export default new Vuex.Store({
                 slug: 'playground',
                 steps: [
                     new TutorialStep({
+                        title: 'Installing Piccolo',
+                        src: 'playground/installing_piccolo.html',
+                        slug: 'installing_piccolo',
+                    }),
+                    new TutorialStep({
                         title: 'Playground',
                         src: 'playground/playground.html',
                         slug: 'playground',
@@ -68,12 +73,7 @@ export default new Vuex.Store({
                         slug: 'define-schema',
                     }),
                     new TutorialStep({
-                        title: 'Step 2 - Migrations',
-                        src: 'migrations.html',
-                        slug: 'migrations',
-                    }),
-                    new TutorialStep({
-                        title: 'Step 3 - Adding data',
+                        title: 'Step 2 - Adding data',
                         src: 'adding_data.html',
                         slug: 'adding-data',
                     })
@@ -97,6 +97,17 @@ export default new Vuex.Store({
                         title: 'Objects',
                         src: 'objects.html',
                         slug: 'objects'
+                    }),
+                ]
+            }),
+            new Tutorial({
+                title: 'Migrations',
+                slug: 'migrations',
+                steps: [
+                    new TutorialStep({
+                        title: 'Migrations',
+                        src: 'migrations/migrations.html',
+                        slug: 'migrations',
                     }),
                 ]
             })

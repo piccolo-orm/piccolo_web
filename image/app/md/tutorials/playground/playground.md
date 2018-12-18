@@ -2,6 +2,11 @@
 
 Piccolo ships with a handy command called `playground`.
 
+<pre><code class="language-bash">
+piccolo playground --help
+
+</code></pre>
+
 It will create an example schema for you, and populate it with data, then launches an iPython shell.
 
 You can follow along with the tutorials without first learning advanced concepts like migrations.
@@ -21,3 +26,7 @@ The quickest way to get Postgres up and running on the Mac is using [Postgres.ap
 ## Create database
 
 By default the playground expects a local database to exist with the following credentials:
+
+## What about other databases?
+
+At the moment the focus is on providing the best Postgres experience possible. Other databases may be supported in the future.
