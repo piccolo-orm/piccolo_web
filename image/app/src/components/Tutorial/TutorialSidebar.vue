@@ -4,17 +4,21 @@
             <li class="dark">
                 <a
                     href="#"
+                    class="heading"
                     v-on:click.prevent="isHidden = true">&larr; All Tutorials</a>
             </li>
+            <li class="dark"><span class="heading">{{ activeTutorial.title }}</span></li>
             <li
                 v-if="activeTutorial"
-                v-for="step in activeTutorial.steps"
+                v-for="(step, index) in activeTutorial.steps"
                 :key="step.slug"
                 :class="{active: (step == activeTutorialStep)}">
                 <router-link
-                    :to="{name: 'tutorial_single', params: {tutorialName: activeTutorial.slug, stepName: step.slug}}">{{ step.title }}</router-link>
+                    :to="{name: 'tutorial_single', params: {tutorialName: activeTutorial.slug, stepName: step.slug}}">{{ index + 1 }}. {{ step.title }}</router-link>
             </li>
         </ul>
+
+        <li class="dark"><span class="heading">Tutorials</span></li>
 
         <li
             v-for="tutorial in tutorials"
@@ -66,10 +70,12 @@ ul {
         width: 100%;
         background-color: darken(@purple, 10%);
         transition: 0.7s left;
+        transition-delay: 0.2s;
 
         &.hidden {
             left: -100% !important;
             transition: 0.7s left;
+            transition-delay: 0.2s;
         }
 
         li {
@@ -82,6 +88,18 @@ ul {
 
         &.dark {
             background-color: darken(@purple, 10%);
+
+            &.dark:hover {
+                background-color: darken(@purple, 10%);
+            }
+        }
+
+        .heading {
+            color: white;
+            font-size: 0.8rem;
+            display: block;
+            padding: 1rem;
+            text-transform: uppercase;
         }
 
         a {

@@ -1,6 +1,4 @@
-# Migrations
-
-## Create your first migration
+# Create your first migration
 
 Migrations are used to create the tables in the database.
 

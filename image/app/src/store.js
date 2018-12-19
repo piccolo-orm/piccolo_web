@@ -68,12 +68,12 @@ export default new Vuex.Store({
                 slug: 'getting-started',
                 steps: [
                     new TutorialStep({
-                        title: 'Step 1 - Schema',
+                        title: 'Schema',
                         src: 'define_schema.html',
                         slug: 'define-schema',
                     }),
                     new TutorialStep({
-                        title: 'Step 2 - Adding data',
+                        title: 'Adding data',
                         src: 'adding_data.html',
                         slug: 'adding-data',
                     })
@@ -105,9 +105,9 @@ export default new Vuex.Store({
                 slug: 'migrations',
                 steps: [
                     new TutorialStep({
-                        title: 'Migrations',
-                        src: 'migrations/migrations.html',
-                        slug: 'migrations',
+                        title: 'Create',
+                        src: 'migrations/create.html',
+                        slug: 'create',
                     }),
                 ]
             })
