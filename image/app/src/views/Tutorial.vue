@@ -137,7 +137,7 @@ div.column_wrapper {
     aside {
         background-color: @purple;
         min-height: 100%;
-        width: 10rem;
+        width: 15rem;
     }
 
     div.main_column {

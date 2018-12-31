@@ -48,15 +48,15 @@
 
 <script>
 
-const selectExample = `await Band.select(
-    'name'
+const selectExample = `await Band.select.columns(
+    Band.name
 ).where(
     Band.popularity > 100
 ).run()`
 
-const joinExample = `await Band.select(
-    'name',
-    'manager.name'
+const joinExample = `await Band.select.columns(
+    Band.name,
+    Band.manager.name
 ).run()`
 
 const deleteExample = `await Band.delete().where(

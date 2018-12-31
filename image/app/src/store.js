@@ -48,35 +48,24 @@ export default new Vuex.Store({
         ],
         tutorials: [
             new Tutorial({
-                title: 'Playground',
-                slug: 'playground',
-                steps: [
-                    new TutorialStep({
-                        title: 'Installing Piccolo',
-                        src: 'playground/installing_piccolo.html',
-                        slug: 'installing_piccolo',
-                    }),
-                    new TutorialStep({
-                        title: 'Playground',
-                        src: 'playground/playground.html',
-                        slug: 'playground',
-                    }),
-                ]
-            }),
-            new Tutorial({
                 title: 'Getting Started',
                 slug: 'getting-started',
                 steps: [
                     new TutorialStep({
-                        title: 'Schema',
-                        src: 'define_schema.html',
-                        slug: 'define-schema',
+                        title: 'Installing Piccolo',
+                        src: 'getting_started/installing_piccolo.html',
+                        slug: 'installing-piccolo',
                     }),
                     new TutorialStep({
-                        title: 'Adding data',
-                        src: 'adding_data.html',
-                        slug: 'adding-data',
-                    })
+                        title: 'Setting up Postgres',
+                        src: 'getting_started/setting_up_postgres.html',
+                        slug: 'setting-up-postgres',
+                    }),
+                    new TutorialStep({
+                        title: 'Playground',
+                        src: 'getting_started/playground.html',
+                        slug: 'playground',
+                    }),
                 ]
             }),
             new Tutorial({
@@ -85,18 +74,40 @@ export default new Vuex.Store({
                 steps: [
                     new TutorialStep({
                         title: 'Select',
-                        src: 'select.html',
+                        src: 'querying/select.html',
                         slug: 'select'
                     }),
                     new TutorialStep({
                         title: 'Joins',
-                        src: 'joins.html',
+                        src: 'querying/joins.html',
                         slug: 'joins'
                     }),
                     new TutorialStep({
                         title: 'Objects',
-                        src: 'objects.html',
+                        src: 'querying/objects.html',
                         slug: 'objects'
+                    }),
+                ]
+            }),
+            new Tutorial({
+                title: 'Adding data',
+                slug: 'adding-data',
+                steps: [
+                    new TutorialStep({
+                        title: 'Adding data',
+                        src: 'adding_data/adding_data.html',
+                        slug: 'adding-data',
+                    })
+                ]
+            }),
+            new Tutorial({
+                title: 'Schema',
+                slug: 'schema',
+                steps: [
+                    new TutorialStep({
+                        title: 'Schema',
+                        src: 'schema/define_schema.html',
+                        slug: 'define-schema',
                     }),
                 ]
             }),

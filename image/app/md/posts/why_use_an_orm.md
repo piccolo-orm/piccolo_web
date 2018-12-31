@@ -7,7 +7,7 @@
 A good ORM should make a developer's life easier. It should take care of the tedious things, like escaping values. An ORM can also have a more compact syntax than SQL. This is most obvious with joins.
 
 <pre><code class="language-python">
-query = Band.select('name', 'genre.name')
+query = Band.select.columns(Band.name, Band.genre.name)
 
 query.__str__()
 
@@ -26,7 +26,7 @@ ORMs often include other tools and features which make a developer's life easier
 With Piccolo, you can pass around queries, and keep on chaining methods onto it.
 
 <pre><code class="language-python">
-query = Band.select('name')
+query = Band.select.columns(Band.name)
 
 if rock == True:
     query = query.where(Band.genre == 'rock')

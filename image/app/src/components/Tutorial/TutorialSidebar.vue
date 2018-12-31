@@ -35,7 +35,7 @@
 export default {
     data: function() {
         return {
-            isHidden: false
+            isHidden: true
         }
     },
     computed: {

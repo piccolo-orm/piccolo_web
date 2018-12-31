@@ -3,6 +3,7 @@ export class Tutorial {
         this.title = config.title
         this.slug = config.slug
         this.steps = config.steps
+        this.root = config.root
     }
 }
 
