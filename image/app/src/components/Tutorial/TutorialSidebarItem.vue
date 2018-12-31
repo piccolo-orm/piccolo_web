@@ -6,15 +6,17 @@
 
             <a href="#"><span v-bind:class="{visible: visible}">></span> {{ tutorial.title }}</a>
         </li>
-        <li
-            v-for="step in tutorial.steps"
-            v-if="visible"
-            v-bind:key="step.slug"
-            class="dark">
+        <transition-group name="steps">
+            <li
+                v-for="step in tutorial.steps"
+                v-if="visible"
+                v-bind:key="step.slug"
+                class="dark">
 
-            <router-link
-                :to="{name: 'tutorial_single', params: {tutorialName: tutorial.slug, stepName: step.slug}}">{{ step.title }}</router-link>
-        </li>
+                <router-link
+                    :to="{name: 'tutorial_single', params: {tutorialName: tutorial.slug, stepName: step.slug}}">{{ step.title }}</router-link>
+            </li>
+        </transition-group>
     </ul>
 </template>
 
@@ -39,6 +41,23 @@ export default {
 
 <style scoped lang="less">
 @purple: #490188;
+
+.steps-enter {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.steps-enter-to {
+    opacity: 1.0;
+    transition: opacity 0.5s;
+}
+.steps-leave {
+    opacity: 1.0;
+    transition: opacity 0.5s;
+}
+.steps-leave-to {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
 
 ul {
     background-color: @purple;
