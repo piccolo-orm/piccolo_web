@@ -27,4 +27,16 @@ export default {
 }
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+        color: white;
+        list-style: none;
+        padding: 1rem;
+        text-transform: uppercase;
+    }
+}
+</style>

@@ -2,7 +2,6 @@
     <ul>
         <li
             v-bind:class="{active: (tutorial == activeTutorial)}"
-            class="dark"
             v-on:click.prevent="visible = (visible ? false : true)">
 
             <a href="#"><span v-bind:class="{visible: visible}">></span> {{ tutorial.title }}</a>
@@ -10,7 +9,8 @@
         <li
             v-for="step in tutorial.steps"
             v-if="visible"
-            v-bind:key="step.slug">
+            v-bind:key="step.slug"
+            class="dark">
 
             <router-link
                 :to="{name: 'tutorial_single', params: {tutorialName: tutorial.slug, stepName: step.slug}}">{{ step.title }}</router-link>
@@ -81,14 +81,6 @@ ul {
             display: block;
             padding: 1rem;
             text-decoration: none;
-        }
-
-        &.active {
-            background-color: rgba(255,255,255,0.3);
-        }
-
-        &:hover {
-            background-color: rgba(255,255,255,0.3);
         }
     }
 }
