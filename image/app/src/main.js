@@ -8,21 +8,24 @@ Vue.config.productionTip = false
 
 /*****************************************************************************/
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-
 import router from './router'
 import store from './store'
-//import { faGithub } from '@fortawesome/fontawesome-free-brands'
-//import { faGithub } from '@fortawesome/vue-fontawesome'
 
-//library.add(faGithub)
-
-//Vue.component('font-awesome-icon', FontAwesomeIcon)
+if (process.env.NODE_ENV == 'production') {
+    import VueAnalytics from 'vue-analytics'
+    Vue.use(
+        VueAnalytics,
+        {
+            id: 'UA-16187310-13',
+            router
+        }
+    )
+}
 
 /*****************************************************************************/
 
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')
