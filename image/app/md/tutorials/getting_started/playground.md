@@ -20,10 +20,10 @@ It's a nice place to experiment with querying / inserting / deleting data using 
 By default the playground expects a local database to exist with the following credentials:
 
 <pre><code class="language-bash">
-host: "localhost"  # or 127.0.0.1
-database_name: "piccolo_playground"
 user: "piccolo"
 password: "piccolo"
+host: "localhost"  # or 127.0.0.1
+database: "piccolo_playground"
 port: 5432
 
 </code></pre>
