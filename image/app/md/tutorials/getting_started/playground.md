@@ -36,7 +36,7 @@ If you want to use different credentials, you can pass them into the playground 
 
 The schema generated in the playground represents fictional bands and their concerts.
 
-When the playground is started it prints out a representation of the available tables.
+When the playground is started it prints out the available tables.
 
 Give these queries a go:
 
