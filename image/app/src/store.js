@@ -66,6 +66,11 @@ export default new Vuex.Store({
                         src: 'getting_started/playground.html',
                         slug: 'playground',
                     }),
+                    new TutorialStep({
+                        title: 'Sync vs Async',
+                        src: 'getting_started/sync_vs_async.html',
+                        slug: 'sync-vs-async',
+                    }),
                 ]
             }),
             new Tutorial({
