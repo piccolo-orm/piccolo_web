@@ -2,9 +2,7 @@
 
 Traditionally, each unit of work which needs to operate concurrently would be assigned to a separate process or thread. Threads and processes are operating system constructs, and are expensive to create. It's up to the operating system when it schedules them to run, not the program. If a program requires thousands of threads, the constant switching between them can result in poor system performance.
 
-An alternative is to use an event loop. Each task which needs to operate concurrently is registered with the event loop. When one task blocks, it yields control back to the event loop, which will resume another task.
-
-In Unix systems, each thread uses a file descriptor, and there's a limit to the number of file descriptors a system can have open at once. With an event loop, it's only limited by available memory - you can have thousands of tasks registered at once.
+An alternative is to use an event loop, which operates in a single thread. Each task which needs to operate concurrently is registered with the event loop. When one task blocks, it yields control back to the event loop, which will resume another task.
 
 One of the better known programs using an event loop is Nginx, which was originally a proxy, but is now a general purpose web server. By using an event loop it was able to provide breakthrough levels of performance when it first appeared on the scene - being able to serve thousands of web requests concurrently. It contrasted to traditional server architectures at the time, as typified by the Apache web server, which created a thread or process per connection.
 

@@ -83,26 +83,30 @@ export default new Vuex.Store({
                         slug: 'select'
                     }),
                     new TutorialStep({
-                        title: 'Joins',
-                        src: 'querying/joins.html',
-                        slug: 'joins'
-                    }),
-                    new TutorialStep({
                         title: 'Objects',
                         src: 'querying/objects.html',
                         slug: 'objects'
                     }),
-                ]
-            }),
-            new Tutorial({
-                title: 'Adding data',
-                slug: 'adding-data',
-                steps: [
                     new TutorialStep({
-                        title: 'Adding data',
-                        src: 'adding_data/adding_data.html',
-                        slug: 'adding-data',
-                    })
+                        title: 'Raw',
+                        src: 'querying/raw.html',
+                        slug: 'raw'
+                    }),
+                    new TutorialStep({
+                        title: 'Delete',
+                        src: 'querying/delete.html',
+                        slug: 'delete'
+                    }),
+                    new TutorialStep({
+                        title: 'Insert',
+                        src: 'querying/insert.html',
+                        slug: 'insert'
+                    }),
+                    new TutorialStep({
+                        title: 'Update',
+                        src: 'querying/update.html',
+                        slug: 'update'
+                    }),
                 ]
             }),
             new Tutorial({
@@ -126,7 +130,18 @@ export default new Vuex.Store({
                         slug: 'create',
                     }),
                 ]
-            })
+            }),
+            new Tutorial({
+                title: 'Extras',
+                slug: 'extras',
+                steps: [
+                    new TutorialStep({
+                        title: 'User',
+                        src: 'extras/user.html',
+                        slug: 'user',
+                    })
+                ]
+            }),
         ],
         activeTutorial: new Tutorial({
             title: 'default',
