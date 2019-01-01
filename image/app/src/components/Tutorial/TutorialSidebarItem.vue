@@ -44,19 +44,19 @@ export default {
 
 .steps-enter {
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 0.8s;
 }
 .steps-enter-to {
     opacity: 1.0;
-    transition: opacity 0.5s;
+    transition: opacity 0.8s;
 }
 .steps-leave {
     opacity: 1.0;
-    transition: opacity 0.5s;
+    transition: opacity 0.2s;
 }
 .steps-leave-to {
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 0.2s;
 }
 
 ul {
