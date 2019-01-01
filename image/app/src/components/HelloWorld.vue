@@ -59,7 +59,7 @@ const joinExample = `await Band.select.columns(
     Band.manager.name
 ).run()`
 
-const deleteExample = `await Band.delete().where(
+const deleteExample = `await Band.delete.where(
     Band.band_members == 0 | Manager.status == 'disabled'
 ).run()`
 
