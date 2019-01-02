@@ -9,7 +9,7 @@
             <h1>Benefits</h1>
             <ul>
                 <li>Supports asyncio</li>
-                <li>Type annotated, making it work great with tools like VSCode</li>
+                <li>Type annotated, making it work great with tools like VSCode and MyPy</li>
                 <li>Fully tested</li>
                 <li>Built in migration support</li>
             </ul>

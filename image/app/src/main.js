@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueAnalytics from 'vue-analytics'
 import VueHighlightJS from 'vue-highlightjs'
 import App from './App.vue'
 
@@ -11,16 +12,17 @@ Vue.config.productionTip = false
 import router from './router'
 import store from './store'
 
-if (process.env.NODE_ENV == 'production') {
-    import VueAnalytics from 'vue-analytics'
-    Vue.use(
-        VueAnalytics,
-        {
-            id: 'UA-16187310-13',
-            router
+
+Vue.use(
+    VueAnalytics,
+    {
+        id: 'UA-16187310-13',
+        router,
+        debug: {
+            enabled: false
         }
-    )
-}
+    }
+)
 
 /*****************************************************************************/
 

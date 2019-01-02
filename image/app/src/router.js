@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/views/Home.vue'
 import BlogList from '@/views/BlogList.vue'
 import BlogSingle from '@/views/BlogSingle.vue'
+import Privacy from '@/views/Privacy.vue'
 import Tutorial from '@/views/Tutorial.vue'
 import TutorialHome from '@/views/TutorialHome.vue'
 
@@ -15,6 +16,11 @@ export default new Router({
             path: '/',
             name: 'home',
             component: Home
+        },
+        {
+            path: '/privacy',
+            name: 'privacy',
+            component: Privacy
         },
         {
             path: '/blog',
