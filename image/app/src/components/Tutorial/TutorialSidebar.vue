@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul>
-            <li class="dark"><span class="heading">Tutorials</span></li>
+            <li class="dark"><span class="heading"><router-link :to="{name: 'tutorial'}">Tutorials</router-link></span></li>
         </ul>
 
         <template v-for="tutorial in tutorials">
@@ -37,6 +37,11 @@ ul {
         list-style: none;
         padding: 1rem;
         text-transform: uppercase;
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
     }
 }
 </style>
