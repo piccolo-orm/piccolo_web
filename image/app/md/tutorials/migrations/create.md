@@ -3,7 +3,7 @@
 Migrations are used to create the tables in the database.
 
 <pre><code class="language-bash">
-migration.py new
+piccolo new
 
 </code></pre>
 
@@ -69,7 +69,7 @@ async def backwards():
 When the migration is run, the forwards function is executed. To do this:
 
 <pre><code class="language-bash">
-migration.py forwards
+piccolo forwards
 
 </code></pre>
 
@@ -80,7 +80,7 @@ Inspect your database, and a ```band``` table should now exist.
 To reverse the migration, run this:
 
 <pre><code class="language-bash">
-migration.py backwards 2018-09-04T19:44:09
+piccolo backwards 2018-09-04T19:44:09
 
 </code></pre>
 
