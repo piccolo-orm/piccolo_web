@@ -1,7 +1,7 @@
 <template>
 <div class="footer_padding">
     <footer>
-        <p>Made by <a href="https://dantownsend.co.uk/">Daniel Townsend</a>, 2018</p>
+        <p>Copyright <a href="https://dantownsend.co.uk/">Daniel Townsend</a>, 2018</p>
         <ul>
             <li><router-link to="privacy">Privacy Policy</router-link></li>
         </ul>

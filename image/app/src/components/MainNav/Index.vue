@@ -9,7 +9,8 @@
                 <a href="#" v-on:click.prevent="burgerVisible = burgerVisible ? false : true">
                     <img src="@/assets/images/burger_menu.png" />
                 </a>
-                <LinkList v-if="burgerVisible" />
+                <!-- Needs to emit an event when clicked ... -->
+                <LinkList v-if="burgerVisible" v-on:navigating="burgerVisible = false" />
             </div>
         </div>
     </nav>
