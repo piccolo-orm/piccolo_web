@@ -60,7 +60,7 @@ const joinExample = `await Band.select.columns(
 ).run()`
 
 const deleteExample = `await Band.delete.where(
-    Band.band_members == 0 | Manager.status == 'disabled'
+    Band.band_members == 0 | Band.manager.status == 'disabled'
 ).run()`
 
 const updateExample = `await Band.update(band_members=5).where(
