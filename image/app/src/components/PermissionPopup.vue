@@ -1,22 +1,45 @@
 <template>
-    <div>
+    <div v-if="visible">
         <p class="title">Allow Google Analytics?</p>
         <p>This helps us improve the website. You can change your <router-link to="privacy">preference</router-link> at any time.</p>
         <ul>
-            <li><button class="primary">OK</button></li>
-            <li><button>No thanks</button></li>
+            <li>
+                <button
+                    class="primary"
+                    v-on:click.prevent="allowGA">OK</button>
+            </li>
+            <li>
+                <button v-on:click.prevent="blockGA">No thanks</button>
+            </li>
         </ul>
     </div>
 </template>
 
 <script>
 export default {
-    methods: {
-        function() {
-            if (process.env.NODE_ENV == 'production') {
-
-            }
+    data: function() {
+        return {
+            visible: true
         }
+    },
+    methods: {
+        allowGA: function() {
+            localStorage['allowGA'] = true
+            if (process.env.NODE_ENV == 'production') {
+                this.$ga.enable()
+            }
+            this.visible = false
+        },
+        blockGA: function() {
+            localStorage['allowGA'] = false
+            if (process.env.NODE_ENV == 'production') {
+                this.$ga.disable()
+            }
+            this.visible = false
+        }
+    },
+    created: function() {
+        this.visible = (localStorage['allowGA'] == undefined)
     }
 }
 </script>
