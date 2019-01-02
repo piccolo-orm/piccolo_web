@@ -1,6 +1,5 @@
 <template>
 <div class="footer_padding">
-    <PermissionPopup></PermissionPopup>
     <footer>
         <p>Made by <a href="https://dantownsend.co.uk/">Daniel Townsend</a>, 2018</p>
         <ul>
@@ -10,15 +9,7 @@
 </div>
 </template>
 
-<script>
-import PermissionPopup from './PermissionPopup.vue'
-
-export default {
-    components: {
-        PermissionPopup
-    }
-}
-</script>
+<script></script>
 
 <style lang="less">
 div.footer_padding {

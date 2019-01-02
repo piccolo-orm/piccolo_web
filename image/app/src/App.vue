@@ -1,16 +1,28 @@
 <template>
-  <div id="app">
-    <nav>
-        <h1><router-link to="/">Piccolo</router-link></h1>
-        <ul>
-            <li><a href="https://github.com/telerytech/piccolo">Github</a></li>
-            <li><router-link to="/tutorial">Tutorials</router-link></li>
-            <li><router-link to="/blog">Blog</router-link></li>
-        </ul>
-    </nav>
-    <router-view/>
-  </div>
+    <div id="app">
+        <nav>
+            <h1><router-link to="/">Piccolo</router-link></h1>
+            <ul>
+                <li><a href="https://github.com/telerytech/piccolo">Github</a></li>
+                <li><router-link to="/tutorial">Tutorials</router-link></li>
+                <li><router-link to="/blog">Blog</router-link></li>
+            </ul>
+        </nav>
+        <router-view/>
+        <PermissionPopup></PermissionPopup>
+    </div>
 </template>
+
+
+<script>
+import PermissionPopup from './components/PermissionPopup.vue'
+
+export default {
+    components: {
+        PermissionPopup
+    }
+}
+</script>
 
 
 <style lang="less">
