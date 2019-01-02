@@ -11,6 +11,7 @@
                 v-for="step in tutorial.steps"
                 v-if="visible"
                 v-bind:key="step.slug"
+                v-bind:class="{active_step: step == activeTutorialStep}"
                 class="dark">
 
                 <router-link
@@ -41,6 +42,8 @@ export default {
 
 <style scoped lang="less">
 @purple: #490188;
+@dark_purple: darken(@purple, 10%);
+@light_purple: lighten(@purple, 40%);
 
 .steps-enter {
     opacity: 0;
@@ -67,13 +70,19 @@ ul {
     position: relative;
 
     li {
+        box-sizing: border-box;
         list-style: none;
 
+        &.active_step {
+            border-left: 2px solid @light_purple !important;
+        }
+
         &.dark {
-            background-color: darken(@purple, 10%);
+            border-left: 2px solid @dark_purple;
+            background-color: @dark_purple;
 
             &.dark:hover {
-                background-color: darken(@purple, 10%);
+                background-color: @dark_purple;
             }
         }
 
