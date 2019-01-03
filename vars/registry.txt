@@ -1,1 +1,1 @@
-registry-1.dantownsend.co.uk:5000
+docker.io
