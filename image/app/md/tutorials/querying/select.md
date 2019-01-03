@@ -60,3 +60,37 @@ b.select.columns(
 ).run_sync()
 
 </code></pre>
+
+## Order by
+
+To order the results by a certain column (ascending):
+
+<pre><code class="language-python">
+b = Band
+b.select.order_by(
+    b.name
+).run_sync()
+
+</code></pre>
+
+To order by descending:
+
+<pre><code class="language-python">
+b = Band
+b.select.order_by(
+    b.name,
+    ascending=False
+).run_sync()
+
+</code></pre>
+
+You can order by multiple columns, and even use joins:
+
+<pre><code class="language-python">
+b = Band
+b.select.order_by(
+    b.name,
+    b.manager.name
+).run_sync()
+
+</code></pre>
