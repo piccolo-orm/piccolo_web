@@ -94,3 +94,39 @@ b.select.order_by(
 ).run_sync()
 
 </code></pre>
+
+## Where clauses
+
+There are lots of different options for where clauses.
+
+### Like
+
+The percentage operator is required to designate where the match should occur.
+
+<pre><code class="language-python">
+b = Band
+b.select.where(
+    b.name.like('Py%')  # Matches the start of the string
+).run_sync()
+
+b.select.where(
+    b.name.like('%istas')  # Matches the end of the string
+).run_sync()
+
+b.select.where(
+    b.name.like('%is%')  # Matches anywhere in string
+).run_sync()
+
+</code></pre>
+
+### Not like
+
+Usage is identical to 'like' excepts it excludes matching rows.
+
+<pre><code class="language-python">
+b = Band
+b.select.where(
+    b.name.not_like('Py%')
+).run_sync()
+
+</code></pre>
