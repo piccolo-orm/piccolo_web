@@ -5,6 +5,7 @@
         </aside>
         <div class=main_column>
             <div class="html" v-html="html"></div>
+            <p class="edit"><a href="https://github.com/piccolo-orm/piccolo_web/tree/master/image/app/md">Edit on Github</a></p>
             <div class="nav_padding"></div>
             <ul class="nav">
                 <li>
@@ -143,6 +144,11 @@ div.column_wrapper {
     div.main_column {
         position: relative;
         flex: 1;
+
+        p.edit {
+            font-size: 0.8rem;
+            padding: 0.5rem 1rem 1rem;
+        }
 
         div.html {
             padding: 1rem;
