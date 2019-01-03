@@ -1,26 +1,21 @@
-# piccolo_site
+# piccolo_web
 
-## Project setup
-```
-npm install
-```
+The Piccolo ORM website, which contains docs and a blog.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Deployed here:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+ * https://piccolo-orm.com
 
-### Run your tests
-```
-npm run test
-```
+## Contributing
 
-### Lints and fixes files
-```
-npm run lint
-```
+The docs are written in Markdown:
+
+ * https://github.com/piccolo-orm/piccolo_web/tree/master/image/app/md
+
+Pull requests are welcome.
+
+## What kind of project is this?
+
+It's a Vue JS app, which is deployed within Docker.
+
+Fundamentally, it's just a skin on top of a bunch of Markdown files, so don't sweat the details.
