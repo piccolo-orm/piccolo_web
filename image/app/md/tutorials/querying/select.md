@@ -49,6 +49,37 @@ The advantage of using column objects over say strings, is your text editor can 
 
 You use a select query when you want to get data back in the form of a list of dictionaries (where each dictionary represents a row).
 
+## Columns
+
+By default all columns are returned from the queried table.
+
+<pre><code class="language-python">
+b = Band
+# Equivalent to SELECT * from band
+b.select.run_sync()
+
+</code></pre>
+
+To restrict the returned columns, used the `columns` method.
+
+<pre><code class="language-python">
+b = Band
+# Equivalent to SELECT name from band
+b.select.columns(b.name).run_sync()
+
+</code></pre>
+
+The `columns` method is additive, meaning you can chain it to add additional columns.
+
+<pre><code class="language-python">
+b = Band
+b.select.columns(b.name).columns(b.manager).run_sync()
+
+# Or just define it one go:
+b.select.columns(b.name, b.manager).run_sync()
+
+</code></pre>
+
 ## Joins
 
 One of the most powerful things about select is it's support for joins.
@@ -56,7 +87,19 @@ One of the most powerful things about select is it's support for joins.
 <pre><code class="language-python">
 b = Band
 b.select.columns(
+    b.name,
     b.manager.name
+).run_sync()
+
+</code></pre>
+
+The joins can go several layers deep.
+
+<pre><code class="language-python">
+c = Concert
+c.select.columns(
+    c.id,
+    c.band_1.manager.name
 ).run_sync()
 
 </code></pre>
