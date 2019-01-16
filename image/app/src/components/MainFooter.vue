@@ -9,7 +9,6 @@
 </div>
 </template>
 
-<script></script>
 
 <style lang="less">
 div.footer_padding {
