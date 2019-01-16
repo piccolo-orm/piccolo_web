@@ -5,7 +5,6 @@ import BlogList from '@/views/BlogList.vue'
 import BlogSingle from '@/views/BlogSingle.vue'
 import Privacy from '@/views/Privacy.vue'
 import Tutorial from '@/views/Tutorial.vue'
-import TutorialHome from '@/views/TutorialHome.vue'
 
 Vue.use(Router)
 
@@ -36,7 +35,7 @@ export default new Router({
         {
             path: '/tutorial',
             name: 'tutorial',
-            component: TutorialHome
+            component: Tutorial
         },
         {
             path: '/tutorial/:tutorialName/:stepName',

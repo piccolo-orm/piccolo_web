@@ -1,9 +1,17 @@
 <template>
     <TutorialBase>
-        <div class="html" v-html="html"></div>
-        <p class="edit"><a href="https://github.com/piccolo-orm/piccolo_web/tree/master/image/app/md">Edit on Github</a></p>
-        <div class="nav_padding"></div>
-        <TutorialNav></TutorialNav>
+        <template v-if="!tutorialName">
+            <div class="html">
+                <h1>Tutorials</h1>
+                <p>Welcome to the Piccolo tutorials. Select a tutorial from the sidebar to get started.</p>
+            </div>
+        </template>
+        <template v-else>
+            <div class="html" v-html="html"></div>
+            <p class="edit"><a href="https://github.com/piccolo-orm/piccolo_web/tree/master/image/app/md">Edit on Github</a></p>
+            <div class="nav_padding"></div>
+            <TutorialNav></TutorialNav>
+        </template>
     </TutorialBase>
 </template>
 
@@ -67,7 +75,7 @@ export default {
             this.$store.commit('updateActiveTutorial', activeTutorial)
 
             if (this.stepName == "") {
-                activeTutorialStep = activeTutorial.steps[0]
+                activeTutorialStep = null
             } else {
                 activeTutorialStep = activeTutorial.steps.filter(
                     (element) => element.slug == this.stepName
