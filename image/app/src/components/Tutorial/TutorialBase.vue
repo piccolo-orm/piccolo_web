@@ -34,7 +34,9 @@ div.column_wrapper {
     aside {
         background-color: @purple;
         min-height: 100%;
-        width: 15rem;
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 12rem;
     }
 
     aside, div.main_column {
@@ -43,7 +45,9 @@ div.column_wrapper {
 
     div.main_column {
         position: relative;
-        flex: 1;
+        flex-grow: 1;
+        flex-shrink: 1;
+        overflow: hidden;
 
         p.edit {
             font-size: 0.8rem;
@@ -51,6 +55,7 @@ div.column_wrapper {
         }
 
         div.html {
+            box-sizing: border-box;
             padding: 1rem;
 
             h2 {
