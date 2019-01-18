@@ -20,7 +20,7 @@ export default {
 div.sidebar_tab {
     background-color: rgba(0,0,0,0.7);
     position: fixed;
-    top: 50%;
+    top: 40%;
     left: 0;
     z-index: 100;
 

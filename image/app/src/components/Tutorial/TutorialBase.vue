@@ -61,6 +61,7 @@ div.column_wrapper {
             left: 0;
             right: 0;
             bottom: 0;
+            overflow: scroll;
             width: 100%;
             z-index: 100;
 
@@ -72,6 +73,7 @@ div.column_wrapper {
     }
 
     aside, div.main_column {
+        box-sizing: border-box;
         padding-top: 4rem;
     }
 
