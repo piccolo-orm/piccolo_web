@@ -1,7 +1,8 @@
 <template>
     <div class="column_wrapper">
-        <aside>
-            <TutorialSidebar></TutorialSidebar>
+        <TutorialSidebarTab v-on:showSidebar="showSidebar()" />
+        <aside v-bind:class="{hidden: hiddenSidebar}">
+            <TutorialSidebar v-on:hideSidebar="hideSidebar()" />
         </aside>
         <div class=main_column>
             <slot></slot>
@@ -12,17 +13,32 @@
 
 <script>
 import TutorialSidebar from '@/components/Tutorial/TutorialSidebar.vue'
+import TutorialSidebarTab from '@/components/Tutorial/TutorialSidebarTab.vue'
 
 export default {
-    components: {
-        TutorialSidebar
+    data: function() {
+        return {
+            hiddenSidebar: false
+        }
     },
+    components: {
+        TutorialSidebar,
+        TutorialSidebarTab
+    },
+    methods: {
+        hideSidebar: function() {
+            this.hiddenSidebar = true;
+        },
+        showSidebar: function() {
+            this.hiddenSidebar = false;
+        }
+    }
 }
 </script>
 
 
 <style scoped lang="less">
-@purple: #490188;
+@import "../../variables.less";
 
 div.column_wrapper {
     align-items: stretch;
@@ -30,6 +46,7 @@ div.column_wrapper {
     flex-direction: row;
     min-height: 100vh;
     box-sizing: border-box;
+    position: relative;
 
     aside {
         background-color: @purple;
@@ -37,6 +54,21 @@ div.column_wrapper {
         flex-grow: 0;
         flex-shrink: 0;
         width: 12rem;
+
+        @media(max-width: @mobile_width) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 100;
+
+            &.hidden {
+                display: none;
+                right: 100%;
+            }
+        }
     }
 
     aside, div.main_column {

@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="less">
-@transition_width: 40rem;
+@import "../../variables.less";
 
 nav {
     background-color: black;
@@ -62,7 +62,7 @@ nav {
     div.burger_wrapper {
         flex-grow: 0;
 
-        @media(min-width: @transition_width) {
+        @media(min-width: @mobile_width) {
             display: none;
         }
 
@@ -101,7 +101,7 @@ nav {
     div.link_wrapper {
         flex-grow: 0;
 
-        @media(max-width: @transition_width) {
+        @media(max-width: @mobile_width) {
             display: none;
         }
 

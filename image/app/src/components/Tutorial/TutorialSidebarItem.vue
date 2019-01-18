@@ -41,9 +41,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-@purple: #490188;
-@dark_purple: darken(@purple, 10%);
-@light_purple: lighten(@purple, 40%);
+@import "../../variables.less";
 
 .steps-enter {
     opacity: 0;
