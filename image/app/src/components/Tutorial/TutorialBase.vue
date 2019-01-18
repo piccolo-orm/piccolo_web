@@ -18,7 +18,7 @@ import TutorialSidebarTab from '@/components/Tutorial/TutorialSidebarTab.vue'
 export default {
     data: function() {
         return {
-            hiddenSidebar: false
+            hiddenSidebar: true
         }
     },
     components: {

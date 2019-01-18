@@ -12,6 +12,7 @@
                 v-if="visible"
                 v-bind:key="step.slug"
                 v-bind:class="{active_step: step == activeTutorialStep}"
+                v-on:click="hideSidebar"
                 class="dark">
 
                 <router-link
@@ -37,6 +38,18 @@ export default {
             return this.$store.state.activeTutorialStep
         },
     },
+    methods: {
+        hideSidebar: function() {
+            // Give a delay for the background content to load.
+            let app = this;
+            setTimeout(
+                function() {
+                    app.$emit('hideSidebar');
+                },
+                200
+            )
+        }
+    }
 }
 </script>
 

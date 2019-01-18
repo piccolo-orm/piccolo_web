@@ -1,14 +1,15 @@
 <template>
     <div>
         <ul>
-            <li class="heading">
+            <li class="heading" v-on:click.prevent="hideSidebar">
                 <router-link :to="{name: 'tutorial'}">Tutorials</router-link>
-                <a href="#" class="close" v-on:click.prevent="hideSidebar">X</a>
+                <a href="#" class="close">X</a>
             </li>
         </ul>
 
         <template v-for="tutorial in tutorials">
             <TutorialSidebarItem
+                v-on:hideSidebar="hideSidebar"
                 v-bind:key="tutorial.slug"
                 v-bind:tutorial="tutorial"></TutorialSidebarItem>
         </template>
