@@ -9,10 +9,10 @@
                 <a href="#" v-on:click.prevent="burgerVisible = burgerVisible ? false : true">
                     <img src="@/assets/images/burger_menu.png" />
                 </a>
-                <!-- Needs to emit an event when clicked ... -->
                 <LinkList v-if="burgerVisible" v-on:navigating="burgerVisible = false" />
             </div>
         </div>
+        <div class="overlay" v-if="burgerVisible"></div>
     </nav>
 </template>
 
@@ -33,6 +33,7 @@ export default {
 
 <style lang="less">
 @import "../../variables.less";
+@overlay_color: lighten(black, 10%);
 
 nav {
     background-color: black;
@@ -41,10 +42,20 @@ nav {
     z-index: 1000;
     width: 100%;
 
+    div.overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: @overlay_color;
+    }
+
     div.inner {
         position: relative;
         display: flex;
         flex-direction: row;
+        z-index: 1000;
     }
 
     h1 {
@@ -72,7 +83,7 @@ nav {
         }
 
         ul {
-            background-color: lighten(black, 10%);
+            background-color: @overlay_color;
             position: absolute;
             margin: 0;
             top: 100%;
