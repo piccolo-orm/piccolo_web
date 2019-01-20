@@ -3,11 +3,13 @@
         <div class="inner">
             <div class="burger_wrapper">
                 <a href="#" v-on:click.prevent="burgerVisible = burgerVisible ? false : true">
-                    <img src="@/assets/images/burger_menu.png" />
+                    <BurgerIcon v-bind:active="burgerVisible" />
                 </a>
                 <LinkList v-if="burgerVisible" v-on:navigating="burgerVisible = false" />
             </div>
-            <h1><router-link to="/">Piccolo</router-link></h1>
+            <h1>
+                <router-link to="/">Piccolo</router-link>
+            </h1>
             <div class="link_wrapper">
                 <LinkList/>
             </div>
@@ -17,11 +19,13 @@
 </template>
 
 <script>
+import BurgerIcon from './BurgerIcon.vue'
 import LinkList from './LinkList.vue'
 
 export default {
     components: {
-        LinkList
+        LinkList,
+        BurgerIcon
     },
     data: function() {
         return {
@@ -87,7 +91,7 @@ nav {
             padding-top: 1.1rem;
         }
 
-        ul {
+        ul.links {
             background-color: @overlay_color;
             position: absolute;
             margin: 0;
@@ -121,7 +125,7 @@ nav {
             display: none;
         }
 
-        ul {
+        ul.links {
             display: inline-block;
 
             padding-right: 2rem;
