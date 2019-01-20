@@ -18,6 +18,7 @@ export default {
 
 ul {
     margin-top: 1.5rem;
+    padding-left: 1rem;
     width: 25px;
 
     li {
