@@ -1,6 +1,6 @@
 <template>
     <div class="sidebar_tab">
-        <a href="#" v-on:click.prevent="showSidebar"><span>&#9654;</span> Tutorials menu</a>
+        <a href="#" v-on:click.prevent="showSidebar"><span><font-awesome-icon icon="caret-right" /></span> Tutorials menu</a>
     </div>
 </template>
 
@@ -41,9 +41,7 @@ div.sidebar_tab {
         text-decoration: none;
 
         span {
-            vertical-align: middle;
-            font-size: 0.6em;
-            padding: 0.2em;
+            margin-right: 0.2em;
         }
     }
 }
