@@ -4,7 +4,7 @@
             v-bind:class="{active: (tutorial == activeTutorial)}"
             v-on:click.prevent="visible = (visible ? false : true)">
 
-            <a href="#"><span v-bind:class="{visible: visible}">></span> {{ tutorial.title }}</a>
+            <a href="#"><span v-bind:class="{visible: visible}">&#9654;</span> {{ tutorial.title }}</a>
         </li>
         <transition-group name="steps">
             <li
@@ -99,6 +99,9 @@ ul {
 
         span {
             display: inline-block;
+            font-size: 0.6em;
+            padding: 0.2em;
+            vertical-align: middle;
             transition: transform 0.5s;
 
             &.visible {

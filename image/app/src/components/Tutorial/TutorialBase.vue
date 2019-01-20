@@ -83,6 +83,10 @@ div.column_wrapper {
         flex-shrink: 1;
         overflow: hidden;
 
+        @media(max-width: @mobile_width) {
+            padding-top: 6rem;
+        }
+
         p.edit {
             font-size: 0.8rem;
             padding: 0.5rem 1rem 1rem;

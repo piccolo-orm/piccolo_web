@@ -66,7 +66,7 @@ nav {
 
         @media(max-width: @mobile_width) {
             text-align: center;
-            padding-right: 3rem;
+            padding-right: 4rem;
         }
 
         a {

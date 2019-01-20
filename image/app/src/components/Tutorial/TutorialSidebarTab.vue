@@ -1,6 +1,6 @@
 <template>
     <div class="sidebar_tab">
-        <a href="#" v-on:click.prevent="showSidebar">></a>
+        <a href="#" v-on:click.prevent="showSidebar"><span>&#9654;</span> Tutorials menu</a>
     </div>
 </template>
 
@@ -18,21 +18,33 @@ export default {
 @import "../../variables.less";
 
 div.sidebar_tab {
-    background-color: rgba(0,0,0,0.7);
+    background-color: @purple;
     position: fixed;
-    top: 40%;
+    top: 0;
     left: 0;
+    width: 100%;
     z-index: 100;
+    padding-top: 4rem;
 
     @media(min-width: @mobile_width) {
         display: none;
     }
 
     a {
-        color: white;
+        color: rgba(255,255,255,0.9);
         display: block;
-        padding: 3rem 1rem;
+        font-size: 0.7rem;
+        font-weight: bolder;
+        padding: 0.8rem;
+        text-transform: uppercase;
+        text-align: center;
         text-decoration: none;
+
+        span {
+            vertical-align: middle;
+            font-size: 0.6em;
+            padding: 0.2em;
+        }
     }
 }
 </style>

@@ -3,7 +3,7 @@
         <template v-if="!tutorialName">
             <div class="html">
                 <h1>Tutorials</h1>
-                <p>Welcome to the Piccolo tutorials. Select a tutorial from the sidebar to get started.</p>
+                <p>Welcome to the Piccolo tutorials. Select a tutorial from the menu to get started.</p>
             </div>
         </template>
         <template v-else>
