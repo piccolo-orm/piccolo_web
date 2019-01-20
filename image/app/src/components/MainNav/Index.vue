@@ -1,15 +1,15 @@
 <template>
     <nav>
         <div class="inner">
-            <h1><router-link to="/">Piccolo</router-link></h1>
-            <div class="link_wrapper">
-                <LinkList/>
-            </div>
             <div class="burger_wrapper">
                 <a href="#" v-on:click.prevent="burgerVisible = burgerVisible ? false : true">
                     <img src="@/assets/images/burger_menu.png" />
                 </a>
                 <LinkList v-if="burgerVisible" v-on:navigating="burgerVisible = false" />
+            </div>
+            <h1><router-link to="/">Piccolo</router-link></h1>
+            <div class="link_wrapper">
+                <LinkList/>
             </div>
         </div>
         <div class="overlay" v-if="burgerVisible"></div>
@@ -62,7 +62,12 @@ nav {
         display: inline-block;
         flex-grow: 1;
         margin: 0;
-        padding: 1rem 2rem;
+        padding: 1rem 1.5rem;
+
+        @media(max-width: @mobile_width) {
+            text-align: center;
+            padding-right: 3rem;
+        }
 
         a {
           color: white;
@@ -78,7 +83,7 @@ nav {
         }
 
         img {
-            padding-right: 2rem;
+            padding-left: 1rem;
             padding-top: 1.1rem;
         }
 
@@ -98,7 +103,7 @@ nav {
                 a {
                     color: white;
                     display: block;
-                    padding: 1rem 2rem;
+                    padding: 1.5rem 2rem;
                     text-decoration: none;
 
                     &:hover {
