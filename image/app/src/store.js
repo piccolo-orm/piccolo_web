@@ -16,6 +16,11 @@ export default new Vuex.Store({
     state: {
         posts: [
             new Post({
+                title: 'Asyncio vs Gevent',
+                src: 'asyncio_vs_gevent.html',
+                slug: 'asyncio-vs-gevent'
+            }),
+            new Post({
                 title: 'Is Async Worthwhile?',
                 src: 'is_async_worthwhile.html',
                 slug: 'is-async-worthwhile'

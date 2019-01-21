@@ -46,6 +46,10 @@ Golang is a compiled language, so as expected it provides greater performance th
 
 In my own testing, I can get about 4000 requests per second out of a simple Golang web service, built using Gin.
 
+### + Typing support
+
+Golang has builtin supports for type annotations.
+
 ### - Limited language
 
 When coming from a more feature rich language, Golang can feel both liberating and incredibly constraining.
