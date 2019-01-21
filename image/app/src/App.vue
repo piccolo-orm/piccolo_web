@@ -21,7 +21,7 @@ export default {
 
 
 <style lang="less">
-@purple: #490188;
+@import "./variables.less";
 
 #app {
     font-family: 'Open Sans', 'Source Sans Pro', Helvetica, Arial, sans-serif;

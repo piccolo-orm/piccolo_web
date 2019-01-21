@@ -12,7 +12,7 @@ For Windows, you can use a package manager like [chocolatey](https://chocolatey.
 
 ## Postgres version
 
-Piccolo is currently tested against Postgres 9.6 and 10, so it's recommended to use one of those.
+Piccolo is currently tested against Postgres 9.6, 10.6, and 11.1 so it's recommended to use one of those. To check all supported versions, see the [Travis file](https://github.com/piccolo-orm/piccolo/blob/master/.travis.yml).
 
 ## What about other databases?
 

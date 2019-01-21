@@ -4,7 +4,7 @@
             v-bind:class="{active: (tutorial == activeTutorial)}"
             v-on:click.prevent="visible = (visible ? false : true)">
 
-            <a href="#"><span v-bind:class="{visible: visible}">></span> {{ tutorial.title }}</a>
+            <a href="#"><span v-bind:class="{visible: visible}"><font-awesome-icon icon="caret-right" /></span> {{ tutorial.title }}</a>
         </li>
         <transition-group name="steps">
             <li
@@ -12,6 +12,7 @@
                 v-if="visible"
                 v-bind:key="step.slug"
                 v-bind:class="{active_step: step == activeTutorialStep}"
+                v-on:click="hideSidebar"
                 class="dark">
 
                 <router-link
@@ -37,13 +38,23 @@ export default {
             return this.$store.state.activeTutorialStep
         },
     },
+    methods: {
+        hideSidebar: function() {
+            // Give a delay for the background content to load.
+            let app = this;
+            setTimeout(
+                function() {
+                    app.$emit('hideSidebar');
+                },
+                200
+            )
+        }
+    }
 }
 </script>
 
 <style scoped lang="less">
-@purple: #490188;
-@dark_purple: darken(@purple, 10%);
-@light_purple: lighten(@purple, 40%);
+@import "../../variables.less";
 
 .steps-enter {
     opacity: 0;
@@ -88,6 +99,7 @@ ul {
 
         span {
             display: inline-block;
+            margin-right: 0.4em;
             transition: transform 0.5s;
 
             &.visible {

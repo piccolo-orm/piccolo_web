@@ -99,10 +99,7 @@ export default {
 
 
 <style lang="less">
-@dark_purple: #230042;
-@purple: #490188;
-@pink: rgb(255, 180, 209);
-@dark_grey: #404040;
+@import "../variables.less";
 
 div.hero {
     background-color: @purple;

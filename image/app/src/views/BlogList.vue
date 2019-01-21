@@ -33,7 +33,7 @@ export default {
 
 
 <style lang="less" scoped>
-@purple: #490188;
+@import "../variables.less";
 
 div.blog {
     min-height: 100vh;

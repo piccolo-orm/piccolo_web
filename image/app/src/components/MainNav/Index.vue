@@ -1,27 +1,31 @@
 <template>
     <nav>
         <div class="inner">
-            <h1><router-link to="/">Piccolo</router-link></h1>
+            <div class="burger_wrapper">
+                <a href="#" v-on:click.prevent="burgerVisible = burgerVisible ? false : true">
+                    <BurgerIcon v-bind:active="burgerVisible" />
+                </a>
+                <LinkList v-if="burgerVisible" v-on:navigating="burgerVisible = false" />
+            </div>
+            <h1>
+                <router-link to="/">Piccolo</router-link>
+            </h1>
             <div class="link_wrapper">
                 <LinkList/>
             </div>
-            <div class="burger_wrapper">
-                <a href="#" v-on:click.prevent="burgerVisible = burgerVisible ? false : true">
-                    <img src="@/assets/images/burger_menu.png" />
-                </a>
-                <!-- Needs to emit an event when clicked ... -->
-                <LinkList v-if="burgerVisible" v-on:navigating="burgerVisible = false" />
-            </div>
         </div>
+        <div class="overlay" v-if="burgerVisible"></div>
     </nav>
 </template>
 
 <script>
+import BurgerIcon from './BurgerIcon.vue'
 import LinkList from './LinkList.vue'
 
 export default {
     components: {
-        LinkList
+        LinkList,
+        BurgerIcon
     },
     data: function() {
         return {
@@ -32,7 +36,8 @@ export default {
 </script>
 
 <style lang="less">
-@transition_width: 40rem;
+@import "../../variables.less";
+@overlay_color: lighten(black, 10%);
 
 nav {
     background-color: black;
@@ -41,17 +46,32 @@ nav {
     z-index: 1000;
     width: 100%;
 
+    div.overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: @overlay_color;
+    }
+
     div.inner {
         position: relative;
         display: flex;
         flex-direction: row;
+        z-index: 1000;
     }
 
     h1 {
         display: inline-block;
         flex-grow: 1;
         margin: 0;
-        padding: 1rem 2rem;
+        padding: 1rem 1.5rem;
+
+        @media(max-width: @mobile_width) {
+            text-align: center;
+            padding-right: 4rem;
+        }
 
         a {
           color: white;
@@ -62,17 +82,17 @@ nav {
     div.burger_wrapper {
         flex-grow: 0;
 
-        @media(min-width: @transition_width) {
+        @media(min-width: @mobile_width) {
             display: none;
         }
 
         img {
-            padding-right: 2rem;
+            padding-left: 1rem;
             padding-top: 1.1rem;
         }
 
-        ul {
-            background-color: lighten(black, 10%);
+        ul.links {
+            background-color: @overlay_color;
             position: absolute;
             margin: 0;
             top: 100%;
@@ -87,7 +107,7 @@ nav {
                 a {
                     color: white;
                     display: block;
-                    padding: 1rem 2rem;
+                    padding: 1.5rem 2rem;
                     text-decoration: none;
 
                     &:hover {
@@ -101,11 +121,11 @@ nav {
     div.link_wrapper {
         flex-grow: 0;
 
-        @media(max-width: @transition_width) {
+        @media(max-width: @mobile_width) {
             display: none;
         }
 
-        ul {
+        ul.links {
             display: inline-block;
 
             padding-right: 2rem;
