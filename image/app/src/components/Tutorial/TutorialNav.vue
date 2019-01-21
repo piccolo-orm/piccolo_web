@@ -1,18 +1,18 @@
 <template>
-    <ul class="nav">
-        <li>
+    <div class="nav">
+        <div>
             <router-link
                 v-if="previousTutorialStep"
                 :to="{name: 'tutorial_single', params: {tutorialName: activeTutorial.slug, stepName: previousTutorialStep.slug}}">
                 <span><font-awesome-icon icon="chevron-circle-left" />Previous</span><span class="subtle">{{ previousTutorialStep.title }}</span></router-link>
-        </li>
-        <li>
+        </div>
+        <div>
             <router-link
                 v-if="nextTutorialStep"
                 :to="{name: 'tutorial_single', params: {tutorialName: activeTutorial.slug, stepName: nextTutorialStep.slug}}">
                 <span>Next <font-awesome-icon icon="chevron-circle-right" /></span><span class="subtle">{{ nextTutorialStep.title }}</span></router-link>
-        </li>
-    </ul>
+        </div>
+    </div>
 </template>
 
 
@@ -36,16 +36,19 @@ export default {
 <style scoped lang="less">
 @arrow_spacing: 0.5rem;
 
-ul.nav {
+div.nav {
+    align-items: stretch;
     background-color: #2b2b2b;
     margin-bottom: 0;
     padding: 0;
     position: absolute;
+    display: flex;
+    flex-direction: row;
     bottom: 0;
     left: 0;
     width: 100%;
 
-    li {
+    div {
         display: inline-block;
         width: 50%;
         text-align: right;

@@ -121,7 +121,7 @@ div.column_wrapper {
         }
 
         div.nav_padding {
-            height: 5rem;
+            height: 7rem;
         }
     }
 }
