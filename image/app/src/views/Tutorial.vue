@@ -55,7 +55,7 @@ export default {
     },
     methods: {
         scrollToTop: function() {
-            document.documentElement.scrollTop = 0
+            window.scrollTo(0,0)
         },
         updateActiveTutorial: function() {
             if (!this.tutorials) {
