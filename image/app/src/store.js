@@ -16,6 +16,11 @@ export default new Vuex.Store({
     state: {
         posts: [
             new Post({
+                title: 'Plugins for Python projects',
+                src: 'plugins_for_python_projects.html',
+                slug: 'plugins-for-python-projects'
+            }),
+            new Post({
                 title: 'Asyncio vs Gevent',
                 src: 'asyncio_vs_gevent.html',
                 slug: 'asyncio-vs-gevent'
