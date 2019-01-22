@@ -67,9 +67,9 @@ For Piccolo, the plan is:
  * Move functionality into extensions where appropriate
  * Provide a low friction way of adding extensions (like in Pytest - just pip install)
  * Provide a CLI tool which orchestrates the various extensions (like Vue)
- * Configure extensions using a configuration file
+ * Configure extensions using a optional configuration file
 
-## What sorts of extensions are envisaged for Piccolo?
+## What sorts of extension are envisaged for Piccolo?
 
 The scope for extensions is large.
 
