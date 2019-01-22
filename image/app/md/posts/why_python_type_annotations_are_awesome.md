@@ -40,9 +40,23 @@ def email_user(user: User):
 </code>
 </pre>
 
-The advantage here is with code editors like Visual Studio Code you can now command + click on the User annotation. and it'll take you to the definition of User in your project, which is a great usability improvement over doing a manual search.
+The advantage here is with code editors like Visual Studio Code you can now `Command + click` on the User annotation. and it'll take you to the definition of User in your project, which is a great usability improvement over doing a manual search.
 
-Declaring your type annotation here make it available in a __annotations__ property, which you access using `typing.get_type_hints`.
+Declaring your type annotation here make it available in a `__annotations__` property, which you access using `typing.get_type_hints`.
+
+<pre>
+<code class="language-python">
+from typing import get_type_hints
+
+def email_user(user: User):
+    # some code
+
+get_type_hints(email_user)
+>>> {'user': User}
+</code>
+</pre>
+
+This makes the annotations easier to access than parsing a docstring.
 
 ## Imports required
 
