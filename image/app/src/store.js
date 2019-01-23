@@ -16,6 +16,11 @@ export default new Vuex.Store({
     state: {
         posts: [
             new Post({
+                title: 'ORM Design Challenges',
+                src: 'orm_design_challenges.html',
+                slug: 'orm-design-challenges'
+            }),
+            new Post({
                 title: 'Why Python type annotations are awesome',
                 src: 'why_python_type_annotations_are_awesome.html',
                 slug: 'why-python-type-annotations-are-awesome'
