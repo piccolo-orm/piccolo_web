@@ -1,4 +1,4 @@
-FROM node:9-alpine
+FROM node:10-alpine
 
 RUN apk add --no-cache nginx
 RUN mkdir /run/nginx
