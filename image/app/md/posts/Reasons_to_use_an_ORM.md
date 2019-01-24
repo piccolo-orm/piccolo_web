@@ -1,4 +1,4 @@
-# Why use an ORM?
+# Reasons to use an ORM
 
 ## Benefits of an ORM
 
