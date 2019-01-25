@@ -35,10 +35,6 @@ export default {
         let app = this;
         axios.get('/html/posts/' + currentPost.src).then(function(response) {
             app.html = response.data
-            setTimeout(
-                () => Prism.highlightAll(),
-                0
-            )
         })
     }
 }

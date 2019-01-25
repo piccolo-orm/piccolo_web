@@ -14,58 +14,7 @@ let defaultStep = new TutorialStep({
 
 export default new Vuex.Store({
     state: {
-        posts: [
-            new Post({
-                title: 'ORM Design Challenges',
-                src: 'orm_design_challenges.html',
-                slug: 'orm-design-challenges'
-            }),
-            new Post({
-                title: 'Why Python type annotations are awesome',
-                src: 'why_python_type_annotations_are_awesome.html',
-                slug: 'why-python-type-annotations-are-awesome'
-            }),
-            new Post({
-                title: 'Plugins for Python projects',
-                src: 'plugins_for_python_projects.html',
-                slug: 'plugins-for-python-projects'
-            }),
-            new Post({
-                title: 'Asyncio vs Gevent',
-                src: 'asyncio_vs_gevent.html',
-                slug: 'asyncio-vs-gevent'
-            }),
-            new Post({
-                title: 'Is Async Worthwhile?',
-                src: 'is_async_worthwhile.html',
-                slug: 'is-async-worthwhile'
-            }),
-            new Post({
-                title: 'Why use an ORM?',
-                src: 'why_use_an_orm.html',
-                slug: 'why-use-an-orm'
-            }),
-            new Post({
-                title: 'Why choose Piccolo?',
-                src: 'why_choose_piccolo.html',
-                slug: 'why-choose-piccolo'
-            }),
-            new Post({
-                title: 'Introduction to ASGI',
-                src: 'introduction_to_asgi.html',
-                slug: 'introduction-to-asgi'
-            }),
-            new Post({
-                title: 'Should I use Python instead of Golang or Node?',
-                src: 'should_i_use_python_instead_of_golang_or_node.html',
-                slug: 'should-i-use-python-instead-of-golang-or-node'
-            }),
-            new Post({
-                title: 'Why is an event loop useful?',
-                src: 'why_is_an_event_loop_useful.html',
-                slug: 'why-is-an-event-loop-useful'
-            })
-        ],
+        posts: [],
         tutorials: [
             new Tutorial({
                 title: 'Getting Started',
@@ -192,10 +141,13 @@ export default new Vuex.Store({
     },
     mutations: {
         updateActiveTutorial: function(state, tutorial) {
-            this.state.activeTutorial = tutorial
+            state.activeTutorial = tutorial
         },
         updateActiveTutorialStep: function(state, step) {
-            this.state.activeTutorialStep = step
+            state.activeTutorialStep = step
         },
+        updatePosts: function(state, posts) {
+            state.posts = posts
+        }
     },
 })

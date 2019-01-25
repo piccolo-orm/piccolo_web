@@ -1,3 +1,9 @@
+{
+    "title": "Is async worthwhile?"
+}
+
+<!-- start -->
+
 # Is async worthwhile?
 
 One of the main motivations for building Piccolo was the lack of options for an asyncio ORM.

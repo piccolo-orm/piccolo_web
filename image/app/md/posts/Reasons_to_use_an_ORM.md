@@ -1,3 +1,9 @@
+{
+    "title": "Reasons to use an ORM"
+}
+
+<!-- start -->
+
 # Reasons to use an ORM
 
 ## Benefits of an ORM
@@ -6,14 +12,14 @@
 
 A good ORM should make a developer's life easier. It should take care of the tedious things, like escaping values. An ORM can also have a more compact syntax than SQL. This is most obvious with joins.
 
-<pre><code class="language-python">
+```python
 query = Band.select.columns(Band.name, Band.genre.name)
 
 query.__str__()
 
 SELECT name, genre.name FROM band JOIN genre ON band.genre = genre.id
 
-</code></pre>
+```
 
 ### Batteries included
 
@@ -25,7 +31,7 @@ ORMs often include other tools and features which make a developer's life easier
 
 With Piccolo, you can pass around queries, and keep on chaining methods onto it.
 
-<pre><code class="language-python">
+```python
 query = Band.select.columns(Band.name)
 
 if rock == True:
@@ -33,7 +39,7 @@ if rock == True:
 
 results = await query.run()
 
-</code></pre>
+```
 
 Doing this with raw SQL strings quickly becomes unmanageable.
 

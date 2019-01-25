@@ -1,3 +1,9 @@
+{
+    "title": "ORM design challenges"
+}
+
+<!-- start -->
+
 # ORM design challenges
 
 Building ORMs isn't the easiest thing in the world. Based on past experience working on similar projects, I knew it wasn't impossible though.
@@ -12,15 +18,13 @@ This is perhaps the most important consideration when designing an ORM. Making s
 
 When generating SQL strings, the ORM needs to be careful not to include raw user input within the string - instead it should be parameterised.
 
-<pre>
-<code class="language-python">
-# This is OK:
-"SELECT * from user WHERE username = $1"
+```sql
+-- This is OK:
+SELECT * from user WHERE username = $1
 
-# If username = "1; DROP TABLE users", and the query wasn't parameterised:
-"SELECT * from user WHERE username = 1; DROP TABLE users"
-</code>
-</pre>
+-- If username = "1; DROP TABLE users", and the query wasn't parameterised:
+SELECT * from user WHERE username = 1; DROP TABLE users
+```
 
 This sounds simple enough, but is quite challenging.
 
@@ -30,19 +34,15 @@ There's two options for joins - either let the user specify joins explicitly, or
 
 In Piccolo, joins are done automatically.
 
-<pre>
-<code class="language-python">
+```python
 Band.select.columns(Band.manager_1.name).run_sync()
-</code>
-</pre>
+```
 
 In order to get the name of `manager_1`, a join is required. There are other situations which require joins. For example:
 
-<pre>
-<code class="language-python">
+```python
 Band.select.where(Band.manager_1.name == 'Guido').run_sync()
-</code>
-</pre>
+```
 
 Piccolo has to manage the joins under the hood to make this happen.
 
@@ -50,11 +50,9 @@ Piccolo has to manage the joins under the hood to make this happen.
 
 Queries such as this:
 
-<pre>
-<code class="language-python">
+```python
 Band.select.run_sync()
-</code>
-</pre>
+```
 
 Which fetch all rows from a table, could return thousands or millions of rows. The ORM needs to handle this under the hood using cursors - fetching data in chunks.
 

@@ -1,3 +1,9 @@
+{
+    "title": "Should I use Python instead of Golang or Node?"
+}
+
+<!-- start -->
+
 # Should I use Python instead of Golang or Node?
 
 In recent years the go-to solution for high performance web services has been Node JS or Golang.
@@ -28,7 +34,7 @@ Typing supports helps make code more understandable, and testable.
 
 With Python, there's now standard library support via the typing module. This makes it really easy to implement.
 
-It soon gets tedious with Typescript constantly having to transpile it to Javascript. Everything requires a build step. Have unit tests which include Typescript code? Need to transpile them first before running.
+It soon gets tedious with Typescript constantly having to transpile it to Javascript (unless you run it through ts-node). Everything requires a build step. Have unit tests which include Typescript code? Need to transpile them first before running.
 
 ### - Testing
 

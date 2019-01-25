@@ -1,3 +1,9 @@
+{
+    "title": "Why Python type annotations are awesome"
+}
+
+<!-- start -->
+
 # Why Python type annotations are awesome
 
 For me, the two stand out features of Python 3 are [asyncio](https://docs.python.org/3/library/asyncio.html) and [type annotations](https://docs.python.org/3/library/typing.html).
@@ -10,42 +16,35 @@ In this article I'll talk about why I think type annotations in particular are a
 
 The first reason to use type annotations is to document your code. Taking this very simple example:
 
-<pre>
-<code class="language-python">
+```python
 def email_user(user):
     # some code
-</code>
-</pre>
+```
 
 User could be any number of different things - an integer, a User object, a string ... the list does on. It adds cognitive load to someone new to a project, having to work out what's going on.
 
 Before type annotations, this was solved using specially formatted docstrings.
 
-<pre>
-<code class="language-python">
+```python
 def email_user(user):
     """
     :type user: User
     """
     # some code
-</code>
-</pre>
+```
 
 This is better, but having the type annotation in a string is limiting. Using the Python 3 approach:
 
-<pre>
-<code class="language-python">
+```python
 def email_user(user: User):
     # some code
-</code>
-</pre>
+```
 
 The advantage here is with code editors like Visual Studio Code you can now `Command + click` on the User annotation. and it'll take you to the definition of User in your project, which is a great usability improvement over doing a manual search.
 
 Declaring your type annotations here makes them available in an `__annotations__` property, which you access using `typing.get_type_hints`.
 
-<pre>
-<code class="language-python">
+```python
 from typing import get_type_hints
 
 def email_user(user: User):
@@ -53,8 +52,7 @@ def email_user(user: User):
 
 get_type_hints(email_user)
 >>> {'user': User}
-</code>
-</pre>
+```
 
 This makes the annotations easier to access than parsing a docstring, and allows for some interesting applications.
 
@@ -62,15 +60,13 @@ This makes the annotations easier to access than parsing a docstring, and allows
 
 [Mypy](http://mypy-lang.org/) uses the type annotations to analyse your code for errors.
 
-<pre>
-<code class="language-python">
+```python
 def say_hello(name: str):
     print(name)
 
 
 say_hello(1)  # Error!
-</code>
-</pre>
+```
 
 Visual Studio Code supports it out of the box. Combined with a linter like Flake8, your editing experience is super charged - catching most coding errors you're likely to encounter.
 
@@ -88,8 +84,7 @@ A library can use type annotations (like Piccolo), and the user doesn't need to 
 
 To finish off, here are some examples of the interesting things you can do with type annotations in Python.
 
-<pre>
-<code class="language-python">
+```python
 import typing as t  # Importing it as an alias makes it less verbose
 
 
@@ -124,7 +119,6 @@ if t.TYPE_CHECKING:
 # type annotations can also be used on variables
 budgies: [Budgie] = []
 
-</code>
-</pre>
+```
 
 As you can see, the typing module is already very powerful - give it a go!

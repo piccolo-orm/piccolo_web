@@ -1,28 +1,55 @@
 /*
-Generates JSON files for all available posts and tutorials, and generates
+Generates JSON files for all available posts and tutorials, and generates a
+sitemap.
 */
 
-let fsPromises = require("fs").promises
+const fsPromises = require('fs').promises
+const slugify = require('slugify')
+const rmfr = require('rmfr')
+const showdown  = require('showdown')
+const showdownHighlight = require("showdown-highlight")
+
+const converter = new showdown.Converter({extensions: [showdownHighlight]})
+const dividingString = '<!-- start -->'
 
 
-// Current limitations - no punctuation in titles
-async function createPostJSON() {
+async function processPosts() {
     var output = []
 
-    let files = await fsPromises.readdir('../md/posts')
+    let mdDirectory = '../md/posts'
+    let htmlDirectory = '../public/html/posts'
+    let files = await fsPromises.readdir(mdDirectory)
 
-    files.forEach(file => {
-        let prefix = file.replace('.md', '')
-        let slug = prefix.replace(/_/g, '-').toLowerCase()
-        let title = prefix.replace(/_/g, ' ')
-        let src = prefix + '.html'
+    // Make sure it's empty
+    await rmfr(htmlDirectory)
+    await fsPromises.mkdir(htmlDirectory)
+
+    for (i=0; i < files.length; i++) {
+        let file = files[i]
+
+        let contents = await fsPromises.readFile(`${mdDirectory}/${file}`)
+        contents = contents.toString()
+
+        let [jsonString, markdownString] = contents.split(dividingString)
+        let json = JSON.parse(jsonString)
+        let html = converter.makeHtml(markdownString)
+
+        let title = json.title
+        let slug = slugify(title).toLowerCase()
+        let src = slug + '.html'
+
+        try {
+            await fsPromises.writeFile(`${htmlDirectory}/${src}`, html)
+        } catch(error) {
+            console.log('error')
+        }
 
         output.push({
             title,
             slug,
             src
         })
-    });
+    }
 
     await fsPromises.writeFile(
         '../public/json/posts.json',
@@ -62,6 +89,10 @@ async function createTutorialsJSON() {
             var _files = await fsPromises.readdir(filePath)
             for (j = 0; j < _files.length; j++) {
                 let _file = _files[j]
+                let _contents = await fsPromises.readFile(`${filePath}/${_file}`)
+
+                let _contentsString = _contents.toString()
+
                 tutorial.steps.push({
                     name: _file
                 })
@@ -79,8 +110,8 @@ async function createTutorialsJSON() {
 
 async function main() {
     await Promise.all([
-        createPostJSON(),
-        createTutorialsJSON()
+        processPosts(),
+        //createTutorialsJSON()
     ])
 }
 

@@ -1,3 +1,9 @@
+{
+    "title": "Why choose Piccolo?"
+}
+
+<!-- start -->
+
 # Why choose Piccolo?
 
 This is a quick overview of the most popular Python ORMs, along with their strengths and weaknesses, and why you might want to choose Piccolo for your project.

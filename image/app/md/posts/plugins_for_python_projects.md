@@ -1,3 +1,9 @@
+{
+    "title": "Plugins for Python Projects"
+}
+
+<!-- start -->
+
 # Plugins for Python Projects
 
 While writing Piccolo I started thinking about how to make it extensible.
@@ -24,8 +30,7 @@ Setuptools is a library used for creating Python packages. The meta data for a P
 
 Here's a [good example from the Pytest documentation](https://docs.pytest.org/en/latest/writing_plugins.html#making-your-plugin-installable-by-others).
 
-<pre>
-<code class="language-python">
+```python
 # sample ./setup.py file
 from setuptools import setup
 
@@ -37,8 +42,7 @@ setup(
     # custom PyPI classifier for pytest plugins
     classifiers=["Framework :: Pytest"],
 )
-</code>
-</pre>
+```
 
 Pytest then uses a little known module bundled within setuptools called pkg_resources. It allows a Python project to discover other packages which were installed in the same environment, and which use a certain entrypoint identifier.
 

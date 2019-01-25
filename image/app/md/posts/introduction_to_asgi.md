@@ -1,3 +1,9 @@
+{
+    "title": "Introduction to ASGI"
+}
+
+<!-- start -->
+
 # Introduction to ASGI
 
 In order to make full use of Piccolo in a web application, you'll need to use it with an async routing framework.
@@ -16,7 +22,7 @@ To solve this problem, [ASGI](https://asgi.readthedocs.io/en/latest/) (Asynchron
 
 An ASGI application is a double callable. This double callable can be implemented how you like, but here's one example.
 
-<pre><code class="language-python">
+```python
 class ASGIApp():
     def __init__(self, scope):
         self.scope = scope
@@ -34,7 +40,7 @@ class ASGIApp():
         })
 
 app = ASGIApp
-</code></pre>
+```
 
 The first callable accepts a scope argument, which tells the ASGI app about the connection. For a HTTP connection, this will include things like headers, the path, query parameters etc.
 
@@ -42,16 +48,16 @@ The second callable acccepts receive and send arguments, which is how the ASGI a
 
 A double callable sounds fancy, but all it means is the ASGI server can call your application like this:
 
-<pre><code class="language-python">
+```python
 asgi = app(scope)
 await asgi(receive, send)
-</code></pre>
+```
 
 ## ASGI Middleware
 
 Middleware modifies the scope passed to ASGI apps, or can do things like return a 403 error if no auth token if provided.
 
-<pre><code class="language-python">
+```python
 class ASGIMiddleware():
     def __init__(self, asgi_app):
         self.asgi_app = asgi_app
@@ -62,7 +68,7 @@ class ASGIMiddleware():
 
 app = ASGIMiddleware(ASGIApp)
 
-</code></pre>
+```
 
 ## ASGI all the way down
 
@@ -78,10 +84,9 @@ Any of them will do fine. In my own testing, I got marginally better performance
 
 Hypercorn makes a great development server, because it can automatically reload the server when it detects changes to your application (in the same was the Django dev server does).
 
-<pre><code class="language-bash">
+```bash
 hypercorn --uvloop --reload --b localhost:8000 views:app
-
-</pre></code>
+```
 
 ## ASGI frameworks
 

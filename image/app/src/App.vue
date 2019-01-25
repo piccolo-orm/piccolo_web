@@ -8,6 +8,7 @@
 
 
 <script>
+import axios from 'axios'
 import MainNav from './components/MainNav/Index.vue'
 import PermissionPopup from './components/PermissionPopup.vue'
 
@@ -15,6 +16,12 @@ export default {
     components: {
         PermissionPopup,
         MainNav
+    },
+    created: function() {
+        let app = this
+        axios.get('/json/posts.json').then(response => {
+            app.$store.commit('updatePosts', response.data)
+        })
     }
 }
 </script>

@@ -1,3 +1,9 @@
+{
+    "title": "Why is an event loop useful?"
+}
+
+<!-- start -->
+
 # Why is an event loop useful?
 
 Traditionally, each unit of work which needs to operate concurrently would be assigned to a separate process or thread. Threads and processes are operating system constructs, and are expensive to create. It's up to the operating system when it schedules them to run, not the program. If a program requires thousands of threads, the constant switching between them can result in poor system performance.
@@ -8,7 +14,7 @@ One of the better known programs using an event loop is Nginx, which was origina
 
 In order for an event loop to work, you need to be able to suspend tasks while they're blocked on IO. In Python, this is possible due to generators. Generators have existed in Python for a long time, and conveniently are functions which can be suspended.
 
-<pre><code class="language-python">
+```python
 def counter():
     i = 0
     while True:
@@ -23,7 +29,7 @@ _counter.__next__()
 _counter.__next__()
 >>> 2
 
-</code></pre>
+```
 
 In early versions of asyncio, generators were used directly. Now the async and await keywords are used instead, but the underlying mechanisms are the same.
 
@@ -31,7 +37,7 @@ As well as performance advantages, an event loop also provides some nice abstrac
 
 One of my favourite features that asyncio provides is the gather function:
 
-<pre><code class="language-python">
+```python
 import asyncio
 
 async def hello(name):
@@ -52,7 +58,7 @@ asyncio.run(hello_everyone())
 >>> hello fred
 >>> welcome!
 
-</code></pre>
+```
 
 With asyncio.gather it makes it very easy to wait until a bunch of tasks have all finished. It's an example of the sorts of nice features which can be built on top of the event loop abstraction.
 
