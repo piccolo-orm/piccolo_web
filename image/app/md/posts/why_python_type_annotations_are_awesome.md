@@ -1,10 +1,9 @@
 {
-    "title": "Why Python type annotations are awesome"
+    "title": "Why Python type annotations are awesome",
+    "postedOn": "2019-01-15"
 }
 
 <!-- start -->
-
-# Why Python type annotations are awesome
 
 For me, the two stand out features of Python 3 are [asyncio](https://docs.python.org/3/library/asyncio.html) and [type annotations](https://docs.python.org/3/library/typing.html).
 

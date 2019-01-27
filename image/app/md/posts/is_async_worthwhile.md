@@ -1,10 +1,9 @@
 {
-    "title": "Is async worthwhile?"
+    "title": "Is async worthwhile?",
+    "postedOn": "2018-11-03"
 }
 
 <!-- start -->
-
-# Is async worthwhile?
 
 One of the main motivations for building Piccolo was the lack of options for an asyncio ORM.
 

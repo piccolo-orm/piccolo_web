@@ -5,12 +5,14 @@
             <ul>
                 <li v-for="post in posts" v-bind:key="post.title">
                     <router-link :to="{name: 'blog_single', params: {articleName: post.slug}}">{{ post.title }}</router-link>
+                    <span>{{ post.postedOn.customString() }}</span>
                 </li>
             </ul>
         </div>
         <MainFooter></MainFooter>
     </div>
 </template>
+
 
 <script>
 import MainFooter from '@/components/MainFooter.vue';
@@ -26,6 +28,11 @@ export default {
     computed: {
         posts: function() {
             return this.$store.state.posts
+        }
+    },
+    created: function() {
+        if (this.$store.state.posts.length == 0) {
+            this.$store.dispatch('fetchPostList')
         }
     }
 }
@@ -49,9 +56,16 @@ div.blog {
             padding: 0.5rem 0;
 
             a {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
                 font-weight: bolder;
                 text-decoration: none;
+            }
+
+            span {
+                color: rgba(0,0,0,0.3);
+                display: block;
+                font-weight: bolder;
+                font-size: 0.7em;
             }
         }
     }

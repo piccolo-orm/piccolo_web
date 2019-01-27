@@ -1,4 +1,9 @@
-# Insert
+{
+    "title": "Insert",
+    "tutorial": "Querying"
+}
+
+<!-- start -->
 
 We can now use insert data into our table. Create a main.py file.
 

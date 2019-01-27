@@ -1,4 +1,9 @@
-# Create your first migration
+{
+    "title": "Create your first migration",
+    "tutorial": "Migrations"
+}
+
+<!-- start -->
 
 Migrations are used to create the tables in the database.
 

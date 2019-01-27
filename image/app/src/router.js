@@ -38,6 +38,10 @@ export default new Router({
             component: Tutorial
         },
         {
+            path: '/tutorial/:tutorialName/',
+            redirect: '/tutorial'
+        },
+        {
             path: '/tutorial/:tutorialName/:stepName',
             name: 'tutorial_single',
             component: Tutorial,

@@ -1,4 +1,9 @@
-# Installing Piccolo
+{
+    "title": "Installing Piccolo",
+    "tutorial": "Getting Started"
+}
+
+<!-- start -->
 
 ## Python
 

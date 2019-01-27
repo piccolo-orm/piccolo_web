@@ -1,10 +1,9 @@
 {
-    "title": "asyncio vs gevent"
+    "title": "asyncio vs gevent",
+    "postedOn": "2018-11-29"
 }
 
 <!-- start -->
-
-# asyncio vs gevent
 
 An alternative to asyncio is [gevent](http://www.gevent.org/) (and a similar library called [eventlet](http://eventlet.net/)).
 

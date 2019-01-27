@@ -1,3 +1,4 @@
+import axios from 'axios'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import {Post, Tutorial, TutorialStep} from '@/classes'
@@ -150,4 +151,25 @@ export default new Vuex.Store({
             state.posts = posts
         }
     },
+    actions: {
+        fetchPostList: async function(context) {
+            let response = await axios.get('/json/posts.json')
+            let data = response.data.map(i => {
+                i.postedOn = new Date(i.postedOn)
+                return i
+            }).sort((i, j) => {
+                if (i.postedOn > j.postedOn) {
+                    return -1
+                } else if (j.postedOn >  i.postedOn ) {
+                    return 1
+                } else {
+                    return 0
+                }
+            })
+            context.commit(
+                'updatePosts',
+                data
+            )
+        }
+    }
 })

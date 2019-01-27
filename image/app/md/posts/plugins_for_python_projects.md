@@ -1,10 +1,9 @@
 {
-    "title": "Plugins for Python Projects"
+    "title": "Plugins for Python Projects",
+    "postedOn": "2019-01-22"
 }
 
 <!-- start -->
-
-# Plugins for Python Projects
 
 While writing Piccolo I started thinking about how to make it extensible.
 

@@ -1,4 +1,9 @@
-# Objects
+{
+    "title": "Objects",
+    "tutorial": "Querying"
+}
+
+<!-- start -->
 
 When doing `select` queries, you got data back in the form of a list of dictionaries (where each dictionary represents a row).
 

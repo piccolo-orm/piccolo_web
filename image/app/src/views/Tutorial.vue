@@ -91,10 +91,6 @@ export default {
             axios.get('/html/tutorials/' + this.activeTutorialStep.src).then(function(response) {
                 app.html = response.data
                 app.scrollToTop()
-                setTimeout(
-                    () => Prism.highlightAll(),
-                    0
-                )
             })
         }
     },

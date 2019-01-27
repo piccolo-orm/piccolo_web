@@ -3,6 +3,7 @@ import VueAnalytics from 'vue-analytics'
 import VueHighlightJS from 'vue-highlightjs'
 import App from './App.vue'
 import './icons.js'
+import './extensions.js'
 
 Vue.use(VueHighlightJS)
 

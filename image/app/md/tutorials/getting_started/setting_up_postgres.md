@@ -1,4 +1,9 @@
-# Installing Postgres
+{
+    "title": "Installing Postgres",
+    "tutorial": "Getting Started"
+}
+
+<!-- start -->
 
 Make sure Postgres is installed and running before you proceed any further.
 

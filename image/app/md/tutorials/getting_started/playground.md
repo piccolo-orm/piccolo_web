@@ -1,4 +1,9 @@
-# Playground
+{
+    "title": "Playground",
+    "tutorial": "Getting Started"
+}
+
+<!-- start -->
 
 Piccolo ships with a handy command called `playground`, which is a great way to learn the basics.
 
