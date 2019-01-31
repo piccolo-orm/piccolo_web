@@ -40,42 +40,42 @@
     <loc>https://piccolo-orm/blog/why-python-type-annotations-are-awesome</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm/tutorial/extras/user</loc>
+    <loc>https://piccolo-orm/tutorial/1_getting_started/installing-piccolo</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm/tutorial/getting_started/installing-piccolo</loc>
+    <loc>https://piccolo-orm/tutorial/1_getting_started/installing-postgres</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm/tutorial/getting_started/playground</loc>
+    <loc>https://piccolo-orm/tutorial/1_getting_started/playground</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm/tutorial/getting_started/installing-postgres</loc>
+    <loc>https://piccolo-orm/tutorial/1_getting_started/sync-vs-async</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm/tutorial/getting_started/sync-vs-async</loc>
+    <loc>https://piccolo-orm/tutorial/2_querying/select</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm/tutorial/migrations/create-your-first-migration</loc>
+    <loc>https://piccolo-orm/tutorial/2_querying/objects</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm/tutorial/querying/delete</loc>
+    <loc>https://piccolo-orm/tutorial/2_querying/raw</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm/tutorial/querying/insert</loc>
+    <loc>https://piccolo-orm/tutorial/2_querying/delete</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm/tutorial/querying/objects</loc>
+    <loc>https://piccolo-orm/tutorial/2_querying/insert</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm/tutorial/querying/raw</loc>
+    <loc>https://piccolo-orm/tutorial/2_querying/update</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm/tutorial/querying/select</loc>
+    <loc>https://piccolo-orm/tutorial/3_schema/creating</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm/tutorial/querying/update</loc>
+    <loc>https://piccolo-orm/tutorial/4_migrations/create-your-first-migration</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm/tutorial/schema/creating</loc>
+    <loc>https://piccolo-orm/tutorial/5_extras/user</loc>
   </url>
 </urlset>

@@ -1,18 +1,14 @@
 var gulp = require('gulp');
-var markdown = require('gulp-markdown');
-var rename = require('gulp-rename');
+var createFiles = require('./content/create-files.js')
 
 
 gulp.task('md', function() {
-    gulp.src('md/**/*.md')
-    .pipe(markdown())
-    .pipe(rename({extname: ".html"}))
-    .pipe(gulp.dest('public/html'));
+    createFiles()
 })
 
 
 gulp.task("watch", function() {
-    gulp.watch("md/**/*.md", ['md'])
+    gulp.watch("content/md/**/*.md", ['md'])
 })
 
 

@@ -1,1 +1,97 @@
-[{"name":"extras","slug":"extras","steps":[{"title":"User","src":"user.html","slug":"user"}]},{"name":"getting_started","slug":"getting_started","steps":[{"title":"Installing Piccolo","src":"installing-piccolo.html","slug":"installing-piccolo"},{"title":"Playground","src":"playground.html","slug":"playground"},{"title":"Installing Postgres","src":"installing-postgres.html","slug":"installing-postgres"},{"title":"Sync vs Async","src":"sync-vs-async.html","slug":"sync-vs-async"}]},{"name":"migrations","slug":"migrations","steps":[{"title":"Create your first migration","src":"create-your-first-migration.html","slug":"create-your-first-migration"}]},{"name":"querying","slug":"querying","steps":[{"title":"Delete","src":"delete.html","slug":"delete"},{"title":"Insert","src":"insert.html","slug":"insert"},{"title":"Objects","src":"objects.html","slug":"objects"},{"title":"Raw","src":"raw.html","slug":"raw"},{"title":"Select","src":"select.html","slug":"select"},{"title":"Update","src":"update.html","slug":"update"}]},{"name":"schema","slug":"schema","steps":[{"title":"Creating","src":"creating.html","slug":"creating"}]}]
+[
+  {
+    "title": "1_getting_started",
+    "slug": "1_getting_started",
+    "steps": [
+      {
+        "title": "Installing Piccolo",
+        "src": "installing-piccolo.html",
+        "slug": "installing-piccolo"
+      },
+      {
+        "title": "Installing Postgres",
+        "src": "installing-postgres.html",
+        "slug": "installing-postgres"
+      },
+      {
+        "title": "Playground",
+        "src": "playground.html",
+        "slug": "playground"
+      },
+      {
+        "title": "Sync vs Async",
+        "src": "sync-vs-async.html",
+        "slug": "sync-vs-async"
+      }
+    ]
+  },
+  {
+    "title": "2_querying",
+    "slug": "2_querying",
+    "steps": [
+      {
+        "title": "Select",
+        "src": "select.html",
+        "slug": "select"
+      },
+      {
+        "title": "Objects",
+        "src": "objects.html",
+        "slug": "objects"
+      },
+      {
+        "title": "Raw",
+        "src": "raw.html",
+        "slug": "raw"
+      },
+      {
+        "title": "Delete",
+        "src": "delete.html",
+        "slug": "delete"
+      },
+      {
+        "title": "Insert",
+        "src": "insert.html",
+        "slug": "insert"
+      },
+      {
+        "title": "Update",
+        "src": "update.html",
+        "slug": "update"
+      }
+    ]
+  },
+  {
+    "title": "3_schema",
+    "slug": "3_schema",
+    "steps": [
+      {
+        "title": "Creating",
+        "src": "creating.html",
+        "slug": "creating"
+      }
+    ]
+  },
+  {
+    "title": "4_migrations",
+    "slug": "4_migrations",
+    "steps": [
+      {
+        "title": "Create your first migration",
+        "src": "create-your-first-migration.html",
+        "slug": "create-your-first-migration"
+      }
+    ]
+  },
+  {
+    "title": "5_extras",
+    "slug": "5_extras",
+    "steps": [
+      {
+        "title": "User",
+        "src": "user.html",
+        "slug": "user"
+      }
+    ]
+  }
+]
