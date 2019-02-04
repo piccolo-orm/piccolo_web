@@ -6,7 +6,7 @@ However, you can use Piccolo in synchronous apps as well, whether that be a WSGI
 
 ## Sync example
 
-<pre><code class="language-python">
+```python
 from my_schema import Band
 
 
@@ -16,12 +16,11 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-</code></pre>
+```
 
 ## Async example
 
-<pre><code class="language-python">
+```python
 import asyncio
 from my_schema import Band
 
@@ -32,8 +31,7 @@ async def main():
 
 if __name__ == '__main__':
     asyncio.run(main())
-
-</code></pre>
+```
 
 ## Which to use?
 

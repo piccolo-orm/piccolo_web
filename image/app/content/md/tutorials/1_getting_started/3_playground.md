@@ -19,14 +19,13 @@ It's a nice place to experiment with querying / inserting / deleting data using 
 
 By default the playground expects a local database to exist with the following credentials:
 
-<pre><code class="language-bash">
+```bash
 user: "piccolo"
 password: "piccolo"
 host: "localhost"  # or 127.0.0.1
 database: "piccolo_playground"
 port: 5432
-
-</code></pre>
+```
 
 You can create a database using [pgAdmin](https://www.pgadmin.org/).
 
@@ -40,13 +39,12 @@ When the playground is started it prints out the available tables.
 
 Give these queries a go:
 
-<pre><code class="language-python">
+```python
 Band.select.run_sync()
 Band.objects.run_sync()
 Band.select.columns(Band.name).run_sync()
 Band.select.columns(Band.name, Band.manager.name).run_sync()
-
-</code></pre>
+```
 
 ## Auto completion is your friend
 
@@ -54,14 +52,13 @@ Piccolo was designed to make auto completion available in as many situations as 
 
 For example, rather than using strings to specify columns, we always refer to the column object on the table.
 
-<pre><code class="language-python">
+```python
 # We use this:
 Band.select.columns(Band.name).run_sync()
 
 # Instead of this:
 Band.select.columns('name').run_sync()
-
-</code></pre>
+```
 
 This means you can do `Band. + TAB`  to see the available columns.
 
