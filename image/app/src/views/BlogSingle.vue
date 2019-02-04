@@ -55,7 +55,7 @@ export default {
 
         this.$seo.updateTags({
             title: `${currentPost.title} - Piccolo Blog`,
-            description: '123'
+            description: currentPost.description
         })
     }
 }

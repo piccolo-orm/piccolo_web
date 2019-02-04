@@ -10,6 +10,12 @@
     <loc>https://piccolo-orm.com/blog</loc>
   </url>
   <url>
+    <loc>https://piccolo-orm.com/blog/orm-design-challenges/</loc>
+  </url>
+  <url>
+    <loc>https://piccolo-orm.com/blog/why-python-type-annotations-are-awesome/</loc>
+  </url>
+  <url>
     <loc>https://piccolo-orm.com/blog/asyncio-vs-gevent/</loc>
   </url>
   <url>
@@ -17,9 +23,6 @@
   </url>
   <url>
     <loc>https://piccolo-orm.com/blog/is-async-worthwhile/</loc>
-  </url>
-  <url>
-    <loc>https://piccolo-orm.com/blog/orm-design-challenges/</loc>
   </url>
   <url>
     <loc>https://piccolo-orm.com/blog/plugins-for-python-projects/</loc>
@@ -35,9 +38,6 @@
   </url>
   <url>
     <loc>https://piccolo-orm.com/blog/why-is-an-event-loop-useful/</loc>
-  </url>
-  <url>
-    <loc>https://piccolo-orm.com/blog/why-python-type-annotations-are-awesome/</loc>
   </url>
   <url>
     <loc>https://piccolo-orm.com/tutorial/getting-started/installing-piccolo/</loc>
