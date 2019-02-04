@@ -1,9 +1,4 @@
-{
-    "title": "Select",
-    "draft": false
-}
-
-<!-- start -->
+# Select
 
 Using this schema:
 

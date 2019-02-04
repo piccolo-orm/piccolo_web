@@ -1,9 +1,4 @@
-{
-    "title": "Creating",
-    "draft": false
-}
-
-<!-- start -->
+# Creating
 
 ## Defining the schema
 

@@ -8,7 +8,10 @@ gulp.task('md', function() {
 
 
 gulp.task("watch", function() {
-    gulp.watch("content/md/**/*.md", ['md'])
+    gulp.watch(
+        ["content/md/**/*.md", "content/json/*.js"],
+        ['md']
+    )
 })
 
 

@@ -1,10 +1,4 @@
-{
-    "title": "Introduction to ASGI",
-    "postedOn": "2018-12-07",
-    "draft": false
-}
-
-<!-- start -->
+# Introduction to ASGI
 
 In order to make full use of Piccolo in a web application, you'll need to use it with an async routing framework.
 

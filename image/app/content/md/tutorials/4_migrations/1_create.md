@@ -1,9 +1,4 @@
-{
-    "title": "Create your first migration",
-    "draft": false
-}
-
-<!-- start -->
+# Create your first migration
 
 Migrations are used to create the tables in the database.
 

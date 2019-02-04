@@ -1,9 +1,4 @@
-{
-    "title": "Sync vs Async",
-    "draft": false
-}
-
-<!-- start -->
+# Sync vs Async
 
 One of the main motivations for making Piccolo was the lack of options for ORMs which support asyncio.
 

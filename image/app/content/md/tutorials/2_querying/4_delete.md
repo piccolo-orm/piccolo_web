@@ -1,8 +1,3 @@
-{
-    "title": "Delete",
-    "draft": false
-}
-
-<!-- start -->
+# Delete
 
 ...

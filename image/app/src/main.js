@@ -2,10 +2,12 @@ import Vue from 'vue'
 import VueAnalytics from 'vue-analytics'
 import VueHighlightJS from 'vue-highlightjs'
 import App from './App.vue'
+import VueSEO from './plugins/seo.js'
 import './icons.js'
 import './extensions.js'
 
 Vue.use(VueHighlightJS)
+Vue.use(VueSEO)
 
 Vue.config.productionTip = false
 

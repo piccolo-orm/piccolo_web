@@ -1,8 +1,3 @@
-{
-    "title": "Raw",
-    "draft": false
-}
-
-<!-- start -->
+# Raw
 
 ...

@@ -2,13 +2,13 @@
     <div class="blog_single">
         <div class="center_wrapper">
             <p id="back"><router-link :to="{name: 'blog'}">All posts</router-link></p>
-            <h1>{{ title }}</h1>
-            <p id="posted_on">Posted on: {{ postedOnString }}</p>
             <div v-html="html"></div>
+            <p id="posted_on">Posted on: {{ postedOnString }}</p>
         </div>
         <MainFooter></MainFooter>
     </div>
 </template>
+
 
 <script>
 import axios from 'axios';
@@ -52,6 +52,11 @@ export default {
         let app = this;
         let response = await axios.get('/html/posts/' + currentPost.src)
         app.html = response.data
+
+        this.$seo.updateTags({
+            title: `${currentPost.title} - Piccolo Blog`,
+            description: '123'
+        })
     }
 }
 </script>

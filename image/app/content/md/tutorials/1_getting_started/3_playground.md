@@ -1,9 +1,4 @@
-{
-    "title": "Playground",
-    "draft": false
-}
-
-<!-- start -->
+# Playground
 
 Piccolo ships with a handy command called `playground`, which is a great way to learn the basics.
 

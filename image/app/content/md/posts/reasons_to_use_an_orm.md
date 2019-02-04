@@ -1,10 +1,4 @@
-{
-    "title": "Reasons to use an ORM",
-    "postedOn": "2018-10-01",
-    "draft": false
-}
-
-<!-- start -->
+# Reasons to use an ORM
 
 ## Benefits of an ORM
 

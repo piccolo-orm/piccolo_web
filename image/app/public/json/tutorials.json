@@ -1,95 +1,95 @@
 [
   {
-    "title": "1_getting_started",
-    "slug": "1_getting_started",
+    "title": "Getting Started",
+    "slug": "getting-started",
     "steps": [
       {
         "title": "Installing Piccolo",
-        "src": "installing-piccolo.html",
+        "src": "1_getting_started/1_installing_piccolo.html",
         "slug": "installing-piccolo"
       },
       {
-        "title": "Installing Postgres",
-        "src": "installing-postgres.html",
-        "slug": "installing-postgres"
+        "title": "Setting up Postgres",
+        "src": "1_getting_started/2_setting_up_postgres.html",
+        "slug": "setting-up-postgres"
       },
       {
         "title": "Playground",
-        "src": "playground.html",
+        "src": "1_getting_started/3_playground.html",
         "slug": "playground"
       },
       {
         "title": "Sync vs Async",
-        "src": "sync-vs-async.html",
+        "src": "1_getting_started/4_sync_vs_async.html",
         "slug": "sync-vs-async"
       }
     ]
   },
   {
-    "title": "2_querying",
-    "slug": "2_querying",
+    "title": "Querying",
+    "slug": "querying",
     "steps": [
       {
         "title": "Select",
-        "src": "select.html",
+        "src": "2_querying/1_select.html",
         "slug": "select"
       },
       {
         "title": "Objects",
-        "src": "objects.html",
+        "src": "2_querying/2_objects.html",
         "slug": "objects"
       },
       {
         "title": "Raw",
-        "src": "raw.html",
+        "src": "2_querying/3_raw.html",
         "slug": "raw"
       },
       {
         "title": "Delete",
-        "src": "delete.html",
+        "src": "2_querying/4_delete.html",
         "slug": "delete"
       },
       {
         "title": "Insert",
-        "src": "insert.html",
+        "src": "2_querying/5_insert.html",
         "slug": "insert"
       },
       {
         "title": "Update",
-        "src": "update.html",
+        "src": "2_querying/6_update.html",
         "slug": "update"
       }
     ]
   },
   {
-    "title": "3_schema",
-    "slug": "3_schema",
+    "title": "Schema",
+    "slug": "schema",
     "steps": [
       {
         "title": "Creating",
-        "src": "creating.html",
+        "src": "3_schema/1_creating.html",
         "slug": "creating"
       }
     ]
   },
   {
-    "title": "4_migrations",
-    "slug": "4_migrations",
+    "title": "Migrations",
+    "slug": "migrations",
     "steps": [
       {
-        "title": "Create your first migration",
-        "src": "create-your-first-migration.html",
-        "slug": "create-your-first-migration"
+        "title": "Create",
+        "src": "4_migrations/1_create.html",
+        "slug": "create"
       }
     ]
   },
   {
-    "title": "5_extras",
-    "slug": "5_extras",
+    "title": "Extras",
+    "slug": "extras",
     "steps": [
       {
         "title": "User",
-        "src": "user.html",
+        "src": "5_extras/1_user.html",
         "slug": "user"
       }
     ]

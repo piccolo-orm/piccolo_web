@@ -1,10 +1,4 @@
-{
-    "title": "ORM design challenges",
-    "postedOn": "2019-01-23",
-    "draft": false
-}
-
-<!-- start -->
+# ORM design challenges
 
 Building ORMs isn't the easiest thing in the world. Based on past experience working on similar projects, I knew it wasn't impossible though.
 

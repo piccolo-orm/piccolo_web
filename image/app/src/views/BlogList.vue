@@ -34,6 +34,10 @@ export default {
         if (this.$store.state.posts.length == 0) {
             this.$store.dispatch('fetchPostList')
         }
+        this.$seo.updateTags({
+            title: `Piccolo ORM Blog`,
+            description: '123'
+        })
     }
 }
 </script>

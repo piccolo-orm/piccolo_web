@@ -1,9 +1,4 @@
-{
-    "title": "Installing Piccolo",
-    "draft": false
-}
-
-<!-- start -->
+# Installing Piccolo
 
 ## Python
 

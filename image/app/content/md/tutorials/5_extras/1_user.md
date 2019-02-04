@@ -1,8 +1,3 @@
-{
-    "title": "User",
-    "draft": false
-}
-
-<!-- start -->
+# User
 
 ...

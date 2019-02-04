@@ -1,9 +1,4 @@
-{
-    "title": "Installing Postgres",
-    "draft": false
-}
-
-<!-- start -->
+# Installing Postgres
 
 Make sure Postgres is installed and running before you proceed any further.
 

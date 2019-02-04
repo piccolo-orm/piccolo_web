@@ -1,10 +1,4 @@
-{
-    "title": "Should I use Python instead of Golang or Node?",
-    "postedOn": "2018-10-05",
-    "draft": false
-}
-
-<!-- start -->
+# Should I use Python instead of Golang or Node?
 
 In recent years the go-to solution for high performance web services has been Node JS or Golang.
 

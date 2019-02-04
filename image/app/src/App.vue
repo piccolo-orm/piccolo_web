@@ -16,6 +16,15 @@ export default {
         PermissionPopup,
         MainNav
     },
+    watch: {
+        $route: function (route) {
+            // Reset default title and description.
+            this.$seo.updateTags({
+                title: 'Piccolo ORM',
+                description: "A fast, async ORM for Python, that's easy to learn."
+            })
+        }
+    }
 }
 </script>
 

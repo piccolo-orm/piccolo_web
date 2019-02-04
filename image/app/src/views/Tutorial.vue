@@ -1,18 +1,20 @@
 <template>
-    <TutorialBase>
-        <template v-if="!tutorialName">
-            <div class="html">
-                <h1>Tutorials</h1>
-                <p>Welcome to the Piccolo tutorials. Select a tutorial from the menu to get started.</p>
-            </div>
-        </template>
-        <template v-else>
-            <div class="html" v-html="html"></div>
-            <p class="edit"><a href="https://github.com/piccolo-orm/piccolo_web/tree/master/image/app/md">Edit on Github</a></p>
-            <div class="nav_padding"></div>
-            <TutorialNav></TutorialNav>
-        </template>
-    </TutorialBase>
+    <div v-if="tutorialsLoaded">
+        <TutorialBase>
+            <template v-if="!tutorialName">
+                <div class="html">
+                    <h1>Tutorials</h1>
+                    <p>Welcome to the Piccolo tutorials. Select a tutorial from the menu to get started.</p>
+                </div>
+            </template>
+            <template v-else>
+                <div class="html" v-html="html"></div>
+                <p class="edit"><a href="https://github.com/piccolo-orm/piccolo_web/tree/master/image/app/content/md">Edit on Github</a></p>
+                <div class="nav_padding"></div>
+                <TutorialNav></TutorialNav>
+            </template>
+        </TutorialBase>
+    </div>
 </template>
 
 
@@ -43,6 +45,9 @@ export default {
         }
     },
     computed: {
+        tutorialsLoaded: function() {
+            return this.$store.state.tutorialsLoaded
+        },
         tutorials: function() {
             return this.$store.state.tutorials
         },
@@ -92,17 +97,24 @@ export default {
                 app.html = response.data
                 app.scrollToTop()
             })
+            this.$seo.updateTags({
+                title: `Piccolo ORM Tutorials | ${this.activeTutorial.title} - ${this.activeTutorialStep.title}`,
+                description: '123'
+            })
         }
     },
     watch: {
         stepName: function(value) {
             this.updateActiveTutorial()
             this.loadHTML()
+        },
+        tutorialsLoaded: function(value) {
+            this.updateActiveTutorial()
+            this.loadHTML()
         }
     },
-    mounted: function() {
-        this.updateActiveTutorial()
-        this.loadHTML()
-    },
+    created: async function() {
+        await this.$store.dispatch('fetchTutorialList')
+    }
 }
 </script>
