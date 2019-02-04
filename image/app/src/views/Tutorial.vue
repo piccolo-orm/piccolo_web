@@ -99,7 +99,7 @@ export default {
             })
             this.$seo.updateTags({
                 title: `Piccolo ORM Tutorials | ${this.activeTutorial.title} - ${this.activeTutorialStep.title}`,
-                description: '123'
+                description: this.activeTutorialStep.description
             })
         }
     },
