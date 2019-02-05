@@ -6,7 +6,7 @@ There are various approaches to the problem. I'll outline the pros and cons belo
 
 ## Django
 
-[Django](https://www.djangoproject.com/) is batteries included. The core Django package contains a bunch of extensions already - just take a look in the [contrib folder](https://github.com/django/django/tree/066f26fe8b98609726f7962c21de7233afb4ff7e/django/contrib).
+[Django](https://www.djangoproject.com/) is batteries included. The core Django package contains a bunch of extensions already - just take a look in the [contrib folder](https://github.com/django/django/tree/066f26fe8b98609726f7962c21de7233afb4ff7e/django/contrib). The advantage of this is you know that all of the extensions bundled with the app will work correctly (when extensions are distributed separately you can potentially get incompatible versions).
 
 Django also allows you to extend it in various ways by installing third party extensions. Enabling these extensions happens in a central settings.py file, which configures everything about your Django project.
 
