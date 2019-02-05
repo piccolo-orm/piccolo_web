@@ -16,8 +16,5 @@ export default {
         HomeContent,
         MainFooter
     },
-    mounted: function() {
-        Prism.highlightAll()
-    }
 };
 </script>

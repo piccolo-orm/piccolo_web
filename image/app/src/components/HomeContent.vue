@@ -16,29 +16,15 @@
         </div>
     </div>
 
-    <section class="example" v-for="example in examples" v-bind:key="example[0]">
-        <div class="center_wrapper">
-            <h1>{{ example[0] }}</h1>
-            <pre><code class="language-python" v-html="example[1]"></code></pre>
-        </div>
-    </section>
+    <div id="examples">
+         <div class="center_wrapper" v-html="examplesHTML"></div>
+    </div>
 
     <div class="neutral">
         <div class="center_wrapper">
             <h1>Getting started</h1>
 
-            <h2>Installation</h2>
-
-            <pre><code class="language-bash">pip install piccolo</code></pre>
-
-            <h2>Quick start tutorial</h2>
-
             <p><router-link to="tutorial">Learn the basics in 5 minutes.</router-link></p>
-
-            <!-- <ul>
-                <li>Documentation</li>
-                <li>Discuss</li>
-            </ul> -->
         </div>
     </div>
 
@@ -47,25 +33,7 @@
 
 
 <script>
-
-const selectExample = `await Band.select.columns(
-    Band.name
-).where(
-    Band.popularity > 100
-).run()`
-
-const joinExample = `await Band.select.columns(
-    Band.name,
-    Band.manager.name
-).run()`
-
-const deleteExample = `await Band.delete.where(
-    Band.band_members == 0 | Band.manager.status == 'disabled'
-).run()`
-
-const updateExample = `await Band.update(band_members=5).where(
-    Band.name == 'Pythonistas'
-).run()`
+import axios from 'axios'
 
 export default {
     name: 'HelloWorld',
@@ -74,26 +42,17 @@ export default {
     },
     data: function() {
         return {
-            examples: [
-                [
-                    'Select',
-                    selectExample
-                ],
-                [
-                    'Join',
-                    joinExample
-                ],
-                [
-                    'Delete',
-                    deleteExample
-                ],
-                [
-                    'Update',
-                    updateExample
-                ]
-            ]
+            examplesHTML: ''
         }
     },
+    created: function() {
+        let app = this
+        axios.get(
+            '/html/examples/home_examples.html'
+        ).then(function(response) {
+            app.examplesHTML = response.data
+        })
+    }
 }
 </script>
 
@@ -135,13 +94,18 @@ div.neutral {
     }
 }
 
-section {
+div#examples {
     background-color: #dadada;
     padding: 1rem;
     box-sizing: border-box;
 
     h1 {
         color: rgba(0,0,0,0.4);
+        font-size: 1.5rem;
+    }
+
+    code {
+        margin-bottom: 3rem;
     }
 }
 

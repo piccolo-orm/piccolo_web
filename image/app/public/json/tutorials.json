@@ -7,19 +7,19 @@
         "title": "Installing Piccolo",
         "src": "1_getting_started/1_installing_piccolo.html",
         "slug": "installing-piccolo",
-        "description": "How to install the Piccolo ORM."
+        "description": "How to install Piccolo."
       },
       {
         "title": "Setting up Postgres",
         "src": "1_getting_started/2_setting_up_postgres.html",
         "slug": "setting-up-postgres",
-        "description": "How to set up Postgres, and which versions are supported by the Piccolo ORM."
+        "description": "How to set up Postgres."
       },
       {
         "title": "Playground",
         "src": "1_getting_started/3_playground.html",
         "slug": "playground",
-        "description": "How to install the playground to learn the Piccolo ORM."
+        "description": "How to install the playground to learn Piccolo."
       },
       {
         "title": "Sync vs Async",
