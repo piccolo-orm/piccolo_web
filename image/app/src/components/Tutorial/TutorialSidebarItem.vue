@@ -49,7 +49,10 @@ export default {
                 200
             )
         }
-    }
+    },
+    created: function() {
+        this.visible = (this.activeTutorial == this.tutorial)
+    },
 }
 </script>
 
