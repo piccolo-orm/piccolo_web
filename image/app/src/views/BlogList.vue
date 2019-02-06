@@ -36,7 +36,7 @@ export default {
         }
         this.$seo.updateTags({
             title: `Piccolo ORM Blog`,
-            description: '123'
+            description: 'Articles about Python, asyncio, databases, the Piccolo ORM, and general development.'
         })
     }
 }
