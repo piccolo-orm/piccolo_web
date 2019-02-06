@@ -111,7 +111,7 @@ if t.TYPE_CHECKING:
 
 
 # type annotations can also be used on variables
-budgies: [Budgie] = []
+budgies: t.List[Budgie] = []
 
 ```
 
