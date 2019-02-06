@@ -15,8 +15,7 @@ RUN npm install
 
 ADD app/src /app/src
 ADD app/public /app/public
-
-ADD app/md /app/md
+ADD app/content /app/content
 
 ADD app/babel.config.js /app/
 ADD app/gulpfile.js /app/
