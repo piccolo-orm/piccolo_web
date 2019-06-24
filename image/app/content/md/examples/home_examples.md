@@ -28,7 +28,7 @@ await Band.delete.where(
 # Update
 
 ```python
-await Band.update(band_members=5).where(
+await Band.update({Band.members: 5}).where(
     Band.name == 'Pythonistas'
 ).run()
 ```
