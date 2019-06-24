@@ -14,7 +14,7 @@ Band.objects.run_sync()
 Band.objects.where(Band.name == 'Pythonistas').run_sync()
 
 # Get the first row
-Band.objects.first().run_sync()
+Band.objects.first.run_sync()
 ```
 
 You'll notice that the API is similar to `select` - except it returns all columns.
@@ -27,7 +27,7 @@ Objects have a save method, which is convenient for updating values:
 # To get certain rows:
 pythonistas = Band.objects.where(
     Band.name == 'Pythonistas'
-).first().run_sync()
+).first.run_sync()
 
 pythonistas.popularity = 100000
 pythonistas.save().run_sync()
