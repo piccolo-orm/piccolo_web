@@ -15,7 +15,21 @@ It's a nice place to experiment with querying / inserting / deleting data using 
 
 <em>Each time you launch the playground it flushes out the existing tables and rebuilds them, so don't use it for anything permanent!</em>
 
-## Create database
+## SQLite
+
+SQLite is used by default, which provides a zero config way of getting started.
+
+A piccolo.sqlite file will get created in the current directory.
+
+## Postgres
+
+If you want to use Postgres instead, you need to create a database first and specify the database flag:
+
+```bash
+piccolo playground --engine=postgres
+```
+
+### Create database
 
 By default the playground expects a local database to exist with the following credentials:
 
@@ -56,7 +70,7 @@ For example, rather than using strings to specify columns, we always refer to th
 # We use this:
 Band.select.columns(Band.name).run_sync()
 
-# Instead of this:
+# Instead of something like this:
 Band.select.columns('name').run_sync()
 ```
 

@@ -30,5 +30,5 @@ pythonistas = Band.objects.where(
 ).first.run_sync()
 
 pythonistas.popularity = 100000
-pythonistas.save().run_sync()
+pythonistas.save.run_sync()
 ```
