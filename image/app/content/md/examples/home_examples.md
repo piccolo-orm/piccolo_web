@@ -31,8 +31,11 @@ await Band.delete.where(
 await Band.update.values({Band.members: 5}).where(
     Band.name == 'Pythonistas'
 ).run()
+```
 
-# Or, alternatively:
+Or, alternatively:
+
+```python
 await band = Band.select.where(Band.name == 'Pythonistas').first.run()
 band.members = 5
 await band.save.run()
