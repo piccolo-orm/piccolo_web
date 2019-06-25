@@ -10,16 +10,16 @@
         "description": "How to install Piccolo."
       },
       {
-        "title": "Setting up Postgres",
-        "src": "1_getting_started/2_setting_up_postgres.html",
-        "slug": "setting-up-postgres",
-        "description": "How to set up Postgres."
-      },
-      {
         "title": "Playground",
         "src": "1_getting_started/3_playground.html",
         "slug": "playground",
         "description": "How to install the playground to learn Piccolo."
+      },
+      {
+        "title": "Setting up Postgres",
+        "src": "1_getting_started/2_setting_up_postgres.html",
+        "slug": "setting-up-postgres",
+        "description": "How to set up Postgres."
       },
       {
         "title": "Sync vs Async",

@@ -43,10 +43,10 @@
     <loc>https://piccolo-orm.com/tutorial/getting-started/installing-piccolo/</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm.com/tutorial/getting-started/setting-up-postgres/</loc>
+    <loc>https://piccolo-orm.com/tutorial/getting-started/playground/</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm.com/tutorial/getting-started/playground/</loc>
+    <loc>https://piccolo-orm.com/tutorial/getting-started/setting-up-postgres/</loc>
   </url>
   <url>
     <loc>https://piccolo-orm.com/tutorial/getting-started/sync-vs-async/</loc>

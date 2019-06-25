@@ -29,6 +29,10 @@ If you want to use Postgres instead, you need to create a database first and spe
 piccolo playground --engine=postgres
 ```
 
+### Setting up Postgres
+
+See the [setting up Postgres tutorial](/tutorial/getting-started/setting-up-postgres/).
+
 ### Create database
 
 By default the playground expects a local database to exist with the following credentials:

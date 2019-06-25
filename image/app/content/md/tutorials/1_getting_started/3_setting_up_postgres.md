@@ -1,7 +1,5 @@
 # Installing Postgres
 
-Make sure Postgres is installed and running before you proceed any further.
-
 ## Mac, Ubuntu, Windows
 
 The quickest way to get Postgres up and running on the Mac is using [Postgres.app](https://postgresapp.com/).
@@ -16,4 +14,4 @@ Piccolo is currently tested against Postgres 9.6, 10.6, and 11.1 so it's recomme
 
 ## What about other databases?
 
-At the moment the focus is on providing the best Postgres experience possible. Other databases may be supported in the future.
+At the moment the focus is on providing the best Postgres experience possible, along with some SQLite support. Other databases may be supported in the future.
