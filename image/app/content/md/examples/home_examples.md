@@ -36,7 +36,7 @@ await Band.update.values({Band.members: 5}).where(
 Or, alternatively:
 
 ```python
-await band = Band.select.where(Band.name == 'Pythonistas').first.run()
+band = await Band.select.where(Band.name == 'Pythonistas').first.run()
 band.members = 5
 await band.save.run()
 ```
