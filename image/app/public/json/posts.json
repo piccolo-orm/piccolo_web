@@ -1,5 +1,12 @@
 [
   {
+    "title": "Improving tab completion in Python",
+    "slug": "improving-tab-completion-in-python",
+    "src": "improving_tab_completion_in_python.html",
+    "postedOn": "2019-07-22",
+    "description": "How to optimise your Python code to support tab completion."
+  },
+  {
     "title": "ORM design challenges",
     "slug": "orm-design-challenges",
     "src": "orm_design_challenges.html",
