@@ -67,6 +67,10 @@ export default {
 div.blog_single {
     padding-top: 4rem;
 
+    a {
+        text-decoration: none;
+    }
+
     h1 {
         margin-bottom: 0;
     }

@@ -4,7 +4,7 @@ One of the main design goals for [Piccolo](https://github.com/piccolo-orm/piccol
 
 Tab completion helps developers write code faster, with fewer errors. This is particularly useful with ORMs, where typos could create some unexpected SQL queries.
 
-There are two tools which I rely on heavily each day, and they are [iPython](https://github.com/ipython/ipython) and [VSCode](https://code.visualstudio.com/). Both of them support tab completion, and use the Jedi library under the hood.
+There are two tools which I rely on heavily each day, and they are [iPython](https://github.com/ipython/ipython) and [VSCode](https://code.visualstudio.com/). Both of them support tab completion, and use the [Jedi](https://github.com/davidhalter/jedi) library under the hood.
 
 The main use cases I wanted to support with tab completion were:
 
