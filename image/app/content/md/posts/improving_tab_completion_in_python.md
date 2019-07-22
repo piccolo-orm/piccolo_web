@@ -1,10 +1,10 @@
 # Improving tab completion in Python
 
-One of the main design goals for Piccolo is to support tab completion as fully as possible.
+One of the main design goals for [Piccolo](https://github.com/piccolo-orm/piccolo) is to support tab completion as fully as possible.
 
 Tab completion helps developers write code faster, with fewer errors. This is particularly useful with ORMs, where typos could create some unexpected SQL queries.
 
-There are two tools which I rely on heavily each day, and they are iPython and VSCode. Both of them support tab completion, and use the Jedi library under the hood.
+There are two tools which I rely on heavily each day, and they are [iPython](https://github.com/ipython/ipython) and [VSCode](https://code.visualstudio.com/). Both of them support tab completion, and use the Jedi library under the hood.
 
 The main use cases I wanted to support with tab completion were:
 
@@ -127,9 +127,9 @@ hello_world.__name__
 >>> 'hello_world'
 ```
 
-If tab completion is a high priority, keep decorators simple and make sure you use `wraps`. The `wraps` function copies some important attributes from the wrapped function to the decorator (including `__name__`, `__annotations__`, `__doc__`).
+If tab completion is a high priority, keep decorators simple and make sure you use `wraps`. The `wraps` function copies some important attributes from the wrapped function to the decorator (including `__name__`, `__annotations__`, and `__doc__`).
 
-Making decorators accurately reflect the child function is a surprisingly deep subject. This is a great [article](http://blog.dscpl.com.au/2014/01/how-you-implemented-your-python.html) on the subject, which is part of an entire series of [articles](https://github.com/GrahamDumpleton/wrapt/tree/develop/blog).
+Making decorators accurately reflect the wrapped function is a surprisingly deep subject. This is a great [article](http://blog.dscpl.com.au/2014/01/how-you-implemented-your-python.html) on the subject, which is part of an entire series of [articles](https://github.com/GrahamDumpleton/wrapt/tree/develop/blog).
 
 ## Some setattr magic
 
