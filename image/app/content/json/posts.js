@@ -1,8 +1,8 @@
 module.exports = [
     {
-        "title": "Improving tab completion in Python",
-        "slug": "improving-tab-completion-in-python",
-        "src": "improving_tab_completion_in_python.html",
+        "title": "Improving tab completion in Python Libraries",
+        "slug": "improving-tab-completion-in-python-libraries",
+        "src": "improving_tab_completion_in_python_libraries.html",
         "postedOn": "2019-07-22",
         "description": "How to optimise your Python code to support tab completion."
     },

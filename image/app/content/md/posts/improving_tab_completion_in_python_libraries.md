@@ -1,4 +1,4 @@
-# Improving tab completion in Python
+# Improving tab completion in Python libraries
 
 One of the main design goals for [Piccolo](https://github.com/piccolo-orm/piccolo) is to support tab completion as fully as possible.
 
@@ -6,7 +6,7 @@ Tab completion helps developers write code faster, with fewer errors. This is pa
 
 There are two tools which I rely on heavily each day, and they are [iPython](https://github.com/ipython/ipython) and [VSCode](https://code.visualstudio.com/). Both of them support tab completion, and use the [Jedi](https://github.com/davidhalter/jedi) library under the hood.
 
-The main use cases I wanted to support with tab completion were:
+The main use cases I want to support with tab completion are:
 
  1. Being able to see all available methods on a table, for example: `MyTable.select`, `MyTable.select.first`, `MyTable.delete`, and many more.
  1. Being able to navigate through foreign key relationships, for example: `Band.manager.name`, where `manager` is a foreign key to a Manager table, and `name` is a column.
@@ -15,7 +15,7 @@ Jedi is very powerful, but it can't perform miracles. If we write our code intel
 
 ## Add type hints
 
-Jedi understands all sorts of type hints. As well as the native type hints introduced in PEP 484, Jedi can also understand type hints within docstrings.
+Jedi understands all sorts of type hints. As well as the native type hints introduced in [PEP 484](https://www.python.org/dev/peps/pep-0484/), Jedi can also understand type hints within docstrings.
 
 I use native type hints throughout Piccolo. The most important type hint, for the purposes of tab completion, is the return type of functions and methods.
 
