@@ -1,5 +1,12 @@
 module.exports = [
     {
+        "title": "Should I use Python properties?",
+        "slug": "should-i-use-python-properties",
+        "src": "should_i_use_python_properties.html",
+        "postedOn": "2019-08-8",
+        "description": "When to use Python properties, and when the avoid them."
+    },
+    {
         "title": "Improving tab completion in Python libraries",
         "slug": "improving-tab-completion-in-python-libraries",
         "src": "improving_tab_completion_in_python_libraries.html",
