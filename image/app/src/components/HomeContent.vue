@@ -24,7 +24,7 @@
         <div class="center_wrapper">
             <h1>Getting started</h1>
 
-            <p><router-link to="tutorial">Learn the basics in 5 minutes.</router-link></p>
+            <p><a href="https://piccolo-orm.readthedocs.io/en/latest/">Read the docs</a>, and learn the basics in 5 minutes.</p>
         </div>
     </div>
 

@@ -46,42 +46,6 @@
     <loc>https://piccolo-orm.com/blog/why-is-an-event-loop-useful/</loc>
   </url>
   <url>
-    <loc>https://piccolo-orm.com/tutorial/getting-started/installing-piccolo/</loc>
-  </url>
-  <url>
-    <loc>https://piccolo-orm.com/tutorial/getting-started/playground/</loc>
-  </url>
-  <url>
-    <loc>https://piccolo-orm.com/tutorial/getting-started/setting-up-postgres/</loc>
-  </url>
-  <url>
-    <loc>https://piccolo-orm.com/tutorial/getting-started/sync-vs-async/</loc>
-  </url>
-  <url>
-    <loc>https://piccolo-orm.com/tutorial/querying/select/</loc>
-  </url>
-  <url>
-    <loc>https://piccolo-orm.com/tutorial/querying/objects/</loc>
-  </url>
-  <url>
-    <loc>https://piccolo-orm.com/tutorial/querying/raw/</loc>
-  </url>
-  <url>
-    <loc>https://piccolo-orm.com/tutorial/querying/delete/</loc>
-  </url>
-  <url>
-    <loc>https://piccolo-orm.com/tutorial/querying/insert/</loc>
-  </url>
-  <url>
-    <loc>https://piccolo-orm.com/tutorial/querying/update/</loc>
-  </url>
-  <url>
-    <loc>https://piccolo-orm.com/tutorial/schema/creating/</loc>
-  </url>
-  <url>
-    <loc>https://piccolo-orm.com/tutorial/migrations/create/</loc>
-  </url>
-  <url>
-    <loc>https://piccolo-orm.com/tutorial/extras/user/</loc>
+    <loc>https://piccolo-orm.com/tutorial/getting-started/documentation/</loc>
   </url>
 </urlset>

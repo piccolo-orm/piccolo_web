@@ -21,7 +21,7 @@ await Band.select.columns(
 
 ```python
 await Band.delete.where(
-    Band.band_members == 0 | Band.manager.status == 'disabled'
+    (Band.band_members == 0) | (Band.manager.status == 'disabled')
 ).run()
 ```
 
@@ -36,7 +36,7 @@ await Band.update.values({Band.members: 5}).where(
 Or, alternatively:
 
 ```python
-band = await Band.select.where(Band.name == 'Pythonistas').first.run()
+band = await Band.select.where(Band.name == 'Pythonistas').first().run()
 band.members = 5
-await band.save.run()
+await band.save().run()
 ```
