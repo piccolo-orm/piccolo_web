@@ -102,3 +102,7 @@ select = Select().where(some_query).first().run()
 ```
 
 Sure, it takes a couple more key strokes, but sometimes consistency is king.
+
+And lastly, perhaps the main way properties can be abused is if a really heavy piece of computation, or a long network request, is done to generate the response. A developer could unexpectedly cripple their app's performance by calling an innocent looking property too many times.
+
+So in conclusion, properties can be great - but consider if you really need them, and if so keep them simple.
