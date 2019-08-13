@@ -1,5 +1,7 @@
 # Introduction to ASGI
 
+***NOTE: UPDATED FOR ASGI 3.0***
+
 In order to make full use of Piccolo in a web application, you'll need to use it with an async routing framework.
 
 There are a few options, including [Sanic](https://github.com/huge-success/sanic), [Quart](https://gitlab.com/pgjones/quart), and [Starlette](https://github.com/encode/starlette).
@@ -14,14 +16,12 @@ To solve this problem, [ASGI](https://asgi.readthedocs.io/en/latest/) (Asynchron
 
 ## ASGI App
 
-An ASGI application is a double callable. This double callable can be implemented how you like, but here's one example.
+An ASGI application is just a callable, which accepts three arguments - `scope`, `receive`, and `send`.
 
 ```python
 class ASGIApp():
-    def __init__(self, scope):
-        self.scope = scope
 
-    async def __call__(self, receive, send):
+    async def __call__(self, scope, receive, send):
         message = await receive()
         await send({
             "type": "http.response.start",
@@ -33,32 +33,44 @@ class ASGIApp():
             'body': bytes('hello world', 'utf-8')
         })
 
-app = ASGIApp
+app = ASGIApp()
 ```
 
-The first callable accepts a scope argument, which tells the ASGI app about the connection. For a HTTP connection, this will include things like headers, the path, query parameters etc.
+The scope argument tells the ASGI app about the connection. For a HTTP connection, this will include things like headers, the path, query parameters etc.
 
-The second callable acccepts receive and send arguments, which is how the ASGI app receives/sends data.
+The receive and send arguments are how the ASGI app receives/sends data.
 
-A double callable sounds fancy, but all it means is the ASGI server can call your application like this:
+Declaring your ASGI app as a class allows you to configure it using a constructor. If you don't need to configure your app, you can declare it as a function instead.
 
 ```python
-asgi = app(scope)
-await asgi(receive, send)
+async def app(scope, receive, send):
+    message = await receive()
+    await send({
+        "type": "http.response.start",
+        "status": 200,
+        "headers": []
+    })
+    await send({
+        'type': 'http.response.body',
+        'body': bytes('hello world', 'utf-8')
+    })
 ```
 
 ## ASGI Middleware
 
-Middleware modifies the scope passed to ASGI apps, or can do things like return a 403 error if no auth token if provided.
+Middleware modifies the scope passed to ASGI apps, or can do things like return a 403 error if no auth token is provided.
 
 ```python
 class ASGIMiddleware():
     def __init__(self, asgi_app):
         self.asgi_app = asgi_app
 
-    def __call__(self, scope):
-        scope['some_param'] = True
-        return self.asgi_app(scope)
+    async def __call__(self, scope, send, receive):
+        # We have to copy the scope before modifying it to prevent changes
+        # from leaking upstream:
+        new_scope = dict(scope)
+        new_scope['some_param'] = True
+        await self.asgi_app(new_scope, send, receive)
 
 app = ASGIMiddleware(ASGIApp)
 
@@ -86,7 +98,7 @@ hypercorn --uvloop --reload --b localhost:8000 views:app
 
 Quart and Starlette already support ASGI.
 
-In a recent episode of [Talk Python to Me](https://talkpython.fm/episodes/show/188/async-for-the-pythonic-web-with-sanic), a Sanic maintainer mentioned that they plan to support ASGI, so expect that soon.
+Sanic can now run under a ASGI server.
 
 Django Channels is another ASGI framework, which brings asynchronous capabilities (web sockets, HTTP2) to Django. The author of Django Channels, Andrew Godwin, was also the author of the ASGI spec.
 
