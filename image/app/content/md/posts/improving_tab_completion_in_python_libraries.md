@@ -8,7 +8,7 @@ There are two tools which I rely on heavily each day, and they are [iPython](htt
 
 The main use cases I want to support with tab completion are:
 
- 1. Being able to see all available methods on a table, for example: `MyTable.select`, `MyTable.select.first`, `MyTable.delete`, and many more.
+ 1. Being able to see all available methods on a table, for example: `MyTable.select()`, `MyTable.select().first()`, `MyTable.delete()`, and many more.
  1. Being able to navigate through foreign key relationships, for example: `Band.manager.name`, where `manager` is a foreign key to a Manager table, and `name` is a column.
 
 Jedi is very powerful, but it can't perform miracles. If we write our code intelligently, we can get the best possible tab completion experience for the user.
@@ -29,7 +29,7 @@ The reason this so useful, is a tool like Jedi can easily infer the return type,
 
 ```python
 # We can continue using tab completion even after a method call:
-Band.select.where(Band.name == 'Radiohead').first.run_sync()
+Band.select().where(Band.name == 'Radiohead').first().run_sync()
 ```
 
 ## Mixins can be problematic
