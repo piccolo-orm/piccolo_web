@@ -1,5 +1,12 @@
 [
   {
+    "title": "Namespacing Python Attributes",
+    "slug": "namespacing-python-attributes",
+    "src": "namespacing_python_attributes.html",
+    "postedOn": "2019-09-10",
+    "description": "Looking at different ways to namespace attributes in Python classes."
+  },
+  {
     "title": "Should I use Python properties?",
     "slug": "should-i-use-python-properties",
     "src": "should_i_use_python_properties.html",

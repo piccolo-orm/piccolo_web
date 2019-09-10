@@ -1,4 +1,4 @@
-# Namespacing Python class attributes
+# Namespacing Python attributes
 
 When you have large classes, it can be useful to namespace some of the attributes.
 
@@ -43,7 +43,7 @@ It's useful for libraries which provide base classes which are meant to be subcl
 
 It's very cool, but you don't see it used often, most likely because it's not widely known about.
 
-Note, it only works if the attribute name has less than trailing one underscore, so prevent issues with magic methods, which use a double underscore prefix and postfix.
+Note, it only works if the attribute name has less than one trailing underscore, so prevent issues with magic methods, which use a double underscore prefix and postfix.
 
 ## Magic methods
 
@@ -64,14 +64,14 @@ In some libraries you'll see this:
 class Table():
 
     class Meta():
-        tablename = 'hello world'
+        tablename = 'awesome_table'
 ```
 
 If we'd done this instead:
 
 ```python
 class Table():
-    tablename = 'hello world'
+    tablename = 'awesome_table'
 ```
 
 It means the user can't subclass `Table`, and define their own tablename variable without breaking the library in some way.
@@ -82,7 +82,7 @@ class MyTable(Table):
     tablename = CharField()
 
     class Meta():
-        tablename = 'hello world'
+        tablename = 'awesome_table'
 ```
 
 But what's actually going on when we define classes inside classes? There's actually nothing weird about this in Python - it's just like declaring any other attribute.
@@ -104,7 +104,7 @@ class MyTable(Table):
     tablename = CharField()
 
     meta = {
-        tablename = 'hello world'
+        tablename = 'awesome_table'
     }
 ```
 
@@ -116,7 +116,7 @@ Finally, we can just prefix our attributes with an identifier.
 
 ```python
 class MyTable(Table):
-    piccolo_tablename = 'hello world'
+    piccolo_tablename = 'awesome_table'
 
 ```
 
