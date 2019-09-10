@@ -9,7 +9,7 @@ In Column, there's a bunch of different attributes which we'd like to differenti
  * Private vs public
  * Library vs user created
 
- By namespacing our attributes, it makes the intention of the software clearer, and also halps prevent name collisions, which could result in unexpected behaviour.
+By namespacing our attributes, it makes the intention of the software clearer, and also helps prevent name collisions, which could result in unexpected behaviour.
 
 ## _ prefix (private)
 
@@ -43,7 +43,7 @@ It's useful for libraries which provide base classes which are meant to be subcl
 
 It's very cool, but you don't see it used often, most likely because it's not widely known about.
 
-Note, it only works if the attribute name has less than one trailing underscore, so prevent issues with magic methods, which use a double underscore prefix and postfix.
+Note, it only works if the attribute name has less than one trailing underscore, to avoid confusion with magic methods (see below).
 
 ## Magic methods
 
@@ -53,7 +53,7 @@ It allows Python to implement functionality transparently, without adding additi
 
 For example, calling an object just calls it's `__call__` method. Instantiating an object just calls its `__init__` method.
 
-It's tempting for library authors to use this dunder syntax for their own variables but it's not ideal. The magic methods are how Python implements some important functionality, and what if they add a new magic method in the future, which clashes with your own variable? It's unlikely, but best to be safe. Consider the dunder namespace to be just for the Python runtime.
+It's tempting for library authors to use this dunder syntax for their own variables but it's not recommended. The magic methods are how Python implements some important functionality, and what if they add a new magic method in the future, which clashes with your own variable? It's unlikely, but best to be safe. Consider the dunder namespace to be just for the Python runtime.
 
 ## Nested classes
 
@@ -87,13 +87,32 @@ class MyTable(Table):
 
 But what's actually going on when we define classes inside classes? There's actually nothing weird about this in Python - it's just like declaring any other attribute.
 
-We also access them as you'd expect - `MyTable.Meta.tablename` or `MyTable().Meta.tablename`.
-
-Lets call this technique 'inner classing'.
+We access them as you'd expect - `MyTable.Meta.tablename` or `MyTable().Meta.tablename`.
 
 One advantage of this approach, is as it's generally just used in libraries, it's unlikely a user would want to define a Meta attribute of their own, which avoids a naming collision.
 
-A disadvantage is the inner class can't access attributes in the outer class (for example, inside a method). In theory you can do some metaclass magic to bind a reference to the outer class in the inner class, but this is seriously advanced / dubious jank.
+A disadvantage is the inner class can't access attributes in the outer class (for example, inside a method). In theory you can do some metaclass magic to bind a reference to the outer class in the inner class, but this is seriously advanced / dubious jank. Also, nested classes can seem a bit strange to users at first, who might be confused by it.
+
+### Inheritance
+
+We can use inheritance on the nested class, which is quite interesting:
+
+```python
+class Table():
+    class Meta():
+        foo = 1
+
+
+class MyTable(Table):
+
+    class Meta(Table.Meta):
+        bar = 2
+
+MyTable().Meta.foo
+>>> 1
+MyTable().Meta.bar
+>>> 2
+```
 
 ## Dictionaries
 
@@ -112,7 +131,7 @@ Which works fine if you just want some simple values. Classes allow you to names
 
 ## Naming conventions
 
-Finally, we can just prefix our attributes with an identifier.
+Finally, we can just prefix our attributes with an identifier, in this case `piccolo_`:
 
 ```python
 class MyTable(Table):
@@ -120,8 +139,6 @@ class MyTable(Table):
 
 ```
 
-This works fine, but is more fragile than the other solutions.
-
 ## Conclusions
 
-We've looked at a few different solutions for namespacing attributes. In Piccolo most of these approaches are used.
+We've looked at a few different solutions for namespacing attributes. In an ideal world, our classes are simple enough to not need any of these techniques, but in larger libraries like Piccolo it can lead to more understandable and robust code.
