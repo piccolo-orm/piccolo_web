@@ -7,6 +7,20 @@ module.exports = [
         "description": "Looking at different ways to namespace attributes in Python classes."
     },
     {
+        "title": "Cross Site Request Forgery",
+        "slug": "understanding-cross-site-request-forgery.md",
+        "src": "understanding_cross_site_request_forgery.html",
+        "postedOn": "2019-08-10",
+        "description": "What is Cross Site Request Forgery (CSRF), and how to prevent it."
+    },
+    {
+        "title": "Understanding JWT and Sessions",
+        "slug": "understanding-jwt-and-sessions",
+        "src": "understanding_jwt_and_sessions.html",
+        "postedOn": "2019-08-10",
+        "description": "The pros and cons of JWT and sessions, and when to use them."
+    },
+    {
         "title": "Should I use Python properties?",
         "slug": "should-i-use-python-properties",
         "src": "should_i_use_python_properties.html",
