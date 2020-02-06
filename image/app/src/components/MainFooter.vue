@@ -1,21 +1,28 @@
 <template>
-<div class="footer_padding">
-    <footer>
-        <p>Copyright <a href="https://dantownsend.co.uk/">Daniel Townsend</a>, 2019</p>
-        <ul>
-            <li><router-link to="privacy">Privacy Policy</router-link></li>
-        </ul>
-    </footer>
-</div>
+    <div class="footer_padding">
+        <footer>
+            <p>
+                Copyright
+                <a href="https://dantownsend.co.uk/">Daniel Townsend</a>, 2019
+            </p>
+            <ul>
+                <li>
+                    <router-link to="privacy">Privacy Policy</router-link>
+                </li>
+            </ul>
+        </footer>
+    </div>
 </template>
 
 
 <style lang="less">
+@import "../variables.less";
+
 div.footer_padding {
     height: 18rem;
 
     footer {
-        background-color: black;
+        background-color: @light_blue;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -23,7 +30,8 @@ div.footer_padding {
 
         a {
             color: white;
-            text-decoration: underline;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         p {

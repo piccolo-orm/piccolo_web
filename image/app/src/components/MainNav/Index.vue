@@ -2,25 +2,34 @@
     <nav>
         <div class="inner">
             <div class="burger_wrapper">
-                <a href="#" v-on:click.prevent="burgerVisible = burgerVisible ? false : true">
+                <a
+                    href="#"
+                    v-on:click.prevent="burgerVisible = burgerVisible ? false : true"
+                >
                     <BurgerIcon v-bind:active="burgerVisible" />
                 </a>
-                <LinkList v-if="burgerVisible" v-on:navigating="burgerVisible = false" />
+                <LinkList
+                    v-if="burgerVisible"
+                    v-on:navigating="burgerVisible = false"
+                />
             </div>
             <h1>
                 <router-link to="/">Piccolo</router-link>
             </h1>
             <div class="link_wrapper">
-                <LinkList/>
+                <LinkList />
             </div>
         </div>
-        <div class="overlay" v-if="burgerVisible"></div>
+        <div
+            class="overlay"
+            v-if="burgerVisible"
+        ></div>
     </nav>
 </template>
 
 <script>
-import BurgerIcon from './BurgerIcon.vue'
-import LinkList from './LinkList.vue'
+import BurgerIcon from "./BurgerIcon.vue"
+import LinkList from "./LinkList.vue"
 
 export default {
     components: {
@@ -40,7 +49,7 @@ export default {
 @overlay_color: lighten(black, 10%);
 
 nav {
-    background-color: black;
+    background-color: @light_blue;
     color: white;
     position: fixed;
     z-index: 1000;
@@ -52,7 +61,7 @@ nav {
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: @overlay_color;
+        background-color: @light_blue;
     }
 
     div.inner {
@@ -68,21 +77,21 @@ nav {
         margin: 0;
         padding: 1rem 1.5rem;
 
-        @media(max-width: @mobile_width) {
+        @media (max-width: @mobile_width) {
             text-align: center;
             padding-right: 4rem;
         }
 
         a {
-          color: white;
-          text-decoration: none;
+            color: white;
+            text-decoration: none;
         }
     }
 
     div.burger_wrapper {
         flex-grow: 0;
 
-        @media(min-width: @mobile_width) {
+        @media (min-width: @mobile_width) {
             display: none;
         }
 
@@ -92,7 +101,7 @@ nav {
         }
 
         ul.links {
-            background-color: @overlay_color;
+            background-color: @light_blue;
             position: absolute;
             margin: 0;
             top: 100%;
@@ -111,7 +120,7 @@ nav {
                     text-decoration: none;
 
                     &:hover {
-                        background-color: rgba(255,255,255, 0.05)
+                        background-color: rgba(255, 255, 255, 0.05);
                     }
                 }
             }
@@ -121,7 +130,7 @@ nav {
     div.link_wrapper {
         flex-grow: 0;
 
-        @media(max-width: @mobile_width) {
+        @media (max-width: @mobile_width) {
             display: none;
         }
 
@@ -144,5 +153,4 @@ nav {
         }
     }
 }
-
 </style>

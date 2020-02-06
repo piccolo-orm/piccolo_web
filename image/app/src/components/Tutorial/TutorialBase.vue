@@ -4,7 +4,7 @@
         <aside v-bind:class="{hidden: hiddenSidebar}">
             <TutorialSidebar v-on:hideSidebar="hideSidebar()" />
         </aside>
-        <div class=main_column>
+        <div class="main_column">
             <slot></slot>
         </div>
     </div>
@@ -12,8 +12,8 @@
 
 
 <script>
-import TutorialSidebar from '@/components/Tutorial/TutorialSidebar.vue'
-import TutorialSidebarTab from '@/components/Tutorial/TutorialSidebarTab.vue'
+import TutorialSidebar from "@/components/Tutorial/TutorialSidebar.vue"
+import TutorialSidebarTab from "@/components/Tutorial/TutorialSidebarTab.vue"
 
 export default {
     data: function() {
@@ -27,10 +27,10 @@ export default {
     },
     methods: {
         hideSidebar: function() {
-            this.hiddenSidebar = true;
+            this.hiddenSidebar = true
         },
         showSidebar: function() {
-            this.hiddenSidebar = false;
+            this.hiddenSidebar = false
         }
     }
 }
@@ -49,13 +49,13 @@ div.column_wrapper {
     position: relative;
 
     aside {
-        background-color: @purple;
+        background-color: @dark_blue;
         min-height: 100%;
         flex-grow: 0;
         flex-shrink: 0;
         width: 12rem;
 
-        @media(max-width: @mobile_width) {
+        @media (max-width: @mobile_width) {
             position: fixed;
             top: 0;
             left: 0;
@@ -72,7 +72,8 @@ div.column_wrapper {
         }
     }
 
-    aside, div.main_column {
+    aside,
+    div.main_column {
         box-sizing: border-box;
         padding-top: 4rem;
     }
@@ -83,7 +84,7 @@ div.column_wrapper {
         flex-shrink: 1;
         overflow: hidden;
 
-        @media(max-width: @mobile_width) {
+        @media (max-width: @mobile_width) {
             padding-top: 6rem;
         }
 
@@ -102,9 +103,9 @@ div.column_wrapper {
             }
 
             em {
-                background-color: fadeout(@purple, 90%);
-                border: 1px solid @purple;
-                color: @purple;
+                background-color: fadeout(@light_blue, 90%);
+                border: 1px solid @light_blue;
+                color: @light_blue;
                 display: block;
                 padding: 0.5rem;
 
@@ -114,7 +115,7 @@ div.column_wrapper {
                     font-style: normal;
                     padding: 0.1rem 0.7rem;
                     margin-right: 0.5rem;
-                    border: 1px solid @purple;
+                    border: 1px solid @light_blue;
                     border-radius: 1rem;
                 }
             }

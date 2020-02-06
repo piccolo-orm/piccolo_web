@@ -1,15 +1,15 @@
 <template>
     <div id="app">
-        <MainNav/>
-        <router-view/>
+        <MainNav />
+        <router-view />
         <PermissionPopup />
     </div>
 </template>
 
 
 <script>
-import MainNav from './components/MainNav/Index.vue'
-import PermissionPopup from './components/PermissionPopup.vue'
+import MainNav from "./components/MainNav/Index.vue"
+import PermissionPopup from "./components/PermissionPopup.vue"
 
 export default {
     components: {
@@ -17,11 +17,12 @@ export default {
         MainNav
     },
     watch: {
-        $route: function (route) {
+        $route: function(route) {
             // Reset default title and description.
             this.$seo.updateTags({
-                title: 'Piccolo ORM',
-                description: "A fast, async ORM for Python, that's easy to learn."
+                title: "Piccolo ORM",
+                description:
+                    "A fast, async ORM for Python, that's easy to learn."
             })
         }
     }
@@ -33,17 +34,17 @@ export default {
 @import "./variables.less";
 
 #app {
-    font-family: 'Open Sans', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", "Source Sans Pro", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
+    color: lighten(black, 20%);
     min-height: 100vh;
 }
 
 html {
-   margin: 0px;
-   padding: 0px;
-   min-height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
 }
 
 body {
@@ -53,6 +54,6 @@ body {
 }
 
 a {
-    color: lighten(@purple, 15%);
+    color: @light_blue;
 }
 </style>

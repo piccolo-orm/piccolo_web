@@ -2,21 +2,27 @@
     <ul>
         <li
             v-bind:class="{active: (tutorial == activeTutorial)}"
-            v-on:click.prevent="visible = (visible ? false : true)">
-
-            <a href="#"><span v-bind:class="{visible: visible}"><font-awesome-icon icon="caret-right" /></span> {{ tutorial.title }}</a>
+            v-on:click.prevent="visible = (visible ? false : true)"
+        >
+            <a href="#">
+                <span v-bind:class="{visible: visible}">
+                    <font-awesome-icon icon="caret-right" />
+                </span>
+                {{ tutorial.title }}
+            </a>
         </li>
         <transition-group name="steps">
             <li
+                class="dark"
+                v-bind:class="{active_step: step == activeTutorialStep}"
+                v-bind:key="step.slug"
                 v-for="step in tutorial.steps"
                 v-if="visible"
-                v-bind:key="step.slug"
-                v-bind:class="{active_step: step == activeTutorialStep}"
                 v-on:click="hideSidebar"
-                class="dark">
-
+            >
                 <router-link
-                    :to="{name: 'tutorial_single', params: {tutorialName: tutorial.slug, stepName: step.slug}}">{{ step.title }}</router-link>
+                    :to="{name: 'tutorial_single', params: {tutorialName: tutorial.slug, stepName: step.slug}}"
+                >{{ step.title }}</router-link>
             </li>
         </transition-group>
     </ul>
@@ -24,7 +30,7 @@
 
 <script>
 export default {
-    props: ['tutorial'],
+    props: ["tutorial"],
     data: function() {
         return {
             visible: false
@@ -36,23 +42,20 @@ export default {
         },
         activeTutorialStep: function() {
             return this.$store.state.activeTutorialStep
-        },
+        }
     },
     methods: {
         hideSidebar: function() {
             // Give a delay for the background content to load.
-            let app = this;
-            setTimeout(
-                function() {
-                    app.$emit('hideSidebar');
-                },
-                200
-            )
+            let app = this
+            setTimeout(function() {
+                app.$emit("hideSidebar")
+            }, 200)
         }
     },
     created: function() {
-        this.visible = (this.activeTutorial == this.tutorial)
-    },
+        this.visible = this.activeTutorial == this.tutorial
+    }
 }
 </script>
 
@@ -64,11 +67,11 @@ export default {
     transition: opacity 0.8s;
 }
 .steps-enter-to {
-    opacity: 1.0;
+    opacity: 1;
     transition: opacity 0.8s;
 }
 .steps-leave {
-    opacity: 1.0;
+    opacity: 1;
     transition: opacity 0.2s;
 }
 .steps-leave-to {
@@ -77,7 +80,6 @@ export default {
 }
 
 ul {
-    background-color: @purple;
     height: 100%;
     margin: 0;
     padding-left: 0;
@@ -88,15 +90,15 @@ ul {
         list-style: none;
 
         &.active_step {
-            border-left: 2px solid @light_purple !important;
+            border-left: 2px solid @lighter_blue !important;
         }
 
         &.dark {
-            border-left: 2px solid @dark_purple;
-            background-color: @dark_purple;
+            border-left: 2px solid @dark_blue;
+            background-color: darken(@dark_blue, 5%);
 
             &.dark:hover {
-                background-color: @dark_purple;
+                background-color: darken(@dark_blue, 5%);
             }
         }
 

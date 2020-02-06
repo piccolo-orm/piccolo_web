@@ -1,6 +1,13 @@
 <template>
     <div class="sidebar_tab">
-        <a href="#" v-on:click.prevent="showSidebar"><span><font-awesome-icon icon="caret-right" /></span> Tutorials menu</a>
+        <a
+            href="#"
+            v-on:click.prevent="showSidebar"
+        >
+            <span>
+                <font-awesome-icon icon="caret-right" />
+            </span> Tutorials menu
+        </a>
     </div>
 </template>
 
@@ -8,7 +15,7 @@
 export default {
     methods: {
         showSidebar: function() {
-            this.$emit('showSidebar');
+            this.$emit("showSidebar")
         }
     }
 }
@@ -18,7 +25,7 @@ export default {
 @import "../../variables.less";
 
 div.sidebar_tab {
-    background-color: @purple;
+    background-color: @light_blue;
     position: fixed;
     top: 0;
     left: 0;
@@ -26,12 +33,12 @@ div.sidebar_tab {
     z-index: 100;
     padding-top: 4rem;
 
-    @media(min-width: @mobile_width) {
+    @media (min-width: @mobile_width) {
         display: none;
     }
 
     a {
-        color: rgba(255,255,255,0.9);
+        color: rgba(255, 255, 255, 0.9);
         display: block;
         font-size: 0.7rem;
         font-weight: bolder;

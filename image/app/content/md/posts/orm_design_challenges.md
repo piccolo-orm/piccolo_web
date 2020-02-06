@@ -29,13 +29,13 @@ There's two options for joins - either let the user specify joins explicitly, or
 In Piccolo, joins are done automatically.
 
 ```python
-Band.select.columns(Band.manager_1.name).run_sync()
+Band.select(Band.manager_1.name).run_sync()
 ```
 
 In order to get the name of `manager_1`, a join is required. There are other situations which require joins. For example:
 
 ```python
-Band.select.where(Band.manager_1.name == 'Guido').run_sync()
+Band.select().where(Band.manager_1.name == 'Guido').run_sync()
 ```
 
 Piccolo has to manage the joins under the hood to make this happen.
@@ -45,7 +45,7 @@ Piccolo has to manage the joins under the hood to make this happen.
 Queries such as this:
 
 ```python
-Band.select.run_sync()
+Band.select().run_sync()
 ```
 
 Which fetch all rows from a table, could return thousands or millions of rows. The ORM needs to handle this under the hood using cursors - fetching data in chunks.

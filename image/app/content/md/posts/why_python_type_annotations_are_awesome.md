@@ -98,7 +98,7 @@ def create_driver(name: str, license_number: t.Optional[int] = None):
 
 class Dog():
     # In Python 3.7 forward references are allowed i.e. the
-    # return type can be current class being defined.
+    # return type can be the current class being defined.
     def return_friend(self) -> Dog:
         return some_dog
 

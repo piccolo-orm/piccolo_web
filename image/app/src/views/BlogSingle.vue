@@ -1,7 +1,11 @@
 <template>
     <div class="blog_single">
         <div class="center_wrapper">
-            <p id="back"><router-link :to="{name: 'blog'}">All posts</router-link></p>
+            <p id="back">
+                <router-link :to="{name: 'blog'}">
+                    <font-awesome-icon icon="chevron-left" />All posts
+                </router-link>
+            </p>
             <div v-html="html"></div>
             <p id="posted_on">Posted on: {{ postedOnString }}</p>
         </div>
@@ -11,20 +15,20 @@
 
 
 <script>
-import axios from 'axios';
-import MainFooter from '@/components/MainFooter.vue';
+import axios from "axios"
+import MainFooter from "@/components/MainFooter.vue"
 
 export default {
-    props: ['articleName'],
+    props: ["articleName"],
     data: function() {
         return {
-            html: '',
+            html: "",
             postedOn: undefined,
-            title: ''
+            title: ""
         }
     },
     components: {
-        MainFooter,
+        MainFooter
     },
     computed: {
         posts: function() {
@@ -32,7 +36,7 @@ export default {
         },
         postedOnString: function() {
             if (!this.postedOn) {
-                return ''
+                return ""
             } else {
                 return this.postedOn.customString()
             }
@@ -40,17 +44,17 @@ export default {
     },
     created: async function() {
         if (this.$store.state.posts.length == 0) {
-            await this.$store.dispatch('fetchPostList')
+            await this.$store.dispatch("fetchPostList")
         }
 
         let currentPost = this.posts.filter(
-            (element) => element.slug == this.articleName
+            element => element.slug == this.articleName
         )[0]
         this.postedOn = currentPost.postedOn
         this.title = currentPost.title
 
-        let app = this;
-        let response = await axios.get('/html/posts/' + currentPost.src)
+        let app = this
+        let response = await axios.get("/html/posts/" + currentPost.src)
         app.html = response.data
 
         this.$seo.updateTags({
@@ -76,7 +80,7 @@ div.blog_single {
     }
 
     p#posted_on {
-        color: rgba(0,0,0,0.3);
+        color: rgba(0, 0, 0, 0.3);
         font-size: 0.8rem;
         font-weight: bolder;
         margin-top: 0;
@@ -85,7 +89,7 @@ div.blog_single {
 
     p#back {
         a {
-            background-color: lighten(black, 60%);
+            background-color: @light_blue;
             color: white;
             padding: 0.4rem 0.6rem;
             text-transform: uppercase;
@@ -93,8 +97,12 @@ div.blog_single {
             text-decoration: none;
             transition: 1s background-color;
 
+            svg {
+                padding-right: 0.5rem;
+            }
+
             &:hover {
-                background-color: lighten(black, 50%);
+                background-color: lighten(@light_blue, 10%);
             }
         }
     }
@@ -102,7 +110,8 @@ div.blog_single {
     h2 {
         margin-top: 2.5rem;
     }
-    p, li {
+    p,
+    li {
         font-size: 1.1rem;
     }
 }
