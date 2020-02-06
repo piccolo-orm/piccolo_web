@@ -62,6 +62,7 @@ div.blog {
 
         li {
             font-size: 1.2rem;
+            line-height: 2;
             list-style: none;
             padding: 1rem 0;
 
@@ -83,7 +84,6 @@ div.blog {
                 display: block;
                 font-weight: bolder;
                 font-size: 0.7em;
-                padding-top: 0.8rem;
             }
         }
     }

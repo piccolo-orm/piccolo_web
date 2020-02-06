@@ -89,6 +89,10 @@ div.hero {
         padding: 10rem 1rem;
         box-sizing: border-box;
 
+        @media (max-width: @mobile_width) {
+            font-size: 1.6rem;
+        }
+
         svg {
             padding-right: 0.5rem;
         }
@@ -100,6 +104,14 @@ div.center_wrapper {
     box-sizing: border-box;
     padding: 1rem;
     margin: 0 auto;
+
+    h1 {
+        font-size: 1.8rem;
+
+        @media (max-width: @mobile_width) {
+            font-size: 1.4rem;
+        }
+    }
 }
 
 div.neutral {
