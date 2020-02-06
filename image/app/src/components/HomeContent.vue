@@ -55,7 +55,7 @@ export default {
             benefits: [
                 "<b>Supports Postgres and SQLite</b>",
                 "<b>Async and sync support</b>",
-                "<b>A builtin playground</b>, which makes learning a breeze",
+                "<b>A builtin playground</b> - which makes learning a breeze",
                 "<b>Tab completion support</b> - works great with iPython and VSCode",
                 "<b>Batteries included</b> - a User model, authentication, migrations, an admin, and more",
                 "<b>Modern Python</b> - fully type annotated",
