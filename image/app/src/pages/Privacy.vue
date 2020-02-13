@@ -22,6 +22,10 @@
 </template>
 
 <script>
+if (process.isServer) {
+    var localStorage = {}
+}
+
 export default {
     data: function() {
         return {

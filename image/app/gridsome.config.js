@@ -25,14 +25,12 @@ module.exports = {
             use: '@gridsome/source-filesystem',
             options: {
                 typeName: 'Tutorial',
-                path: './content/tutorials/**/*.md',
+                path: './content/tutorials/*.md',
             }
         }
     ],
     templates: {
-        BlogPost: '/blog/:title/'
-    },
-    templates: {
+        BlogPost: '/blog/:title/',
         Tutorial: '/tutorial/:title/'
     },
     transformers: {

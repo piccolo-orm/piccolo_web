@@ -1,12 +1,16 @@
 <template>
     <div v-if="visible">
         <p class="title">Allow Google Analytics?</p>
-        <p>This helps us improve the website. You can change your <router-link to="privacy">preference</router-link> at any time.</p>
+        <p>
+            This helps us improve the website. You can change your
+            <router-link to="privacy">preference at any time.</router-link>
+        </p>
         <ul>
             <li>
                 <button
                     class="primary"
-                    v-on:click.prevent="allowGA">OK</button>
+                    v-on:click.prevent="allowGA"
+                >OK</button>
             </li>
             <li>
                 <button v-on:click.prevent="blockGA">No thanks</button>
@@ -16,6 +20,10 @@
 </template>
 
 <script>
+if (process.isServer) {
+    var localStorage = {}
+}
+
 export default {
     data: function() {
         return {
@@ -24,22 +32,22 @@ export default {
     },
     methods: {
         allowGA: function() {
-            localStorage['allowGA'] = true
-            if (process.env.NODE_ENV == 'production') {
+            localStorage["allowGA"] = true
+            if (process.env.NODE_ENV == "production") {
                 this.$ga.enable()
             }
             this.visible = false
         },
         blockGA: function() {
-            localStorage['allowGA'] = false
-            if (process.env.NODE_ENV == 'production') {
+            localStorage["allowGA"] = false
+            if (process.env.NODE_ENV == "production") {
                 this.$ga.disable()
             }
             this.visible = false
         }
     },
     created: function() {
-        this.visible = (localStorage['allowGA'] == undefined)
+        this.visible = localStorage["allowGA"] == undefined
     }
 }
 </script>
@@ -51,7 +59,7 @@ div {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 2rem;
     z-index: 100;
 
@@ -95,8 +103,8 @@ div {
         width: 10rem;
 
         &.primary {
-            background-color: #FF8787;
-            border: 1px solid #FF8787 !important;
+            background-color: #ff8787;
+            border: 1px solid #ff8787 !important;
         }
     }
 }
