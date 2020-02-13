@@ -19,7 +19,7 @@
 @import "../variables.less";
 
 div.footer_padding {
-    height: 18rem;
+    height: 15rem;
 
     footer {
         background-color: @light_blue;

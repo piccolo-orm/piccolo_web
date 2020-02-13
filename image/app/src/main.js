@@ -1,35 +1,44 @@
-import Vue from 'vue'
+// This is the main.js file. Import global CSS and scripts here.
+// The Client API can be used here. Learn more: gridsome.org/docs/client-api
+
 import VueAnalytics from 'vue-analytics'
-import App from './App.vue'
-import VueSEO from './plugins/seo.js'
+
+import 'prismjs/themes/prism-tomorrow.css'
+import DefaultLayout from '~/layouts/Default.vue'
 import './icons.js'
-import './extensions.js'
+import './assets/css/prism-railscasts.css'
 
-Vue.use(VueSEO)
+export default function (Vue, { router, head, isClient }) {
+    // Set default layout as a global component
+    Vue.component('Layout', DefaultLayout)
 
-Vue.config.productionTip = false
-
-/*****************************************************************************/
-
-import router from './router'
-import store from './store'
-
-
-Vue.use(
-    VueAnalytics,
-    {
-        id: 'UA-16187310-13',
-        router,
-        debug: {
-            enabled: false
+    Vue.use(
+        VueAnalytics,
+        {
+            id: 'UA-16187310-13',
+            router,
+            debug: {
+                enabled: false
+            }
         }
-    }
-)
+    )
 
-/*****************************************************************************/
+    Vue.filter('customString', function (value) {
+        var monthNames = [
+            'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+        ]
 
-new Vue({
-    router,
-    store,
-    render: h => h(App)
-}).$mount('#app')
+        if (!value) {
+            return ''
+        }
+
+        if (typeof (value) == "string") {
+            value = new Date(value)
+        }
+
+        let day = value.getDate()
+        let month = monthNames[value.getMonth()]
+        let year = value.getUTCFullYear()
+        return `${day} ${month} ${year}`
+    })
+}

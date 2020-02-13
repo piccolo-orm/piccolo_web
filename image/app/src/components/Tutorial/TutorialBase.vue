@@ -11,6 +11,21 @@
 </template>
 
 
+<static-query>
+query {
+  tutorials: allTutorial {
+    edges {
+      node {
+        title
+        path
+        content
+      }
+    }
+  }
+}
+</static-query>
+
+
 <script>
 import TutorialSidebar from "@/components/Tutorial/TutorialSidebar.vue"
 import TutorialSidebarTab from "@/components/Tutorial/TutorialSidebarTab.vue"

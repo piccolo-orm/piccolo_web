@@ -1,43 +1,66 @@
 <template>
     <div>
         <ul>
-            <li class="heading" v-on:click.prevent="hideSidebar">
-                <router-link :to="{name: 'tutorial'}">Tutorials</router-link>
-                <a href="#" class="close">X</a>
+            <li
+                class="heading"
+                v-on:click.prevent="hideSidebar"
+            >
+                <g-link to="/tutorial/">Tutorials</g-link>
+                <a
+                    class="close"
+                    href="#"
+                >X</a>
             </li>
         </ul>
 
-        <template v-for="tutorial in tutorials">
-            <TutorialSidebarItem
-                v-on:hideSidebar="hideSidebar"
-                v-bind:key="tutorial.slug"
-                v-bind:tutorial="tutorial"></TutorialSidebarItem>
-        </template>
+        <ul>
+            <li
+                :class="{active: tutorial.node.path == activePath }"
+                :key="tutorial.node.title"
+                v-for="tutorial in $static.tutorials.edges"
+            >
+                <g-link :to="tutorial.node.path">{{ tutorial.node.title }}</g-link>
+            </li>
+        </ul>
     </div>
 </template>
 
-<script>
-import TutorialSidebarItem from './TutorialSidebarItem.vue'
 
+<static-query>
+query {
+  tutorials: allTutorial {
+    edges {
+      node {
+        title
+        path
+        content
+      }
+    }
+  }
+}
+</static-query>
+
+
+<script>
 export default {
-    components: {
-        TutorialSidebarItem,
-    },
-    computed: {
-        tutorials: function() {
-            return this.$store.state.tutorials || []
-        },
+    data() {
+        return {
+            activePath: ""
+        }
     },
     methods: {
-        hideSidebar: function() {
-            this.$emit('hideSidebar');
+        hideSidebar() {
+            this.$emit("hideSidebar")
         }
+    },
+    mounted() {
+        this.activePath = window.location.pathname
     }
 }
 </script>
 
 <style scoped lang="less">
-@import '../../variables.less';
+@import "../../variables.less";
 
 ul {
     margin: 0;
@@ -47,11 +70,19 @@ ul {
         color: white;
         list-style: none;
         padding: 1rem;
-        text-transform: uppercase;
+
+        &.heading {
+            text-transform: uppercase;
+        }
 
         a {
             color: white;
             text-decoration: none;
+        }
+
+        &.active,
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
         }
     }
 
@@ -60,7 +91,7 @@ ul {
             float: right;
             padding-right: 1.5rem;
 
-            @media(min-width: @mobile_width) {
+            @media (min-width: @mobile_width) {
                 display: none;
             }
         }
