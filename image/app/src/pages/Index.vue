@@ -60,7 +60,6 @@ query {
 export default {
     data: function() {
         return {
-            examplesHTML: "",
             benefits: [
                 "<b>Supports Postgres and SQLite</b>",
                 "<b>Async and sync support</b>",
@@ -69,6 +68,18 @@ export default {
                 "<b>Batteries included</b> - a User model, authentication, migrations, an admin, and more",
                 "<b>Modern Python</b> - fully type annotated",
                 "<b>Built for web developers and data scientists</b>"
+            ]
+        }
+    },
+    metaInfo() {
+        return {
+            title: "Piccolo ORM",
+            meta: [
+                {
+                    name: "description",
+                    content:
+                        "A fast, async ORM for Python, that's easy to learn."
+                }
             ]
         }
     }

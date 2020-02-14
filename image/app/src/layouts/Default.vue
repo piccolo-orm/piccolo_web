@@ -21,12 +21,11 @@ export default {
         MainFooter
     },
     metaInfo: {
-        title: "Hello, world!",
         meta: [
             {
-                title: "Piccolo ORM",
-                description:
-                    "A fast, async ORM for Python, that's easy to learn."
+                key: "description",
+                name: "description",
+                content: "A fast, async ORM for Python, that's easy to learn."
             }
         ]
     }

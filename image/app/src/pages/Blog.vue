@@ -8,9 +8,7 @@
                         v-bind:key="post.node.title"
                         v-for="post in $page.posts.edges"
                     >
-                        <g-link
-                            :to="post.node.path"
-                        >{{ post.node.title }}</g-link>
+                        <g-link :to="post.node.path">{{ post.node.title }}</g-link>
                         <span>{{ post.node.date | customString }}</span>
                     </li>
                 </ul>
@@ -44,11 +42,15 @@ export default {
         MainFooter
     },
     metaInfo: {
-        title: 'Piccolo ORM Blog',
+        title: "Blog",
         meta: [
-            {description: 'Articles about Python, asyncio, databases, the Piccolo ORM, and general development.'}
-        ],
-    },
+            {
+                name: "description",
+                content:
+                    "Articles about Python, asyncio, databases, the Piccolo ORM, and general development."
+            }
+        ]
+    }
 }
 </script>
 
