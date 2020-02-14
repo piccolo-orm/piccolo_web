@@ -20,10 +20,6 @@
 </template>
 
 <script>
-if (process.isServer) {
-    var localStorage = {}
-}
-
 export default {
     data: function() {
         return {
@@ -32,22 +28,28 @@ export default {
     },
     methods: {
         allowGA: function() {
-            localStorage["allowGA"] = true
-            if (process.env.NODE_ENV == "production") {
-                this.$ga.enable()
+            if (process.isClient) {
+                localStorage["allowGA"] = true
+                if (process.env.NODE_ENV == "production") {
+                    this.$ga.enable()
+                }
+                this.visible = false
             }
-            this.visible = false
         },
         blockGA: function() {
-            localStorage["allowGA"] = false
-            if (process.env.NODE_ENV == "production") {
-                this.$ga.disable()
+            if (process.isClient) {
+                localStorage["allowGA"] = false
+                if (process.env.NODE_ENV == "production") {
+                    this.$ga.disable()
+                }
+                this.visible = false
             }
-            this.visible = false
         }
     },
     created: function() {
-        this.visible = localStorage["allowGA"] == undefined
+        if (process.isClient) {
+            this.visible = localStorage["allowGA"] == undefined
+        }
     }
 }
 </script>

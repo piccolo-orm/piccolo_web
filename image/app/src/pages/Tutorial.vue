@@ -34,6 +34,16 @@ export default {
         return {
             html: ""
         }
+    },
+    metaInfo: {
+        title: "Tutorials",
+        meta: [
+            {
+                key: "description",
+                name: "description",
+                content: "Piccolo ORM Tutorials"
+            }
+        ]
     }
 }
 </script>

@@ -32,10 +32,13 @@ query BlogPost ($path: String!) {
 export default {
     metaInfo() {
         return {
-            title: `${this.$page.blogPost.title} - Piccolo Blog`,
+            title: this.$page.blogPost.title,
+            titleTemplate: "%s - Piccolo Blog",
             meta: [
                 {
-                    description: this.$page.blogPost.description
+                    key: "description",
+                    name: "description",
+                    content: this.$page.blogPost.description
                 }
             ]
         }

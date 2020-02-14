@@ -45,6 +45,7 @@ export default {
         title: "Blog",
         meta: [
             {
+                key: "description",
                 name: "description",
                 content:
                     "Articles about Python, asyncio, databases, the Piccolo ORM, and general development."

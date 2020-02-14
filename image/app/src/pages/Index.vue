@@ -76,6 +76,7 @@ export default {
             title: "Piccolo ORM",
             meta: [
                 {
+                    key: "description",
                     name: "description",
                     content:
                         "A fast, async ORM for Python, that's easy to learn."

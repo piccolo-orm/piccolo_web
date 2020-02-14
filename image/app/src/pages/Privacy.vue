@@ -22,10 +22,6 @@
 </template>
 
 <script>
-if (process.isServer) {
-    var localStorage = {}
-}
-
 export default {
     data: function() {
         return {
@@ -34,18 +30,24 @@ export default {
     },
     methods: {
         blockGA: function() {
-            localStorage["allowGA"] = false
-            this.$ga.disable()
-            this.hasAgreed = false
+            if (process.isClient) {
+                localStorage["allowGA"] = false
+                this.$ga.disable()
+                this.hasAgreed = false
+            }
         },
         allowGA: function() {
-            localStorage["allowGA"] = true
-            this.$ga.enable()
-            this.hasAgreed = true
+            if (process.isClient) {
+                localStorage["allowGA"] = true
+                this.$ga.enable()
+                this.hasAgreed = true
+            }
         }
     },
     created: function() {
-        this.hasAgreed = localStorage["allowGA"] == "true"
+        if (process.isClient) {
+            this.hasAgreed = localStorage["allowGA"] == "true"
+        }
     }
 }
 </script>

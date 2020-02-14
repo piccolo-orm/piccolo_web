@@ -19,15 +19,6 @@ export default {
         PermissionPopup,
         MainNav,
         MainFooter
-    },
-    metaInfo: {
-        meta: [
-            {
-                key: "description",
-                name: "description",
-                content: "A fast, async ORM for Python, that's easy to learn."
-            }
-        ]
     }
 }
 </script>
