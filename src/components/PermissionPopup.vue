@@ -3,7 +3,7 @@
         <p class="title">Allow Google Analytics?</p>
         <p>
             This helps us improve the website. You can change your
-            <router-link to="privacy">preference at any time.</router-link>
+            <g-link to="/privacy">preference at any time.</g-link>
         </p>
         <ul>
             <li>
@@ -23,7 +23,7 @@
 export default {
     data: function() {
         return {
-            visible: true
+            visible: false
         }
     },
     methods: {
@@ -46,7 +46,7 @@ export default {
             }
         }
     },
-    created: function() {
+    mounted: function() {
         if (process.isClient) {
             this.visible = localStorage["allowGA"] == undefined
         }

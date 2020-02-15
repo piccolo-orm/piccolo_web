@@ -14,7 +14,7 @@
                 />
             </div>
             <h1>
-                <router-link to="/">Piccolo</router-link>
+                <g-link to="/">Piccolo</g-link>
             </h1>
             <div class="link_wrapper">
                 <LinkList />

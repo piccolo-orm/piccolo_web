@@ -7,7 +7,7 @@
             </p>
             <ul>
                 <li>
-                    <router-link to="privacy">Privacy Policy</router-link>
+                    <g-link to="/privacy">Privacy Policy</g-link>
                 </li>
             </ul>
         </footer>
