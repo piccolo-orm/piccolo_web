@@ -24,7 +24,7 @@ So with all these advantages, would you ever host a static website yourself?
 
 In a post-[GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) world, tools like Google Analytics aren't an effective measure for website engagement, as users should be allowed to opt out of tracking. The only true measure of engagement is web server logs. Whilst this isn't a perfect solution, because some traffic isn't recorded due to caching, and bots add a lot of noise, it's still valuable to have. By using a static host, you are losing this granularity. Netlify offers it's own analytics solution as a paid add on.
 
-Talking about paid add-ons, if you really went to town with Netlify, you could end up incurring some fairly high costs. For a more ambitious site with a large team, weigh up the costs carefully vs just hosting it via Nginx on your own server. This isn't to suggest that Netlify is overpriced, it's just the nature of services like this. The same is true with AWS.
+Talking about paid add-ons, if you really went to town with Netlify, then the costs do start to add up. For a more ambitious site with a large team, weigh up the costs carefully vs just hosting it via Nginx on your own server. This isn't to suggest that Netlify is overpriced, it's just the nature of services like this. The same is true with AWS.
 
 Also, be wary of putting a square peg in a round hole. For example, if your app has lots of dynamic content, authentication, and backend services, you're probably best off hosting that yourself, or at least looking for some other alternative.
 

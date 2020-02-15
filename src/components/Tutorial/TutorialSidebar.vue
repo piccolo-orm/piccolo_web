@@ -69,7 +69,6 @@ ul {
     li {
         color: white;
         list-style: none;
-        padding: 1rem;
 
         &.heading {
             text-transform: uppercase;
@@ -77,6 +76,9 @@ ul {
 
         a {
             color: white;
+            display: block;
+            padding: 1rem;
+            box-sizing: border-box;
             text-decoration: none;
         }
 
