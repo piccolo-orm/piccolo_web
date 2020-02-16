@@ -4,7 +4,7 @@ date: 2020-02-15
 description: A look at asyncio.gather, an important part of the asyncio Python library for concurency.
 ---
 
-When it comes to learning the asyncio library in Python, there are two important functions to be aware of. The first is `run`, which is a simple way to run a coroutine, and the second is `gather`.
+When it comes to learning the [asyncio](https://docs.python.org/3/library/asyncio.html) library in Python, there are two important functions to be aware of. The first is `run`, which is a simple way to run a coroutine, and the second is `gather`.
 
 `gather` lets you fire off a bunch of coroutines simultaneously, and the current context will resume once all of the coroutines have completed. The return value is a list of responses from each coroutine.
 
@@ -37,11 +37,13 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
+We are using the [httpx](https://github.com/encode/httpx) library to make network requests.
+
 One thing to be aware of is you can potentially open up a lot of connections using `gather`. If you open too many, this can result in errors as operating systems will only let you open a certain number of sockets at a time, so don't go too crazy!
 
 Likewise, when connecting to a database, only a certain number of connections can be open at a time. It's important to use a connection pool to avoid errors.
 
-Here's an example using Piccolo:
+Here's an example using [Piccolo](http://piccolo-orm.com/):
 
 ```python
 import asyncio
@@ -80,3 +82,7 @@ if __name__ == "__main__":
 With Piccolo, if we make sure a connection pool is open then we're fine - if all connections are being used, the coroutine will wait until one becomes available.
 
 As you can see, `gather` is super powerful. It lets us concisely request several resources concurrently, which is a common occurence in web apps.
+
+## Resources
+
+ * [Official docs](https://docs.python.org/3/library/asyncio-task.html#asyncio.gather)
