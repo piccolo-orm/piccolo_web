@@ -6,6 +6,7 @@
 
 module.exports = {
     siteName: 'Piccolo',
+    siteUrl: 'https://piccolo-orm.com',
     plugins: [
         {
             use: '@gridsome/source-filesystem',
@@ -26,6 +27,26 @@ module.exports = {
             options: {
                 typeName: 'Tutorial',
                 path: './content/tutorials/*.md',
+            }
+        },
+        {
+            use: '@gridsome/plugin-sitemap',
+            options: {
+                exclude: ['/privacy'],
+                config: {
+                    '/blog': {
+                        changefreq: 'daily',
+                        priority: 0.8
+                    },
+                    '/blog/*': {
+                        changefreq: 'monthly',
+                        priority: 0.8
+                    },
+                    '/': {
+                        changefreq: 'weekly',
+                        priority: 1.0
+                    },
+                }
             }
         }
     ],
