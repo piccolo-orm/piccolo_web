@@ -3,7 +3,7 @@
         <footer>
             <p>
                 Copyright
-                <a href="https://dantownsend.co.uk/">Daniel Townsend</a>, 2019
+                <a href="https://dantownsend.co.uk/">Daniel Townsend</a>, 2020
             </p>
             <ul>
                 <li>
