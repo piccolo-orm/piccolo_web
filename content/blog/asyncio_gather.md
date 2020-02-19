@@ -1,7 +1,7 @@
 ---
 title: asyncio.gather
 date: 2020-02-15
-description: A look at asyncio.gather, an important part of the asyncio Python library for concurency.
+description: A look at asyncio.gather, an important part of the asyncio Python library for concurrency.
 ---
 
 When it comes to learning the [asyncio](https://docs.python.org/3/library/asyncio.html) library in Python, there are two important functions to be aware of. The first is `run`, which is a simple way to run a coroutine, and the second is `gather`.

@@ -48,6 +48,26 @@ module.exports = {
                     },
                 }
             }
+        },
+        {
+            use: 'gridsome-plugin-feed',
+            options: {
+                contentTypes: ['BlogPost'],
+                feedOptions: {
+                    title: 'Piccolo',
+                    description: 'Articles about the Piccolo ORM and Python development.'
+                },
+                rss: {
+                    enabled: true,
+                    output: '/feed.xml'
+                },
+                maxItems: 1000,
+                nodeToFeedItem: (node) => ({
+                    title: node.title,
+                    date: node.date,
+                    content: ''
+                })
+            }
         }
     ],
     templates: {
