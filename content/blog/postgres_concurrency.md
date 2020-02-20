@@ -6,7 +6,7 @@ description: Understanding concurrency in Postgres, and how it relates to async 
 
 When using an async ORM, it's good to understand how the underlying database handles concurrency.
 
-When Piccolo makes a query, it gets a connection from the database adapter. The Postgres server spawns a new process to handle each connection it receives. If you hammer a database server with connections, and enter `ps aux | grep postgres` on the command line, then you'll see the connection processes.
+When Piccolo makes a query, it gets a connection from the database adapter. The Postgres server spawns a new process to handle each connection it receives. If you open up a bunch of connections to a database server, and enter `ps aux | grep postgres` on the command line, then you'll see the connection processes.
 
 A database server is configured to only support a certain number of connections at a time. If this limit is exceeded then you'll get an error. An async web app will typically open far more database connections than a synchronous one, so it's important to use a connection pool.
 
@@ -24,7 +24,7 @@ In terms of tuning your Postgres server for maximum performance:
  * RAM - increasing the Postgres server's shared_buffers setting will help reduce disk reads (around 25% of total system memory is recommended).
  * Fast disk - will help prevent IO bottlenecks.
 
-Avoid ramping up the max connection limit too high. Above a certain number, it becomes counter productive, as the connections compete for resources, and the connections themselves consume RAM. The default is 100, which should be sufficient for most needs.
+Avoid ramping up the max connection limit too high. Above a certain number it becomes counter productive, as the connections themselves consume RAM, which could otherwise be used by Postgres itself for making queries. The default is 100, which should be sufficient for most needs.
 
 ## Resources
 
