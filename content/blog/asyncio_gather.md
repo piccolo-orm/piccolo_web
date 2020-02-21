@@ -83,6 +83,10 @@ With Piccolo, if we make sure a connection pool is open then we're fine - if all
 
 As you can see, `gather` is super powerful. It lets us concisely request several resources concurrently, which is a common occurence in web apps.
 
+## Exceptions
+
+Where things get tricky with `gather` is exceptions. What if one of the coroutines raises an exception? Will the other coroutines continue executing? What if several coroutines raise exceptions - which one will you actually see?
+
 ## Resources
 
  * [Official docs](https://docs.python.org/3/library/asyncio-task.html#asyncio.gather)
