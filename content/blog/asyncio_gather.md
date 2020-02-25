@@ -83,6 +83,10 @@ With Piccolo, if we make sure a connection pool is open then we're fine - if all
 
 As you can see, `gather` is super powerful. It lets us concisely request several resources concurrently, which is a common occurence in web apps.
 
+## asyncio_tools
+
+If you want to take your use of asyncio.gather to the next level, check out [asyncio_tools](https://github.com/piccolo-orm/asyncio_tools).
+
 ## Resources
 
- * [Official docs](https://docs.python.org/3/library/asyncio-task.html#asyncio.gather)
+-   [Official docs](https://docs.python.org/3/library/asyncio-task.html#asyncio.gather)
