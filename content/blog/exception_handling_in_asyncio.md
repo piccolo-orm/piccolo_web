@@ -94,5 +94,17 @@ We are now aware of every exception which happened. But as a programmer, what do
 ```python
 
 # Now I need a simple way of saying is the 'TransactionError' in the list
+class GatheredResults:
+    def __init__(self, results):
+        self.results = results
+        self.result_set = set(results)
+
+    def has_exception(self, exception_class: Exception):
+        for i in self.result_set:
+            if isinstance(i, exception_class):
+                return True
+
+    def __contains__(self, exception_class: Exception):
+        return self.has_exception(exception_class)
 
 ```
