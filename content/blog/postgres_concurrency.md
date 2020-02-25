@@ -2,6 +2,7 @@
 title: Postgres Concurrency
 date: 2020-02-16
 description: Understanding concurrency in Postgres, and how it relates to async libraries like Piccolo.
+draft: false
 ---
 
 When using an async ORM, it's good to understand how the underlying database handles concurrency.

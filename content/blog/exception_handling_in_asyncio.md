@@ -2,6 +2,7 @@
 title: Exception handling in asyncio
 date: 2020-02-23
 description: A look at asyncio.gather, an important part of the asyncio Python library for concurency.
+draft: false
 ---
 
 In most situations, exception handling in asyncio is as you'd expect in your typical Python application.

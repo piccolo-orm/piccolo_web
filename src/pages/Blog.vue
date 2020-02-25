@@ -21,7 +21,7 @@
 
 <page-query>
 query {
-  posts: allBlogPost {
+  posts: allBlogPost(filter: { draft: { eq: false }}) {
     edges {
       node {
         title

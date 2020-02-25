@@ -2,6 +2,7 @@
 title: Reasons to use an ORM
 date: 2018-10-01
 description: An ORM can provide extra convenience over raw SQL, along with tools such as migrations.
+draft: false
 ---
 
 ## Benefits of an ORM

@@ -2,6 +2,7 @@
 title: ORM design challenges
 date: 2019-01-23
 description: Interesting design and technical challenges with ORMs.
+draft: false
 ---
 
 Building ORMs isn't the easiest thing in the world. Based on past experience working on similar projects, I knew it wasn't impossible though.

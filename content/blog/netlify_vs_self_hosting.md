@@ -2,6 +2,7 @@
 title: Netlify vs Self Hosting
 date: 2020-02-15
 description: A look at the pros and cons of using a service like Netflify to host a static website, vs self hosting.
+draft: false
 ---
 
 This is a little off topic from the usual [Python articles](..), but I recently migrated this website to [Netlify](https://www.netlify.com/) for hosting.

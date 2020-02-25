@@ -2,6 +2,7 @@
 title: Namespacing Python attributes
 date: 2019-09-10
 description: Looking at different ways to namespace attributes in Python classes.
+draft: false
 ---
 
 When you have large classes, it can be useful to namespace some of the attributes.

@@ -2,6 +2,7 @@
 title: Should I use Python instead of Golang or Node?
 date: 2018-10-05
 description: Async Python web frameworks offer improved performance, making it more competitive with Node and Golang.
+draft: false
 ---
 
 In recent years the go-to solution for high performance web services has been Node JS or Golang.
