@@ -2,6 +2,7 @@
 title: Is async worthwhile?
 date: 2018-11-03
 description: Async increases the throughput of web applications when under high load.
+draft: false
 ---
 
 One of the main motivations for building Piccolo was the lack of options for an asyncio ORM.

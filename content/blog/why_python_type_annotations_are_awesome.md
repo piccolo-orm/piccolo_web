@@ -2,6 +2,7 @@
 title: Why Python type annotations are awesome
 date: 2019-01-15
 description: Examples of how Python type annotations make code more maintainable.
+draft: false
 ---
 
 For me, the two stand out features of Python 3 are [asyncio](https://docs.python.org/3/library/asyncio.html) and [type annotations](https://docs.python.org/3/library/typing.html).

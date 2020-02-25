@@ -2,6 +2,7 @@
 title: Understanding JWT and Sessions
 date: 2019-08-10
 description: The pros and cons of JWT and sessions, and when to use them.
+draft: false
 ---
 
 When it comes to authenticating your web app, there are two main choices - session auth and token auth.

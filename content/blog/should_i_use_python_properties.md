@@ -2,6 +2,7 @@
 title: Should I use Python properties?
 date: 2019-08-08
 description: When to use Python properties, and when the avoid them.
+draft: false
 ---
 
 Python properties have been surprisingly divisive amongst developers I've worked with.

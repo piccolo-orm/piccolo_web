@@ -2,6 +2,7 @@
 title: Improving tab completion in Python libraries
 date: 2019-07-22
 description: How to optimise your Python code to support tab completion.
+draft: false
 ---
 
 One of the main design goals for [Piccolo](https://github.com/piccolo-orm/piccolo) is to support tab completion as fully as possible.

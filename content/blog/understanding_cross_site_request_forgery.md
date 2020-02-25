@@ -2,6 +2,7 @@
 title: Cross Site Request Forgery
 date: 2019-08-10
 description: What is Cross Site Request Forgery (CSRF), and how to prevent it.
+draft: false
 ---
 
 Cross Site Request Forgery (CSRF) is a well known security vulnerability which all developers must be aware of.

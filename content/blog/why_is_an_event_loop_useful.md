@@ -2,6 +2,7 @@
 title: Why is an event loop useful?
 date: 2018-10-10
 description: An event loop is an approach to concurrency which doesn't require threads, and bypasses the GIL.
+draft: false
 ---
 
 Traditionally, each unit of work which needs to operate concurrently would be assigned to a separate process or thread. Threads and processes are operating system constructs, and are expensive to create. It's up to the operating system when it schedules them to run, not the program. If a program requires thousands of threads, the constant switching between them can result in poor system performance.

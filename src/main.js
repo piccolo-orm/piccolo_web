@@ -23,6 +23,11 @@ export default function (Vue, { router, head, isClient }) {
         }
     )
 
+    head.link.push({
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap'
+      })
+
     Vue.filter('customString', function (value) {
         var monthNames = [
             'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'

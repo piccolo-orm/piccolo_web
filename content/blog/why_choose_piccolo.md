@@ -2,6 +2,7 @@
 title: Why choose Piccolo?
 date: 2018-10-01
 description: Piccolo is a fast, easy to learn ORM, which supports asyncio.
+draft: false
 ---
 
 This is a quick overview of the most popular Python ORMs, along with their strengths and weaknesses, and why you might want to choose Piccolo for your project.

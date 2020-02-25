@@ -2,6 +2,7 @@
 title: Plugins for Python Projects
 date: 2019-01-22
 description: A look at different ways of implementing plugins in Python projects.
+draft: false
 ---
 
 While writing Piccolo I started thinking about how to make it extensible.
