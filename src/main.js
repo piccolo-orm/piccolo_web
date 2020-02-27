@@ -26,7 +26,8 @@ export default function (Vue, { router, head, isClient }) {
     head.link.push({
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap'
-      })
+    })
+    // https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap
 
     Vue.filter('customString', function (value) {
         var monthNames = [

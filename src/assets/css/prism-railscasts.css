@@ -12,7 +12,7 @@ code[class*="language-"], pre[class*="language-"] {
 	color: white;
 	font-family: Consolas, Monaco, 'Andale Mono', monospace;
 	direction: ltr;
-	font-size: 0.95rem;
+	font-size: 0.9rem;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -40,7 +40,8 @@ pre[class*="language-"]::selection, pre[class*="language-"] ::selection, code[cl
 /* Code blocks */
 
 pre[class*="language-"] {
-	padding: 1em;
+	box-sizing: border-box;
+	padding: 2em;
 	margin: .5em 0;
 	overflow: auto;
 }

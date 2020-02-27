@@ -61,6 +61,32 @@ div.blog_single {
         margin-bottom: 0;
     }
 
+    figure {
+        margin: 1rem 0;
+        text-align: center;
+
+        img {
+            max-width: 100%;
+            margin: 0 auto;
+
+            &.medium {
+                max-width: 100%;
+                width: 25rem;
+            }
+        }
+
+        figcaption {
+            font-size: 0.7rem;
+            color: rgb(119, 119, 119);
+            display: block;
+            padding: 0.2rem;
+        }
+    }
+
+    p {
+        text-align: justify;
+    }
+
     p#posted_on {
         color: rgba(0, 0, 0, 0.3);
         font-size: 0.8rem;
@@ -94,7 +120,7 @@ div.blog_single {
     }
     p,
     li {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 }
 </style>
