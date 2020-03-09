@@ -27,6 +27,12 @@ export default function (Vue, { router, head, isClient }) {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap'
     })
+
+    head.meta.push({
+        name: "google-site-verification",
+        content: "HuqMNAQW0DpoexjRYJ9-8XrqXQb3wD1cWWf0EEvO-Qc"
+    })
+
     // https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap
 
     Vue.filter('customString', function (value) {
