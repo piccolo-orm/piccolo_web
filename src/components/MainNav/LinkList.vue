@@ -1,10 +1,10 @@
 <template>
     <ul class="links">
         <li v-on:click="clicked">
-            <g-link to="/blog">Blog</g-link>
+            <g-link to="/blog/">Blog</g-link>
         </li>
         <li v-on:click="clicked">
-            <g-link to="/tutorial">Tutorials</g-link>
+            <g-link to="/tutorial/">Tutorials</g-link>
         </li>
         <li>
             <a href="https://piccolo-orm.readthedocs.io/en/latest/">
