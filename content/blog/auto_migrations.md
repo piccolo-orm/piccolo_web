@@ -150,9 +150,6 @@ async def forwards():
 
     return manager
 
-
-async def backwards():
-    pass
 ```
 
 It all hinges on a class called `MigrationManager`. It's how we register any changes we want to make to the schema. Also, note that the `forwards` function needs to return it.
