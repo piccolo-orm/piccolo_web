@@ -2,7 +2,11 @@
     <Layout>
         <div>
             <div class="hero">
-                <h2>
+                <!--
+                Using an inline style to stop the SVG being too large when only
+                the static HTML has been loaded.
+                -->
+                <h2 style="font-size: 2.2rem;">
                     <font-awesome-icon :icon="['fab', 'python']" />A fast, async ORM for Python, that's easy to learn
                 </h2>
             </div>
