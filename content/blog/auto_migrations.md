@@ -159,3 +159,7 @@ The way that Piccolo applies the required schema changes is to run the returned 
 But `MigrationManger` serves another important purpose - if we give a sequence of `MigrationManager` instances to a `SchemaSnapshot`, it can add them up to build a complete picture of the schema.
 
 The next time the user creates a new migration, Piccolo uses a `SchemaDiffer` to work out the differences between the snapshot, and the current Table classes, and generates a new `MigrationManager` instance, which it writes to a migration file.
+
+Here's a visualisation of how auto migrations work internally:
+
+<img src="/images/blog/migration_graphic.png" class="medium" alt="migration graphic" />

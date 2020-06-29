@@ -64,5 +64,9 @@ div.center_wrapper {
             font-size: 1.4rem;
         }
     }
+
+    img {
+        max-width: 100%;
+    }
 }
 </style>
