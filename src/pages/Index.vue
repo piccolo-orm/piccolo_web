@@ -6,8 +6,11 @@
                 Using an inline style to stop the SVG being too large when only
                 the static HTML has been loaded.
                 -->
-                <h2 style="font-size: 2.2rem;">
-                    <font-awesome-icon :icon="['fab', 'python']" />A fast, async ORM for Python, that's easy to learn
+                <h2>
+                    <font-awesome-icon
+                        :icon="['fab', 'python']"
+                        style="max-height: 2.2rem;"
+                    />A fast, async ORM for Python, that's easy to learn
                 </h2>
             </div>
 
@@ -19,7 +22,10 @@
                             v-bind:key="benefit"
                             v-for="benefit in benefits"
                         >
-                            <font-awesome-icon icon="check" />
+                            <font-awesome-icon
+                                icon="check"
+                                style="max-height: 1rem;"
+                            />
                             <span v-html="benefit"></span>
                         </li>
                     </ul>
