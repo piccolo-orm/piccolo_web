@@ -18,8 +18,8 @@ export default {
     components: {
         PermissionPopup,
         MainNav,
-        MainFooter
-    }
+        MainFooter,
+    },
 }
 </script>
 
@@ -49,10 +49,11 @@ body {
 
 a {
     color: @light_blue;
+    text-decoration: none;
 }
 
 div.center_wrapper {
-    max-width: 50rem;
+    max-width: 48rem;
     box-sizing: border-box;
     padding: 1rem;
     margin: 0 auto;

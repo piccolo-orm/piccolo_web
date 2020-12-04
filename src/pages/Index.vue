@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <div>
+        <div id="home">
             <div class="hero">
                 <!--
                 Using an inline style to stop the SVG being too large when only
@@ -9,45 +9,58 @@
                 <h2>
                     <font-awesome-icon
                         :icon="['fab', 'python']"
-                        style="max-height: 2.2rem;"
+                        style="max-height: 2.2rem"
                     />A fast, async ORM for Python, that's easy to learn
                 </h2>
             </div>
 
-            <div class="neutral">
+            <section>
                 <div class="center_wrapper">
                     <h1>Benefits</h1>
                     <ul id="benefits">
-                        <li
-                            v-bind:key="benefit"
-                            v-for="benefit in benefits"
-                        >
+                        <li v-bind:key="benefit" v-for="benefit in benefits">
                             <font-awesome-icon
                                 icon="check"
-                                style="max-height: 1rem;"
+                                style="max-height: 1rem"
                             />
                             <span v-html="benefit"></span>
                         </li>
                     </ul>
                 </div>
-            </div>
+            </section>
 
-            <div id="examples">
-                <div
-                    class="center_wrapper"
-                    v-html="$page.examples.edges[0].node.content"
-                ></div>
-            </div>
+            <section>
+                <div class="center_wrapper">
+                    <h1>Examples</h1>
+                    <div id="examples">
+                        <div
+                            v-html="$page.examples.edges[0].node.content"
+                        ></div>
+                    </div>
+                </div>
+            </section>
 
-            <div class="neutral">
+            <section>
                 <div class="center_wrapper">
                     <h1>Getting started</h1>
 
                     <p>
-                        <a href="https://piccolo-orm.readthedocs.io/en/latest/">Read the docs</a>, and learn the basics in 5 minutes.
+                        <a href="https://piccolo-orm.readthedocs.io/en/latest/"
+                            >Read the docs</a
+                        >, and learn the basics in 5 minutes.
                     </p>
                 </div>
-            </div>
+            </section>
+
+            <section class="posts">
+                <div class="center_wrapper">
+                    <h2>Recent Blog Posts</h2>
+                    <p v-for="edge in $page.posts.edges" :key="edge.node.title">
+                        <a :href="edge.node.path">{{ edge.node.title }}</a>
+                    </p>
+                    <p><a href="/blog/">View all</a></p>
+                </div>
+            </section>
         </div>
     </Layout>
 </template>
@@ -62,13 +75,21 @@ query {
             }
         }
     }
+    posts: allBlogPost(limit: 5, order: DESC, sortBy: "date") {
+        edges {
+            node {
+                title
+                path
+            }
+        }
+    }
 }
 </page-query>
 
 
 <script>
 export default {
-    data: function() {
+    data: function () {
         return {
             benefits: [
                 "<b>Supports Postgres and SQLite</b>",
@@ -77,8 +98,8 @@ export default {
                 "<b>Tab completion support</b> - works great with iPython and VSCode",
                 "<b>Batteries included</b> - a User model, authentication, migrations, an admin, and more",
                 "<b>Modern Python</b> - fully type annotated",
-                "<b>Built for web developers and data scientists</b>"
-            ]
+                "<b>Built for web developers and data scientists</b>",
+            ],
         }
     },
     metaInfo() {
@@ -89,11 +110,11 @@ export default {
                     key: "description",
                     name: "description",
                     content:
-                        "A fast, async ORM for Python, that's easy to learn."
-                }
-            ]
+                        "A fast, async ORM for Python, that's easy to learn.",
+                },
+            ],
         }
-    }
+    },
 }
 </script>
 
@@ -101,70 +122,91 @@ export default {
 <style lang="less">
 @import "../variables.less";
 
-div.hero {
-    background-color: @light_blue;
-    padding-top: 4rem;
-    text-align: center;
+div#home {
+    div.hero {
+        background-color: @light_blue;
+        padding-top: 4rem;
+        text-align: center;
 
-    h2 {
-        color: white;
-        font-size: 2.2rem;
-        font-weight: bold;
-        margin: 0;
-        padding: 10rem 1rem;
+        h2 {
+            color: white;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 0;
+            padding: 10rem 1rem;
+            box-sizing: border-box;
+
+            @media (max-width: @mobile_width) {
+                font-size: 1.6rem;
+            }
+
+            svg {
+                padding-right: 0.5rem;
+            }
+        }
+    }
+
+    section {
         box-sizing: border-box;
+        padding: 3rem 0;
 
-        @media (max-width: @mobile_width) {
-            font-size: 1.6rem;
+        h1 {
+            margin: 0;
+            padding: 1rem 0;
         }
 
-        svg {
-            padding-right: 0.5rem;
+        ul {
+            margin: 0;
+        }
+
+        &:nth-child(odd) {
+            background-color: @blue_grey;
         }
     }
-}
 
-div.neutral {
-    background-color: white;
-    padding: 3rem 1rem;
-    box-sizing: border-box;
+    div#examples {
+        h1 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            border-bottom: 0.2rem solid @light_blue;
+            display: inline-block;
+            padding-bottom: 0;
+            margin-bottom: 0.5rem;
+        }
 
-    h1 {
-        margin: 0;
-        padding: 1rem 0;
+        pre {
+            margin-bottom: 3rem;
+        }
     }
 
-    ul {
-        margin: 0;
-    }
-}
+    ul#benefits {
+        padding-left: 0;
 
-div#examples {
-    background-color: whitesmoke;
-    padding: 1rem;
-    box-sizing: border-box;
+        li {
+            list-style: none;
+            padding: 0.5rem 0;
 
-    h1 {
-        color: rgba(0, 0, 0, 0.8);
-        font-size: 1rem;
-        text-transform: uppercase;
+            svg {
+                color: green;
+                padding-right: 0.5rem;
+            }
+        }
     }
 
-    pre {
-        margin-bottom: 3rem;
-    }
-}
+    section.posts {
+        background-color: @extra_dark_blue;
 
-ul#benefits {
-    padding-left: 0;
+        h2 {
+            color: white;
+        }
 
-    li {
-        list-style: none;
-        padding: 0.5rem 0;
+        div {
+            padding: 3rem 1rem;
+        }
 
-        svg {
-            color: green;
-            padding-right: 0.5rem;
+        a {
+            border-bottom: 0.2em solid @light_blue;
+            color: white;
         }
     }
 }

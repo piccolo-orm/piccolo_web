@@ -9,7 +9,9 @@
                 </p>
                 <h1>{{ $page.blogPost.title }}</h1>
                 <div v-html="$page.blogPost.content"></div>
-                <p id="posted_on">Posted on: {{ $page.blogPost.date|customString }}</p>
+                <p id="posted_on">
+                    Posted on: {{ $page.blogPost.date | customString }}
+                </p>
             </div>
         </div>
     </Layout>
@@ -38,11 +40,11 @@ export default {
                 {
                     key: "description",
                     name: "description",
-                    content: this.$page.blogPost.description
-                }
-            ]
+                    content: this.$page.blogPost.description,
+                },
+            ],
         }
-    }
+    },
 }
 </script>
 
@@ -59,6 +61,16 @@ div.blog_single {
 
     h1 {
         margin-bottom: 0;
+    }
+
+    p,
+    li {
+        code {
+            padding: 2px 4px;
+            color: #1f1f1f;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
     }
 
     figure {
