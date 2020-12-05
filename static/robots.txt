@@ -1,1 +1,1 @@
-Sitemap: https://piccolo-orm.com/sitemap.xml
+Sitemap: https://www.piccolo-orm.com/sitemap.xml
