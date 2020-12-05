@@ -6,7 +6,7 @@
 
 module.exports = {
     siteName: 'Piccolo',
-    siteUrl: 'https://www.piccolo-orm.com',
+    siteUrl: 'https://piccolo-orm.com',
     plugins: [
         {
             use: '@gridsome/source-filesystem',
