@@ -56,7 +56,9 @@
                 <div class="center_wrapper">
                     <h2>Recent Blog Posts</h2>
                     <p v-for="edge in $page.posts.edges" :key="edge.node.title">
-                        <a :href="edge.node.path">{{ edge.node.title }}</a>
+                        <g-link :to="edge.node.path">{{
+                            edge.node.title
+                        }}</g-link>
                     </p>
                     <p><a href="/blog/">View all</a></p>
                 </div>
