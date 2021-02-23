@@ -4,7 +4,10 @@
             <TutorialBase>
                 <div class="html">
                     <h1>Tutorials</h1>
-                    <p>Welcome to the Piccolo tutorials. Select a tutorial from the menu to get started.</p>
+                    <p>
+                        Welcome to the Piccolo tutorials. Select a tutorial from
+                        the menu to get started.
+                    </p>
                 </div>
             </TutorialBase>
         </div>
@@ -13,26 +16,25 @@
 
 
 <script>
-import axios from "axios"
 import TutorialBase from "@/components/Tutorial/TutorialBase.vue"
 
 export default {
     props: {
         tutorialName: {
             type: String,
-            default: ""
+            default: "",
         },
         stepName: {
             type: String,
-            default: ""
-        }
+            default: "",
+        },
     },
     components: {
-        TutorialBase
+        TutorialBase,
     },
-    data: function() {
+    data: function () {
         return {
-            html: ""
+            html: "",
         }
     },
     metaInfo: {
@@ -41,9 +43,9 @@ export default {
             {
                 key: "description",
                 name: "description",
-                content: "Piccolo ORM Tutorials"
-            }
-        ]
-    }
+                content: "Piccolo ORM Tutorials",
+            },
+        ],
+    },
 }
 </script>

@@ -6,6 +6,7 @@ import {
     faChevronCircleRight,
     faChevronLeft,
     faCheck,
+    faComment,
     faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons'
 import { faPython } from '@fortawesome/free-brands-svg-icons'
@@ -18,6 +19,7 @@ library.add(
     faChevronCircleRight,
     faChevronLeft,
     faCheck,
+    faComment,
     faPython,
     faExternalLinkAlt
 )

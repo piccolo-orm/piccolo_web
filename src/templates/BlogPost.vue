@@ -1,19 +1,32 @@
 <template>
     <Layout>
         <div class="blog_single">
+            <div class="hero">
+                <div class="center_wrapper">
+                    <p id="back">
+                        <g-link to="/blog/">
+                            <font-awesome-icon icon="chevron-left" />All posts
+                        </g-link>
+                    </p>
+                    <h1>{{ $page.blogPost.title }}</h1>
+                </div>
+            </div>
+
             <div class="center_wrapper">
-                <p id="back">
-                    <g-link to="/blog/">
-                        <font-awesome-icon icon="chevron-left" />All posts
-                    </g-link>
-                </p>
-                <h1>{{ $page.blogPost.title }}</h1>
                 <div v-html="$page.blogPost.content"></div>
                 <p id="posted_on">
                     Posted on: {{ $page.blogPost.date | customString }}
                 </p>
             </div>
         </div>
+
+        <p class="discussion">
+            <font-awesome-icon icon="comment" />
+            Have any comments or feedback on this post?
+            <a href="https://github.com/piccolo-orm/piccolo/discussions"
+                >Chat with us on GitHub.</a
+            >
+        </p>
     </Layout>
 </template>
 
@@ -55,6 +68,18 @@ div.blog_single {
     padding-top: 4rem;
     padding-bottom: 8rem;
 
+    div.hero {
+        background-color: @blue_grey;
+        box-sizing: border-box;
+        padding: 1rem 0;
+
+        h1 {
+            color: @medium_blue;
+            font-size: 2.5rem;
+            font-weight: normal;
+        }
+    }
+
     a {
         text-decoration: none;
     }
@@ -63,12 +88,15 @@ div.blog_single {
         margin-bottom: 0;
     }
 
+    h2 {
+        margin-top: 2.5rem;
+    }
+
     p,
     li {
         code {
             padding: 2px 4px;
-            color: #1f1f1f;
-            background-color: #f0f0f0;
+            background-color: @blue_grey;
             border-radius: 4px;
         }
     }
@@ -100,7 +128,7 @@ div.blog_single {
     }
 
     p#posted_on {
-        color: rgba(0, 0, 0, 0.3);
+        color: lighten(@medium_blue, 20%);
         font-size: 0.8rem;
         font-weight: bolder;
         margin-top: 0;
@@ -119,20 +147,35 @@ div.blog_single {
 
             svg {
                 padding-right: 0.5rem;
+                transition: 0.5s transform;
             }
 
             &:hover {
                 background-color: lighten(@light_blue, 10%);
+
+                svg {
+                    transform: translateX(-0.2rem);
+                }
             }
         }
     }
+}
 
-    h2 {
-        margin-top: 2.5rem;
+p.discussion {
+    background-color: @blue_grey;
+    box-sizing: border-box;
+    color: @medium_blue;
+    margin: 0;
+    padding: 2rem 2rem 3rem;
+    text-align: center;
+
+    a {
+        color: @light_blue;
     }
-    p,
-    li {
-        font-size: 1rem;
+
+    svg {
+        padding: 0 0.5rem;
+        opacity: 0.5;
     }
 }
 </style>

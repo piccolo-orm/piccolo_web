@@ -47,6 +47,19 @@ body {
     position: relative;
 }
 
+h1,
+h2,
+h3 {
+    color: @medium_blue;
+}
+
+p,
+li {
+    color: darken(@medium_blue, 5%);
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
 a {
     color: @light_blue;
     text-decoration: none;

@@ -8,7 +8,9 @@
                         v-bind:key="post.node.title"
                         v-for="post in $page.posts.edges"
                     >
-                        <g-link :to="post.node.path">{{ post.node.title }}</g-link>
+                        <g-link :to="post.node.path">{{
+                            post.node.title
+                        }}</g-link>
                         <span>{{ post.node.date | customString }}</span>
                     </li>
                 </ul>
@@ -39,7 +41,7 @@ import MainFooter from "@/components/MainFooter.vue"
 
 export default {
     components: {
-        MainFooter
+        MainFooter,
     },
     metaInfo: {
         title: "Blog",
@@ -48,10 +50,10 @@ export default {
                 key: "description",
                 name: "description",
                 content:
-                    "Articles about Python, asyncio, databases, the Piccolo ORM, and general development."
-            }
-        ]
-    }
+                    "Articles about Python, asyncio, databases, the Piccolo ORM, and general development.",
+            },
+        ],
+    },
 }
 </script>
 
@@ -77,7 +79,7 @@ div.blog {
                 font-size: 1.2rem;
                 font-weight: bolder;
                 text-decoration: none;
-                color: rgba(0, 0, 0, 0.8);
+                color: @medium_blue;
                 border-bottom: 3px solid lighten(@light_blue, 10%);
                 padding-bottom: 0.2rem;
 
