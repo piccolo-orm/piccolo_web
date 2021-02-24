@@ -51,6 +51,10 @@ async def run_batched():
     iterations = 5
     chunk_size = int(len(coroutines) / iterations)
 
+    remainder = len(coroutines) - (chunk_size * iterations)
+    if remainder > 0:
+        iterations += math.ceil(remainder / chunk_size)
+
     for i in range(iterations):
         chunk = coroutines[i * chunk_size : (i + 1) * chunk_size]
         await asyncio.gather(*chunk)
