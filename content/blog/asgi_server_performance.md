@@ -1,5 +1,5 @@
 ---
-title: What is the fastest ASGI server?
+title: Which is the fastest ASGI server?
 date: 2021-02-28
 description: Testing the main Python ASGI servers to see which fastest.
 draft: false
