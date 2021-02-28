@@ -77,7 +77,7 @@ query {
             }
         }
     }
-    posts: allBlogPost(limit: 5, order: DESC, sortBy: "date") {
+    posts: allBlogPost(limit: 6, order: DESC, sortBy: "date") {
         edges {
             node {
                 title
