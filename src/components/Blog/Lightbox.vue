@@ -5,9 +5,7 @@
                 ><font-awesome-icon icon="times"
             /></a>
         </p>
-        <div class="content">
-            <img :src="imageSrc" v-if="imageSrc" />
-        </div>
+        <img :src="imageSrc" v-if="imageSrc" />
     </div>
 </template>
 
@@ -15,7 +13,7 @@
 export default {
     data() {
         return {
-            visible: true,
+            visible: false,
             imageSrc: undefined,
         }
     },
@@ -46,19 +44,20 @@ div#lightbox {
     position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     z-index: 1000;
 
     p.close {
-        box-sizing: border-box;
         flex-grow: 0;
         line-height: 1;
         margin: 0;
-        padding: 2rem;
         text-align: right;
+        padding-bottom: 1rem;
 
         a {
             color: white;
@@ -67,18 +66,15 @@ div#lightbox {
         }
     }
 
-    div.content {
-        box-sizing: border-box;
-        flex-grow: 0;
-        padding: 1rem;
-
-        img {
-            display: block;
-            margin: 0 auto;
-            max-height: 100%;
-            max-width: 100%;
-            width: 60rem;
-        }
+    img {
+        display: block;
+        flex-grow: 1;
+        margin: 0 auto;
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+        object-position: top;
+        width: 60rem;
     }
 }
 </style>
