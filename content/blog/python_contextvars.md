@@ -39,7 +39,9 @@ It wraps the the coroutine in a task. A coroutine is basically a function which 
 The important thing to understand is your coroutine will always be running inside some task.
 
 <figure>
-    <img src="/images/blog/asyncio_contextvars.png" class="medium" alt="asyncio contextvars" />
+    <a href="#" class="lightbox">
+        <img src="/images/blog/asyncio_contextvars.png" class="medium" alt="asyncio contextvars" />
+    </a>
     <figcaption>An example asyncio program</figcaption>
 </figure>
 

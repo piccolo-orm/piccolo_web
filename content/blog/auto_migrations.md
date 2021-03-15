@@ -162,4 +162,6 @@ The next time the user creates a new migration, Piccolo uses a `SchemaDiffer` to
 
 Here's a visualisation of how auto migrations work internally:
 
+<a href="#" class="lightbox">
 <img src="/images/blog/migration_graphic.png" class="medium" alt="migration graphic" />
+</a>

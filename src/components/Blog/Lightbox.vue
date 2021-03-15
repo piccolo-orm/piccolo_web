@@ -47,7 +47,7 @@ div#lightbox {
     height: 100%;
     width: 100%;
     box-sizing: border-box;
-    padding: 2rem;
+    padding: 2rem 2rem 5rem;
     display: flex;
     flex-direction: column;
     z-index: 1000;
@@ -74,7 +74,7 @@ div#lightbox {
         max-width: 100%;
         object-fit: contain;
         object-position: top;
-        width: 60rem;
+        width: 80rem;
     }
 }
 </style>

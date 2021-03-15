@@ -18,15 +18,21 @@ The testing process and results are documented on [GitHub](https://github.com/pi
 
 Uvicorn:
 
-![Uvicorn](https://raw.githubusercontent.com/piccolo-orm/asgi_server_performance/master/images/uvicorn.png)
+<a href="#" class="lightbox">
+<img src="https://raw.githubusercontent.com/piccolo-orm/asgi_server_performance/master/images/uvicorn.png" title="Uvicorn" />
+</a>
 
 Hypercorn:
 
-![Hypercorn](https://raw.githubusercontent.com/piccolo-orm/asgi_server_performance/master/images/hypercorn.png)
+<a href="#" class="lightbox">
+<img src="https://raw.githubusercontent.com/piccolo-orm/asgi_server_performance/master/images/hypercorn.png" title="Hypercorn" />
+</a>
 
 Daphne:
 
-![Daphne](https://raw.githubusercontent.com/piccolo-orm/asgi_server_performance/master/images/daphne.png)
+<a href="#" class="lightbox">
+<img src="https://raw.githubusercontent.com/piccolo-orm/asgi_server_performance/master/images/daphne.png" title="Daphne" />
+</a>
 
 ## Conclusions
 
