@@ -27,6 +27,8 @@
                 >Chat with us on GitHub.</a
             >
         </p>
+
+        <Lightbox />
     </Layout>
 </template>
 
@@ -44,6 +46,8 @@ query BlogPost ($path: String!) {
 
 
 <script>
+import Lightbox from "../components/Blog/Lightbox"
+
 export default {
     metaInfo() {
         return {
@@ -57,6 +61,9 @@ export default {
                 },
             ],
         }
+    },
+    components: {
+        Lightbox,
     },
 }
 </script>

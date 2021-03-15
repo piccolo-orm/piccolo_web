@@ -8,7 +8,9 @@ draft: false
 Many of the recent changes to [Piccolo Admin](https://github.com/piccolo-orm/piccolo_admin) have been about improving performance and usability when dealing with large database tables.
 
 <figure>
+<a href="#" class="lightbox">
 <img src="/images/blog/admin-millions-of-rows/admin_screenshot.png" alt="Piccolo Admin screenshot" />
+</a>
 <figcaption>The Piccolo Admin, in dark mode</figcaption>
 </figure>
 
@@ -41,12 +43,16 @@ This is the main bottleneck for supporting large database tables. If a simple se
 The solution is to use a search input instead. For the filter sidebar, this has now been implemented. But for the edit and add pages, it will be implemented soon.
 
 <figure>
+<a href="#" class="lightbox">
 <img src="/images/blog/admin-millions-of-rows/search-empty.png" class="medium" alt="Foreign key selector - empty" />
+</a>
 <figcaption>Empty search field</figcaption>
 </figure>
 
 <figure>
+<a href="#" class="lightbox">
 <img src="/images/blog/admin-millions-of-rows/search-with-content.png" class="medium" alt="Foreign key selector - with content" />
+</a>
 <figcaption>Search field with content</figcaption>
 </figure>
 
