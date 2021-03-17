@@ -17,6 +17,25 @@ export default {
             imageSrc: undefined,
         }
     },
+    methods: {
+        handler(event) {
+            let app = this
+
+            console.log("Key pressed")
+            if (event.key == "x") {
+                app.visible = false
+            }
+        },
+    },
+    watch: {
+        visible(isVisible) {
+            if (isVisible) {
+                document.addEventListener("keydown", this.handler)
+            } else {
+                document.removeEventListener("keydown", this.handler)
+            }
+        },
+    },
     mounted() {
         let app = this
 
