@@ -20,7 +20,7 @@ export default {
     methods: {
         handler(event) {
             console.log("Key pressed")
-            if (event.key == "x") {
+            if (event.key == "x" || event.key === "Escape") {
                 this.visible = false
             }
         },
