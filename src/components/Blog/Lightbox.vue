@@ -19,11 +19,9 @@ export default {
     },
     methods: {
         handler(event) {
-            let app = this
-
             console.log("Key pressed")
             if (event.key == "x") {
-                app.visible = false
+                this.visible = false
             }
         },
     },
