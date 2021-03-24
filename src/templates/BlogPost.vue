@@ -125,6 +125,11 @@ div.blog_single {
                 max-width: 100%;
                 width: 15rem;
             }
+
+            &.extra_small {
+                max-width: 100%;
+                width: 10rem;
+            }
         }
 
         figcaption {
