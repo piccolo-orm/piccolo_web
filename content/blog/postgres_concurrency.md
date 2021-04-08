@@ -1,5 +1,5 @@
 ---
-title: Postgres Concurrency
+title: Postgres concurrency
 date: 2020-02-16
 description: Understanding concurrency in Postgres, and how it relates to async libraries like Piccolo.
 draft: false

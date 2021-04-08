@@ -1,5 +1,5 @@
 ---
-title: Auto Migrations
+title: Auto migrations
 date: 2020-03-15
 description: A look at how auto migrations work in Piccolo.
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: Piccolo Transactions
+title: Piccolo transactions
 date: 2020-02-26
 description: A look at how the Piccolo ORM handles database transactions using asyncio.
 draft: false
