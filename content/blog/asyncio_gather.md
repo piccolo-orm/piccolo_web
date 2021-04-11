@@ -31,7 +31,7 @@ async def main():
         )
 
     # Check all of the requests were successful:
-    assert set([i.status_code for i in response]) == {200}
+    assert {i.status_code for i in response} == {200}
 
 
 if __name__ == "__main__":
