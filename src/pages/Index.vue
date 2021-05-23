@@ -1,7 +1,7 @@
 <template>
     <Layout>
         <div id="home">
-            <div class="hero">
+            <Hero>
                 <!--
                 Using an inline style to stop the SVG being too large when only
                 the static HTML has been loaded.
@@ -12,20 +12,13 @@
                         style="max-height: 2.2rem"
                     />A fast, async ORM for Python, that's easy to learn
                 </h2>
-            </div>
+            </Hero>
 
             <section>
                 <div class="center_wrapper">
                     <h1>Benefits</h1>
-                    <ul id="benefits">
-                        <li v-bind:key="benefit" v-for="benefit in benefits">
-                            <font-awesome-icon
-                                icon="check"
-                                style="max-height: 1rem"
-                            />
-                            <span v-html="benefit"></span>
-                        </li>
-                    </ul>
+
+                    <Benefits :benefits="benefits" />
                 </div>
             </section>
 
@@ -90,6 +83,9 @@ query {
 
 
 <script>
+import Benefits from "../components/Benefits.vue"
+import Hero from "../components/Hero.vue"
+
 export default {
     data: function () {
         return {
@@ -103,6 +99,10 @@ export default {
                 "<b>Built for web developers and data scientists</b>",
             ],
         }
+    },
+    components: {
+        Benefits,
+        Hero,
     },
     metaInfo() {
         return {
@@ -125,29 +125,6 @@ export default {
 @import "../variables.less";
 
 div#home {
-    div.hero {
-        background-color: @light_blue;
-        padding-top: 4rem;
-        text-align: center;
-
-        h2 {
-            color: white;
-            font-size: 2.2rem;
-            font-weight: bold;
-            margin: 0;
-            padding: 10rem 1rem;
-            box-sizing: border-box;
-
-            @media (max-width: @mobile_width) {
-                font-size: 1.6rem;
-            }
-
-            svg {
-                padding-right: 0.5rem;
-            }
-        }
-    }
-
     section {
         box-sizing: border-box;
         padding: 3rem 0;
@@ -178,20 +155,6 @@ div#home {
 
         pre {
             margin-bottom: 3rem;
-        }
-    }
-
-    ul#benefits {
-        padding-left: 0;
-
-        li {
-            list-style: none;
-            padding: 0.5rem 0;
-
-            svg {
-                color: green;
-                padding-right: 0.5rem;
-            }
         }
     }
 

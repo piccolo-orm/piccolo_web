@@ -46,7 +46,7 @@ query BlogPost ($path: String!) {
 
 
 <script>
-import Lightbox from "../components/Blog/Lightbox"
+import Lightbox from "../components/Lightbox"
 
 export default {
     metaInfo() {

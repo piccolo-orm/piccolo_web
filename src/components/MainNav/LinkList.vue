@@ -1,6 +1,9 @@
 <template>
     <ul class="links">
         <li v-on:click="clicked">
+            <g-link to="/ecosystem/">Ecosystem</g-link>
+        </li>
+        <li v-on:click="clicked">
             <g-link to="/blog/">Blog</g-link>
         </li>
         <li v-on:click="clicked">
@@ -27,10 +30,10 @@
 <script>
 export default {
     methods: {
-        clicked: function() {
+        clicked: function () {
             this.$emit("navigating")
-        }
-    }
+        },
+    },
 }
 </script>
 

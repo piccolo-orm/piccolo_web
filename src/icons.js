@@ -9,6 +9,7 @@ import {
     faComment,
     faExternalLinkAlt,
     faTimes,
+    faTools
 } from '@fortawesome/free-solid-svg-icons'
 import { faPython } from '@fortawesome/free-brands-svg-icons'
 
@@ -24,6 +25,7 @@ library.add(
     faExternalLinkAlt,
     faPython,
     faTimes,
+    faTools
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
