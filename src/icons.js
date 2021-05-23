@@ -8,10 +8,11 @@ import {
     faChevronLeft,
     faComment,
     faExternalLinkAlt,
+    faFile,
     faTimes,
     faTools
 } from '@fortawesome/free-solid-svg-icons'
-import { faPython } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faPython } from '@fortawesome/free-brands-svg-icons'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -23,6 +24,8 @@ library.add(
     faChevronLeft,
     faComment,
     faExternalLinkAlt,
+    faFile,
+    faGithub,
     faPython,
     faTimes,
     faTools

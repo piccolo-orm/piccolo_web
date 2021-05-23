@@ -19,16 +19,17 @@
         <section>
             <div class="center_wrapper">
                 <h2>Learn more</h2>
-                <ul>
+                <ul class="link_blocks">
                     <li>
                         <a
                             href="https://piccolo-admin.readthedocs.io/en/latest/"
-                            >Read the docs</a
+                            ><font-awesome-icon icon="file" />Read the docs</a
                         >
                     </li>
                     <li>
-                        <a href="https://github.com/piccolo-orm/piccolo_admin"
-                            >Source code</a
+                        <a href="https://github.com/piccolo-orm/piccolo_admin">
+                            <font-awesome-icon :icon="['fab', 'github']" />View
+                            the source code</a
                         >
                     </li>
                 </ul>
@@ -89,6 +90,34 @@ section {
 
     &:nth-child(even) {
         background-color: @blue_grey;
+    }
+
+    ul.link_blocks {
+        padding: 0;
+
+        li {
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 0 0.2rem 0 0;
+
+            text-align: center;
+            width: 50%;
+
+            &:nth-child(even) {
+                padding: 0 0 0 0.2rem;
+            }
+
+            a {
+                background-color: @light_blue;
+                color: white;
+                display: block;
+                padding: 1rem;
+
+                svg {
+                    margin-right: 0.5rem;
+                }
+            }
+        }
     }
 }
 </style>
