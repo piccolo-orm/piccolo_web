@@ -4,9 +4,36 @@
             <h2><font-awesome-icon icon="tools" />Piccolo Admin</h2>
             <h3>A modern web app for managing your data</h3>
 
-            <a href="/images/ecosystem/piccolo_admin.png" class="lightbox"
-                ><img src="/images/ecosystem/piccolo_admin.png"
+            <a
+                href="/images/ecosystem/piccolo_admin_dark.png"
+                class="lightbox"
+                v-show="colourMode == 'dark'"
+                ><img src="/images/ecosystem/piccolo_admin_dark.png"
             /></a>
+
+            <a
+                href="/images/ecosystem/piccolo_admin_light.png"
+                class="lightbox"
+                v-show="colourMode == 'light'"
+                ><img src="/images/ecosystem/piccolo_admin_light.png"
+            /></a>
+
+            <a
+                style="
+                    color: white;
+                    text-alight: center;
+                    display: block;
+                    padding-top: 2rem;
+                "
+                href="#"
+                v-on:click.prevent="
+                    colourMode = colourMode == 'light' ? 'dark' : 'light'
+                "
+                ><font-awesome-icon
+                    :icon="colourMode == 'light' ? 'moon' : 'sun'"
+                />
+                Show {{ colourMode == "light" ? "dark" : "light" }} mode</a
+            >
         </Hero>
         <section>
             <div class="center_wrapper">
@@ -54,6 +81,7 @@ export default {
     },
     data() {
         return {
+            colourMode: "dark",
             benefits: [
                 "An alternative to tools like Wordpress and the Django Admin",
                 "User friendly and slick design",

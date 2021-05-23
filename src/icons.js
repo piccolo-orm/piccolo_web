@@ -9,6 +9,8 @@ import {
     faComment,
     faExternalLinkAlt,
     faFile,
+    faMoon,
+    faSun,
     faTimes,
     faTools
 } from '@fortawesome/free-solid-svg-icons'
@@ -26,7 +28,9 @@ library.add(
     faExternalLinkAlt,
     faFile,
     faGithub,
+    faMoon,
     faPython,
+    faSun,
     faTimes,
     faTools
 )
