@@ -1,7 +1,7 @@
 <template>
     <Layout>
         <div class="blog_single">
-            <div class="hero">
+            <div class="blog_hero">
                 <div class="center_wrapper">
                     <p id="back">
                         <g-link to="/blog/">
@@ -75,7 +75,7 @@ div.blog_single {
     padding-top: 4rem;
     padding-bottom: 8rem;
 
-    div.hero {
+    div.blog_hero {
         background-color: @blue_grey;
         box-sizing: border-box;
         padding: 1rem 0;
