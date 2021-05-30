@@ -3,10 +3,19 @@
         <div class="blog">
             <div class="center_wrapper">
                 <h1>Blog</h1>
-                <ul>
+                <div class="search">
+                    <font-awesome-icon icon="search" />
+                    <input
+                        type="search"
+                        placeholder="Filter"
+                        v-model="searchTerm"
+                        v-on:focus="searchTerm = ''"
+                    />
+                </div>
+                <ul v-if="filteredPosts.length > 0">
                     <li
                         v-bind:key="post.node.title"
-                        v-for="post in $page.posts.edges"
+                        v-for="post in filteredPosts"
                     >
                         <g-link :to="post.node.path">{{
                             post.node.title
@@ -14,6 +23,7 @@
                         <span>{{ post.node.date | customString }}</span>
                     </li>
                 </ul>
+                <p v-else>No results</p>
             </div>
             <MainFooter></MainFooter>
         </div>
@@ -43,6 +53,20 @@ export default {
     components: {
         MainFooter,
     },
+    data() {
+        return {
+            searchTerm: "",
+        }
+    },
+    computed: {
+        filteredPosts() {
+            let searchTerm = this.searchTerm.toLowerCase()
+            return this.$page.posts.edges.filter(
+                (post) =>
+                    post.node.title.toLowerCase().indexOf(searchTerm) != -1
+            )
+        },
+    },
     metaInfo: {
         title: "Blog",
         meta: [
@@ -65,6 +89,29 @@ div.blog {
     min-height: 100vh;
     padding-top: 4rem;
     box-sizing: border-box;
+
+    div.search {
+        border-bottom: 2px solid #f0f0f0;
+        border-radius: 0.2rem;
+        box-sizing: border-box;
+        color: @medium_blue;
+        display: flex;
+        padding-left: 0.5rem;
+        align-items: center;
+
+        input {
+            border: none;
+            color: @medium_blue;
+            flex-grow: 1;
+            font-size: 1rem;
+            margin-right: 0.2rem;
+            padding: 0.5rem;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
 
     ul {
         padding: 0;

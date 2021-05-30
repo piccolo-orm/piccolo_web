@@ -10,6 +10,7 @@ import {
     faExternalLinkAlt,
     faFile,
     faMoon,
+    faSearch,
     faSun,
     faTimes,
     faTools
@@ -30,6 +31,7 @@ library.add(
     faGithub,
     faMoon,
     faPython,
+    faSearch,
     faSun,
     faTimes,
     faTools
