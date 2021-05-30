@@ -38,9 +38,16 @@ export default {
 </script>
 
 <style scoped lang="less">
-svg {
-    font-size: 0.7em;
-    padding-left: 0.1rem;
-    vertical-align: top;
+ul.links {
+    li {
+        a.active {
+            border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+        }
+        svg {
+            font-size: 0.7em;
+            padding-left: 0.1rem;
+            vertical-align: top;
+        }
+    }
 }
 </style>
