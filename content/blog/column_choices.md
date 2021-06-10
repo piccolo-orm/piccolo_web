@@ -40,7 +40,7 @@ You can now do queries like this:
 >>> director.save().run_sync()
 ```
 
-Piccolo Admin also supports this feature. When a column has choices specified, a select widget is rendered in the UI.
+[Piccolo Admin](/ecosystem/) also supports this feature. When a column has choices specified, a select widget is rendered in the UI.
 
 <figure>
 <a href="#" class="lightbox">
