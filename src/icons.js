@@ -17,6 +17,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faPython } from '@fortawesome/free-brands-svg-icons'
 
+// It's important to load the CSS, otherwise the unsaturated version of the
+// website will be missing these styles.
+import '@fortawesome/fontawesome-svg-core/styles.css'
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(
