@@ -25,10 +25,19 @@ ul#benefits {
     li {
         list-style: none;
         padding: 0.5rem 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
 
         svg {
             color: green;
             padding-right: 0.5rem;
+            flex-grow: 0;
+        }
+
+        span {
+            flex-grow: 1;
         }
     }
 }
