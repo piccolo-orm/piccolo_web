@@ -87,7 +87,7 @@ export default {
 
 div.blog {
     min-height: 100vh;
-    padding-top: 4rem;
+    padding-top: 6rem;
     box-sizing: border-box;
 
     div.search {

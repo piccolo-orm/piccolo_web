@@ -1,15 +1,9 @@
 <template>
     <div>
         <ul>
-            <li
-                class="heading"
-                v-on:click.prevent="hideSidebar"
-            >
+            <li class="heading" v-on:click.prevent="hideSidebar">
                 <g-link to="/tutorial/">Tutorials</g-link>
-                <a
-                    class="close"
-                    href="#"
-                >X</a>
+                <a class="close" href="#">X</a>
             </li>
         </ul>
 
@@ -19,7 +13,9 @@
                 :key="tutorial.node.title"
                 v-for="tutorial in $static.tutorials.edges"
             >
-                <g-link :to="tutorial.node.path">{{ tutorial.node.title }}</g-link>
+                <g-link :to="tutorial.node.path">{{
+                    tutorial.node.title
+                }}</g-link>
             </li>
         </ul>
     </div>
@@ -45,7 +41,7 @@ query {
 export default {
     data() {
         return {
-            activePath: ""
+            activePath: "",
         }
     },
     methods: {
@@ -55,7 +51,7 @@ export default {
     },
     mounted() {
         this.activePath = window.location.pathname
-    }
+    },
 }
 </script>
 
@@ -70,10 +66,6 @@ ul {
         color: white;
         list-style: none;
 
-        &.heading {
-            text-transform: uppercase;
-        }
-
         a {
             color: white;
             display: block;
@@ -86,15 +78,23 @@ ul {
         &:hover {
             background-color: rgba(0, 0, 0, 0.2);
         }
-    }
 
-    li.heading {
-        a.close {
-            float: right;
-            padding-right: 1.5rem;
+        &.heading {
+            display: flex;
+            flex-direction: row;
+            text-transform: uppercase;
 
-            @media (min-width: @mobile_width) {
-                display: none;
+            a {
+                flex-grow: 1;
+            }
+
+            a.close {
+                flex-grow: 0;
+                padding-right: 1.5rem;
+
+                @media (min-width: @mobile_width) {
+                    display: none;
+                }
             }
         }
     }

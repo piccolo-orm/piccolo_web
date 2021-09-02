@@ -1,7 +1,7 @@
 <template>
-    <div class="column_wrapper">
+    <div class="tutorial_column_wrapper">
         <TutorialSidebarTab v-on:showSidebar="showSidebar()" />
-        <aside v-bind:class="{hidden: hiddenSidebar}">
+        <aside v-bind:class="{ hidden: hiddenSidebar }">
             <TutorialSidebar v-on:hideSidebar="hideSidebar()" />
         </aside>
         <div class="main_column">
@@ -31,31 +31,31 @@ import TutorialSidebar from "@/components/Tutorial/TutorialSidebar.vue"
 import TutorialSidebarTab from "@/components/Tutorial/TutorialSidebarTab.vue"
 
 export default {
-    data: function() {
+    data: function () {
         return {
-            hiddenSidebar: true
+            hiddenSidebar: true,
         }
     },
     components: {
         TutorialSidebar,
-        TutorialSidebarTab
+        TutorialSidebarTab,
     },
     methods: {
-        hideSidebar: function() {
+        hideSidebar: function () {
             this.hiddenSidebar = true
         },
-        showSidebar: function() {
+        showSidebar: function () {
             this.hiddenSidebar = false
-        }
-    }
+        },
+    },
 }
 </script>
 
 
-<style scoped lang="less">
+<style lang="less">
 @import "../../variables.less";
 
-div.column_wrapper {
+div.tutorial_column_wrapper {
     align-items: stretch;
     display: flex;
     flex-direction: row;
@@ -110,7 +110,31 @@ div.column_wrapper {
 
         div.html {
             box-sizing: border-box;
-            padding: 1rem;
+            max-width: 50rem;
+            padding: 3rem 1rem 5rem;
+            margin: 0 auto;
+
+            hr {
+                border: none;
+                background-color: #f0f0f0;
+                height: 2px;
+                margin: 2rem 0;
+            }
+
+            iframe {
+                padding: 1rem 0;
+                width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+
+            p {
+                code {
+                    padding: 2px 4px;
+                    background-color: @blue_grey;
+                    border-radius: 4px;
+                }
+            }
 
             h2 {
                 margin-top: 2.5rem;
