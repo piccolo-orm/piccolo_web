@@ -4,7 +4,9 @@
             <div class="burger_wrapper">
                 <a
                     href="#"
-                    v-on:click.prevent="burgerVisible = burgerVisible ? false : true"
+                    v-on:click.prevent="
+                        burgerVisible = burgerVisible ? false : true
+                    "
                 >
                     <BurgerIcon v-bind:active="burgerVisible" />
                 </a>
@@ -14,16 +16,13 @@
                 />
             </div>
             <h1>
-                <g-link to="/">Piccolo</g-link>
+                <g-link to="/"><img src="/images/db_icon.svg" />Piccolo</g-link>
             </h1>
             <div class="link_wrapper">
                 <LinkList />
             </div>
         </div>
-        <div
-            class="overlay"
-            v-if="burgerVisible"
-        ></div>
+        <div class="overlay" v-if="burgerVisible"></div>
     </nav>
 </template>
 
@@ -34,13 +33,13 @@ import LinkList from "./LinkList.vue"
 export default {
     components: {
         LinkList,
-        BurgerIcon
+        BurgerIcon,
     },
-    data: function() {
+    data: function () {
         return {
-            burgerVisible: false
+            burgerVisible: false,
         }
-    }
+    },
 }
 </script>
 
@@ -76,6 +75,11 @@ nav {
         flex-grow: 1;
         margin: 0;
         padding: 1rem 1.5rem;
+
+        img {
+            height: 1.1rem;
+            padding-right: 0.5rem;
+        }
 
         @media (max-width: @mobile_width) {
             text-align: center;
