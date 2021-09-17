@@ -16,7 +16,11 @@
                 />
             </div>
             <h1>
-                <g-link to="/"><img src="/images/db_icon.svg" />Piccolo</g-link>
+                <g-link to="/"
+                    ><img
+                        src="../../assets/images/db_icon.svg"
+                    />Piccolo</g-link
+                >
             </h1>
             <div class="link_wrapper">
                 <LinkList />
@@ -74,12 +78,8 @@ nav {
         display: inline-block;
         flex-grow: 1;
         margin: 0;
+        font-size: 1.5rem;
         padding: 1rem 1.5rem;
-
-        img {
-            height: 1.1rem;
-            padding-right: 0.5rem;
-        }
 
         @media (max-width: @mobile_width) {
             text-align: center;
@@ -89,6 +89,12 @@ nav {
         a {
             color: white;
             text-decoration: none;
+
+            img {
+                height: 1.1rem;
+                padding-right: 0.5rem;
+                padding-top: 0.15rem;
+            }
         }
     }
 
