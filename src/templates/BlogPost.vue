@@ -108,6 +108,10 @@ div.blog_single {
         }
     }
 
+    iframe {
+        max-width: 100%;
+    }
+
     figure {
         margin: 1rem 0;
         text-align: center;
