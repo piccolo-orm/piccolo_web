@@ -100,6 +100,7 @@ APP_REGISTRY = AppRegistry(apps=["piccolo_admin.piccolo_app"])
 To run the app:
 
 - Make sure the database exists.
+- Install the requirements - `pip install piccolo[all] piccolo_admin`
 - Run all migrations - `piccolo migrations forwards all`
 - Create a user to login with - `piccolo user create`
 - Start the app - `uvicorn app:app`
