@@ -1,6 +1,6 @@
 ---
 title: Python's graphlib is awesome
-date: 2021-12-06
+date: 2021-10-12
 description: An introduction to the the graphlib module which got added to the Python standard library in version 3.9.
 draft: false
 ---
