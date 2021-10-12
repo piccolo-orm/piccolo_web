@@ -33,7 +33,7 @@ The `sorted` function works in situations like this:
 
 When sorting more complex types, you can pass a `key` argument to `sorted`, telling it how to compare the various elements. But when each element in the list has complex relationships to other elements in the list, the output won't be what you expect.
 
-Thankfully `graphlib` comes to the rescue. Tools such as graphlib have existing for a long time (for example [NetworkX](https://networkx.org/)), but having something in the standard library which solves common use cases is very welcome.
+Thankfully `graphlib` comes to the rescue. Tools such as `graphlib` have existing for a long time (for example [NetworkX](https://networkx.org/)), but having something in the standard library which solves common use cases is very welcome.
 
 All we have to do to sort the above schema is this:
 
