@@ -4,7 +4,7 @@
             <div class="blog_hero">
                 <div class="center_wrapper">
                     <p id="back">
-                        <g-link to="/blog/">
+                        <g-link to="/blog/" class="nav_button left">
                             <font-awesome-icon icon="chevron-left" />All posts
                         </g-link>
                     </p>
@@ -17,6 +17,25 @@
                 <p id="posted_on">
                     Posted on: {{ $page.blogPost.date | customString }}
                 </p>
+
+                <div class="post_navigation">
+                    <a
+                        class="nav_button left"
+                        v-if="previousPost"
+                        :href="previousPost.node.path"
+                        ><font-awesome-icon icon="chevron-left" />{{
+                            previousPost.node.title
+                        }}</a
+                    >
+
+                    <a
+                        class="nav_button right"
+                        v-if="nextPost"
+                        :href="nextPost.node.path"
+                        >{{ nextPost.node.title
+                        }}<font-awesome-icon icon="chevron-right"
+                    /></a>
+                </div>
             </div>
         </div>
 
@@ -40,6 +59,15 @@ query BlogPost ($path: String!) {
     content
     date
     description
+    path
+  }
+  allBlogPosts: allBlogPost(sortBy: "date") {
+    edges {
+      node {
+        title
+        path
+      }
+    }
   }
 }
 </page-query>
@@ -61,6 +89,34 @@ export default {
                 },
             ],
         }
+    },
+    computed: {
+        nextPost() {
+            let path = this.$page.blogPost.path
+            let allBlogPosts = this.$page.allBlogPosts.edges
+            let element = allBlogPosts.filter(
+                (element) => element.node.path == path
+            )[0]
+            let index = allBlogPosts.indexOf(element)
+            if (index == 0) {
+                return null
+            } else {
+                return allBlogPosts[index - 1]
+            }
+        },
+        previousPost() {
+            let path = this.$page.blogPost.path
+            let allBlogPosts = this.$page.allBlogPosts.edges
+            let element = allBlogPosts.filter(
+                (element) => element.node.path == path
+            )[0]
+            let index = allBlogPosts.indexOf(element)
+            if (index + 1 == allBlogPosts.length) {
+                return null
+            } else {
+                return allBlogPosts[index + 1]
+            }
+        },
     },
     components: {
         Lightbox,
@@ -156,28 +212,62 @@ div.blog_single {
         margin-bottom: 1.5rem;
     }
 
-    p#back {
-        a {
-            background-color: @light_blue;
-            color: white;
-            padding: 0.4rem 0.6rem;
-            text-transform: uppercase;
-            font-size: 0.7rem;
-            text-decoration: none;
-            transition: 1s background-color;
+    a.nav_button {
+        background-color: @light_blue;
+        color: white;
+        padding: 0.4rem 0.6rem;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        max-width: 50%;
+        text-decoration: none;
+        transition: 1s background-color;
+
+        &.left {
+            margin-right: 0.5rem;
 
             svg {
                 padding-right: 0.5rem;
-                transition: 0.5s transform;
             }
 
             &:hover {
-                background-color: lighten(@light_blue, 10%);
-
                 svg {
                     transform: translateX(-0.2rem);
                 }
             }
+        }
+
+        &.right {
+            margin-left: 0.5rem;
+
+            svg {
+                padding-left: 0.5rem;
+            }
+
+            &:hover {
+                svg {
+                    transform: translateX(0.2rem);
+                }
+            }
+        }
+
+        svg {
+            transition: 0.5s transform;
+        }
+
+        &:hover {
+            background-color: lighten(@light_blue, 10%);
+        }
+    }
+
+    div.post_navigation {
+        a {
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        a:last-child {
+            float: right;
         }
     }
 }
