@@ -4,7 +4,7 @@
             <div class="blog_hero">
                 <div class="center_wrapper">
                     <p id="back">
-                        <g-link to="/blog/" class="nav_button left">
+                        <g-link to="/blog/" class="nav_button">
                             <font-awesome-icon icon="chevron-left" />All posts
                         </g-link>
                     </p>
@@ -19,22 +19,25 @@
                 </p>
 
                 <div class="post_navigation">
-                    <a
-                        class="nav_button left"
-                        v-if="previousPost"
-                        :href="previousPost.node.path"
-                        ><font-awesome-icon icon="chevron-left" />{{
-                            previousPost.node.title
-                        }}</a
-                    >
+                    <div class="left">
+                        <a v-if="previousPost" :href="previousPost.node.path"
+                            ><span class="heading"
+                                ><font-awesome-icon
+                                    icon="chevron-left"
+                                />Previous</span
+                            >
+                            <span>{{ previousPost.node.title }}</span></a
+                        >
+                    </div>
 
-                    <a
-                        class="nav_button right"
-                        v-if="nextPost"
-                        :href="nextPost.node.path"
-                        >{{ nextPost.node.title
-                        }}<font-awesome-icon icon="chevron-right"
-                    /></a>
+                    <div class="right">
+                        <a v-if="nextPost" :href="nextPost.node.path"
+                            ><span class="heading"
+                                >Next<font-awesome-icon icon="chevron-right"
+                            /></span>
+                            <span>{{ nextPost.node.title }}</span></a
+                        >
+                    </div>
                 </div>
             </div>
         </div>
@@ -205,7 +208,7 @@ div.blog_single {
     }
 
     p#posted_on {
-        color: lighten(@medium_blue, 20%);
+        color: @dark_blue;
         font-size: 0.8rem;
         font-weight: bolder;
         margin-top: 0;
@@ -219,40 +222,19 @@ div.blog_single {
         box-sizing: border-box;
         text-transform: uppercase;
         font-size: 0.7rem;
-        max-width: 50%;
+        max-width: 48%;
         text-decoration: none;
         transition: 1s background-color;
 
-        &.left {
-            margin-right: 0.5rem;
-
+        &:hover {
             svg {
-                padding-right: 0.5rem;
-            }
-
-            &:hover {
-                svg {
-                    transform: translateX(-0.2rem);
-                }
-            }
-        }
-
-        &.right {
-            margin-left: 0.5rem;
-
-            svg {
-                padding-left: 0.5rem;
-            }
-
-            &:hover {
-                svg {
-                    transform: translateX(0.2rem);
-                }
+                transform: translateX(-0.2rem);
             }
         }
 
         svg {
             transition: 0.5s transform;
+            padding-right: 0.5rem;
         }
 
         &:hover {
@@ -261,13 +243,59 @@ div.blog_single {
     }
 
     div.post_navigation {
+        display: flex;
+        margin-top: 6rem;
+
         a {
-            display: inline-block;
-            margin-bottom: 0.5rem;
+            display: block;
+
+            span {
+                display: block;
+
+                &.heading {
+                    color: @dark_blue;
+                    font-weight: bold;
+                }
+            }
         }
 
-        a:last-child {
-            float: right;
+        div {
+            box-sizing: border-box;
+            flex-grow: 1;
+
+            svg {
+                transition: 0.5s transform;
+            }
+
+            &.left {
+                padding-right: 0.5rem;
+                text-align: left;
+
+                svg {
+                    padding-right: 0.5rem;
+                }
+
+                &:hover {
+                    svg {
+                        transform: translateX(-0.2rem);
+                    }
+                }
+            }
+
+            &.right {
+                padding-left: 0.5rem;
+                text-align: right;
+
+                svg {
+                    padding-left: 0.5rem;
+                }
+
+                &:hover {
+                    svg {
+                        transform: translateX(0.2rem);
+                    }
+                }
+            }
         }
     }
 }
@@ -285,8 +313,8 @@ p.discussion {
     }
 
     svg {
+        color: @light_blue;
         padding: 0 0.5rem;
-        opacity: 0.5;
     }
 }
 </style>
