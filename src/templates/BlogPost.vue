@@ -93,14 +93,21 @@ export default {
             ],
         }
     },
-    computed: {
-        nextPost() {
+    methods: {
+        getPostIndex() {
             let path = this.$page.blogPost.path
             let allBlogPosts = this.$page.allBlogPosts.edges
             let element = allBlogPosts.filter(
                 (element) => element.node.path == path
             )[0]
             let index = allBlogPosts.indexOf(element)
+            return index
+        },
+    },
+    computed: {
+        nextPost() {
+            let index = this.getPostIndex()
+            let allBlogPosts = this.$page.allBlogPosts.edges
             if (index == 0) {
                 return null
             } else {
@@ -108,12 +115,8 @@ export default {
             }
         },
         previousPost() {
-            let path = this.$page.blogPost.path
+            let index = this.getPostIndex()
             let allBlogPosts = this.$page.allBlogPosts.edges
-            let element = allBlogPosts.filter(
-                (element) => element.node.path == path
-            )[0]
-            let index = allBlogPosts.indexOf(element)
             if (index + 1 == allBlogPosts.length) {
                 return null
             } else {
