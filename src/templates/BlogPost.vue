@@ -225,7 +225,6 @@ div.blog_single {
         box-sizing: border-box;
         text-transform: uppercase;
         font-size: 0.7rem;
-        max-width: 48%;
         text-decoration: none;
         transition: 1s background-color;
 
