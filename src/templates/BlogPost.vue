@@ -4,7 +4,7 @@
             <div class="blog_hero">
                 <div class="center_wrapper">
                     <p id="back">
-                        <g-link to="/blog/">
+                        <g-link to="/blog/" class="nav_button">
                             <font-awesome-icon icon="chevron-left" />All posts
                         </g-link>
                     </p>
@@ -17,6 +17,28 @@
                 <p id="posted_on">
                     Posted on: {{ $page.blogPost.date | customString }}
                 </p>
+
+                <div class="post_navigation">
+                    <div class="left">
+                        <a v-if="previousPost" :href="previousPost.node.path"
+                            ><span class="heading"
+                                ><font-awesome-icon
+                                    icon="chevron-left"
+                                />Previous</span
+                            >
+                            <span>{{ previousPost.node.title }}</span></a
+                        >
+                    </div>
+
+                    <div class="right">
+                        <a v-if="nextPost" :href="nextPost.node.path"
+                            ><span class="heading"
+                                >Next<font-awesome-icon icon="chevron-right"
+                            /></span>
+                            <span>{{ nextPost.node.title }}</span></a
+                        >
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -40,6 +62,15 @@ query BlogPost ($path: String!) {
     content
     date
     description
+    path
+  }
+  allBlogPosts: allBlogPost(sortBy: "date") {
+    edges {
+      node {
+        title
+        path
+      }
+    }
   }
 }
 </page-query>
@@ -61,6 +92,37 @@ export default {
                 },
             ],
         }
+    },
+    methods: {
+        getPostIndex() {
+            let path = this.$page.blogPost.path
+            let allBlogPosts = this.$page.allBlogPosts.edges
+            let element = allBlogPosts.filter(
+                (element) => element.node.path == path
+            )[0]
+            let index = allBlogPosts.indexOf(element)
+            return index
+        },
+    },
+    computed: {
+        nextPost() {
+            let index = this.getPostIndex()
+            let allBlogPosts = this.$page.allBlogPosts.edges
+            if (index == 0) {
+                return null
+            } else {
+                return allBlogPosts[index - 1]
+            }
+        },
+        previousPost() {
+            let index = this.getPostIndex()
+            let allBlogPosts = this.$page.allBlogPosts.edges
+            if (index + 1 == allBlogPosts.length) {
+                return null
+            } else {
+                return allBlogPosts[index + 1]
+            }
+        },
     },
     components: {
         Lightbox,
@@ -149,33 +211,91 @@ div.blog_single {
     }
 
     p#posted_on {
-        color: lighten(@medium_blue, 20%);
+        color: @dark_blue;
         font-size: 0.8rem;
         font-weight: bolder;
         margin-top: 0;
         margin-bottom: 1.5rem;
     }
 
-    p#back {
+    a.nav_button {
+        background-color: @light_blue;
+        color: white;
+        padding: 0.4rem 0.6rem;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        text-decoration: none;
+        transition: 1s background-color;
+
+        &:hover {
+            svg {
+                transform: translateX(-0.2rem);
+            }
+        }
+
+        svg {
+            transition: 0.5s transform;
+            padding-right: 0.5rem;
+        }
+
+        &:hover {
+            background-color: lighten(@light_blue, 10%);
+        }
+    }
+
+    div.post_navigation {
+        display: flex;
+        margin-top: 6rem;
+
         a {
-            background-color: @light_blue;
-            color: white;
-            padding: 0.4rem 0.6rem;
-            text-transform: uppercase;
-            font-size: 0.7rem;
-            text-decoration: none;
-            transition: 1s background-color;
+            display: block;
+
+            span {
+                display: block;
+
+                &.heading {
+                    color: @dark_blue;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        div {
+            box-sizing: border-box;
+            flex-grow: 1;
 
             svg {
-                padding-right: 0.5rem;
                 transition: 0.5s transform;
             }
 
-            &:hover {
-                background-color: lighten(@light_blue, 10%);
+            &.left {
+                padding-right: 0.5rem;
+                text-align: left;
 
                 svg {
-                    transform: translateX(-0.2rem);
+                    padding-right: 0.5rem;
+                }
+
+                &:hover {
+                    svg {
+                        transform: translateX(-0.2rem);
+                    }
+                }
+            }
+
+            &.right {
+                padding-left: 0.5rem;
+                text-align: right;
+
+                svg {
+                    padding-left: 0.5rem;
+                }
+
+                &:hover {
+                    svg {
+                        transform: translateX(0.2rem);
+                    }
                 }
             }
         }
@@ -195,8 +315,8 @@ p.discussion {
     }
 
     svg {
+        color: @light_blue;
         padding: 0 0.5rem;
-        opacity: 0.5;
     }
 }
 </style>

@@ -34,6 +34,11 @@ div.footer_padding {
             font-weight: bold;
         }
 
+        p,
+        li {
+            font-size: 0.9rem;
+        }
+
         p {
             color: white;
             padding: 6rem 1rem 0rem;
