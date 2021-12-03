@@ -89,7 +89,7 @@ GET /movies/
 }
 ```
 
-Now lets try fetching a subset of fields, using the `__visible_fields` parameter:
+Now let's try fetching a subset of fields, using the `__visible_fields` parameter:
 
 ```json
 GET /movies/?__visible_fields=name,director.name
