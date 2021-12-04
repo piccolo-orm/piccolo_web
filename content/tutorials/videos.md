@@ -55,6 +55,26 @@ This [video](https://www.youtube.com/watch?v=NRO0HyFCCCI) introduces nested sele
 
 <hr />
 
+## Schema Generation and Visualisation
+
+<iframe width="560" height="560" src="https://www.youtube.com/embed/Y9vaS4nnQGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<hr />
+
+## Piccolo for Data Science Scripts
+
+<iframe width="560" height="560" src="https://www.youtube.com/embed/yBGgK09H5rI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Easy Forms using Pydantic and Piccolo Admin
+
+<iframe width="560" height="560" src="https://www.youtube.com/embed/xGdZDmGMkaU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Making a powerful REST API, like GraphQL
+
+<iframe width="560" height="560" src="https://www.youtube.com/embed/OUvWn0GUDSI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<hr />
+
 ## Others
 
 Please [subscribe to the channel](https://www.youtube.com/channel/UCE7x5nm1Iy9KDfXPNrNQ5lA) for new tutorials.
