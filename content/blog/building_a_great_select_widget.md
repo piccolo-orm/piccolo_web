@@ -5,7 +5,7 @@ description: How to build a great select widget using Vue JS, which handles lots
 draft: false
 ---
 
-[Select widgets](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) are easy right? We just do this in HTML:
+A [`select`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) widget is easy right? We just do this in HTML:
 
 ```html
 <select name="director">
