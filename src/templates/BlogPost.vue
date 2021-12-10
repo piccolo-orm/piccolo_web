@@ -170,6 +170,10 @@ div.blog_single {
         }
     }
 
+    li {
+        padding-bottom: 0.5rem;
+    }
+
     iframe {
         max-width: 100%;
     }
