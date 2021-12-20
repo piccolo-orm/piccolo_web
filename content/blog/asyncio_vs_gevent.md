@@ -9,7 +9,7 @@ An alternative to asyncio is [gevent](http://www.gevent.org/) (and a similar lib
 
 Gevent also uses an event loop, but it's hidden from the user. Your code is run in greenlets, which are similar to threads but are scheduled by Python and not the operating system. The Python socket library is patched, so whenever your program is blocked on a network request it'll automatically switch to another greenlet, and run that instead.
 
-The main benefit of gevent is you can make a traditional synchronous program work asyncronously with little effort. For example, a [Django](https://djangoproject.com) app can be run using [Gunicorn](http://docs.gunicorn.org/en/stable/), a popular WSGI framework, which [supports gevent out of the box](http://docs.gunicorn.org/en/stable/settings.html). If your application was previously IO bound, you can expect to see increased throughput.
+The main benefit of gevent is you can make a traditional synchronous program work asyncronously with little effort. For example, a [Django](https://djangoproject.com) app can be run using [Gunicorn](http://docs.gunicorn.org/en/stable/), a popular WSGI server, which [supports gevent out of the box](http://docs.gunicorn.org/en/stable/settings.html). If your application was previously IO bound, you can expect to see increased throughput.
 
 However, some care is required. Some libraries don't play nicely with the patched socket library, so testing is advised before pushing to production.
 
