@@ -18,6 +18,7 @@ from piccolo.columns.column_types import (
     Varchar
 )
 from piccolo.columns.m2m import M2M
+from piccolo.table import Table
 
 
 class Band(Table):
