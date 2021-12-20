@@ -10,7 +10,7 @@
                     <font-awesome-icon
                         :icon="['fab', 'python']"
                         style="max-height: 2.2rem"
-                    />A fast, async ORM for Python, that's easy to learn
+                    />A powerful async ORM, query builder, and admin GUI
                 </h2>
             </Hero>
 
@@ -112,7 +112,7 @@ export default {
                     key: "description",
                     name: "description",
                     content:
-                        "A fast, async ORM for Python, that's easy to learn.",
+                        "A powerful async ORM, query builder, and admin GUI for Python.",
                 },
             ],
         }
