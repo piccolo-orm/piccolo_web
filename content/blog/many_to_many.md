@@ -5,6 +5,8 @@ description: The Piccolo ORM and query builder now has support for Many-To-Many 
 draft: false
 ---
 
+<iframe width="735" height="400" src="https://www.youtube.com/embed/J9YFt8Hxm4I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Piccolo has a new API for [Many-To-Many relationships](https://piccolo-orm.readthedocs.io/en/latest/piccolo/schema/m2m.html).
 
 We put a lot of work into making it powerful and user friendly.

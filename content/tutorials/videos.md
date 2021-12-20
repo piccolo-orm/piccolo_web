@@ -73,6 +73,10 @@ This [video](https://www.youtube.com/watch?v=NRO0HyFCCCI) introduces nested sele
 
 <iframe width="560" height="560" src="https://www.youtube.com/embed/OUvWn0GUDSI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Many-To-Many Relationships
+
+<iframe width="560" height="560" src="https://www.youtube.com/embed/J9YFt8Hxm4I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <hr />
 
 ## Others
