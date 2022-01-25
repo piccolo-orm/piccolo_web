@@ -17,9 +17,13 @@ The descriptor protocol allows us to implement custom logic when a variable is a
 class Parent:
     child = Child()
 
+parent = Parent()
+
 # With the descriptor protocol we can run custom logic:
-Parent.child      # when it's accessed
-Parent.child = 1  # when we assign a new value to it
+
+Parent.child       # when it's accessed on the class
+parent.child       # when it's accessed on a class instance
+parent.child = 1   # when we assign a new value to it
 ```
 
 Like many things in Python, it's implemented using magic methods. In this case `__get__` and `__set__`:
@@ -37,10 +41,12 @@ class Child:
 Which gives us the following:
 
 ```python
-Parent.child
+parent = Parent()
+
+parent.child
 >>> I was accessed
 
-Parent.child = 1
+parent.child = 1
 >>> I was a assigned a new value
 ```
 
