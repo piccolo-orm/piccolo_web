@@ -2,10 +2,10 @@
 
 ```python
 >>> await Band.select(
->>>     Band.name
->>> ).where(
->>>     Band.popularity > 100
->>> )
+...     Band.name
+... ).where(
+...     Band.popularity > 100
+... )
 
 [
     {
@@ -18,9 +18,9 @@
 
 ```python
 >>> await Band.select(
->>>     Band.name,
->>>     Band.manager.name.as_alias('manager_name')
->>> )
+...     Band.name,
+...     Band.manager.name.as_alias('manager_name')
+... )
 
 [
     {
