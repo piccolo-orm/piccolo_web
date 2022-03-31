@@ -65,6 +65,10 @@ a {
     text-decoration: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 div.center_wrapper {
     max-width: 48rem;
     box-sizing: border-box;
