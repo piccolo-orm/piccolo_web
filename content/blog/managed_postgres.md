@@ -131,8 +131,14 @@ All of the following offer a managed Postgres service:
 
 With the following coming soon (as of May 2022):
 
-- [Vultr](https://www.vultr.com/products/managed-databases/)
 - [Linode](https://www.linode.com/products/databases/)
+- [Vultr](https://www.vultr.com/products/managed-databases/)
+
+There are also some companies who will setup a managed Postgres cluster for you, on one of the hyperscale cloud providers:
+
+- [Aiven](https://aiven.io/postgresql)
+- [ElephantSQL](https://www.elephantsql.com/)
+- [EnterpriseDB](https://www.enterprisedb.com/products/biganimal-cloud-postgresql)
 
 ### Which should I use?
 
