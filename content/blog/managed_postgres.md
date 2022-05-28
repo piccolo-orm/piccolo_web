@@ -139,6 +139,7 @@ There are also some companies who will setup a managed Postgres cluster for you,
 - [Aiven](https://aiven.io/postgresql)
 - [ElephantSQL](https://www.elephantsql.com/)
 - [EnterpriseDB](https://www.enterprisedb.com/products/biganimal-cloud-postgresql)
+- [ScaleGrid](https://scalegrid.io/postgresql.html)
 
 ### Which should I use?
 
