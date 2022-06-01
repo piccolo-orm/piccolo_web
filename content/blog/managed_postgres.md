@@ -78,7 +78,7 @@ Compared to the managed Postgres service, which starts at 15 USD, and only offer
 
 Bear in the mind the additional storage that the cloud provider is using for backups. DigitalOcean stores backups for 7 days, which means it could use quite a bit more than 10 GB of storage.
 
-Still, database storage is very expensive compared to block storage and object storage. If your business requires huge amounts of database storage (perhaps you're using [TimescaleDB](https://www.timescale.com/) with terrabytes of data) then the cost of a managed database will be substantial.
+Still, database storage is very expensive compared to block storage and object storage. If your business requires huge amounts of database storage (perhaps you're using [TimescaleDB](https://www.timescale.com/) with terabytes of data) then the cost of a managed database will be substantial.
 
 ## Reasons not to use a Postgres service
 
