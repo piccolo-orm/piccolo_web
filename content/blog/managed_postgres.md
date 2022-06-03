@@ -137,6 +137,7 @@ With the following coming soon (as of May 2022):
 There are also some companies who will setup a managed Postgres cluster for you, on one of the hyperscale cloud providers:
 
 - [Aiven](https://aiven.io/postgresql)
+- [Crunchy Data](https://www.crunchydata.com/products/crunchy-bridge)
 - [ElephantSQL](https://www.elephantsql.com/)
 - [EnterpriseDB](https://www.enterprisedb.com/products/biganimal-cloud-postgresql)
 - [ScaleGrid](https://scalegrid.io/postgresql.html)
