@@ -82,7 +82,7 @@ Still, database storage is very expensive compared to block storage and object s
 
 ## Reasons not to use a Postgres service
 
-Besides the cost implications outlined above, there are some other downsides with using Postgres services. For example, there are usually limitations around which Postgres extensions you can install, and you don't have direct control over the many parameters which can be used to tune Postgres performance. If you have vey specific requirements, or a particularly demanding application, then managed services might not be the best option.
+Besides the cost implications outlined above, there are some other downsides with using Postgres services. For example, there are usually limitations around which Postgres extensions you can install, and you don't have direct control over the many parameters which can be used to tune Postgres performance. If you have very specific requirements, or a particularly demanding application, then managed services might not be the best option.
 
 ## Things to look out for
 
