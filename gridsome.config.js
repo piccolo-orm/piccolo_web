@@ -65,7 +65,7 @@ module.exports = {
                 nodeToFeedItem: (node) => ({
                     title: node.title,
                     date: node.date,
-                    content: ''
+                    content: node.content
                 })
             }
         }
@@ -84,8 +84,5 @@ module.exports = {
                 '@gridsome/remark-prismjs'
             ]
         }
-    },
-    // chainWebpack (config) {
-    //   config.mode('development')
-    // }
+    }
 }
