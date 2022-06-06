@@ -311,7 +311,7 @@ p.discussion {
     box-sizing: border-box;
     color: @medium_blue;
     margin: 0;
-    padding: 2rem 2rem 3rem;
+    padding: 2rem;
     text-align: center;
 
     a {
