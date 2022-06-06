@@ -13,6 +13,7 @@ import {
     faMoon,
     faRss,
     faSearch,
+    faShoppingCart,
     faSun,
     faTimes,
     faTools
@@ -40,6 +41,7 @@ library.add(
     faPython,
     faRss,
     faSearch,
+    faShoppingCart,
     faSun,
     faTimes,
     faTools,

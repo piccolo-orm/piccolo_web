@@ -3,6 +3,15 @@
         <ul>
             <li>
                 <a
+                    href="https://piccolo-store.com/"
+                    ><font-awesome-icon
+                        :icon="'shopping-cart'"
+                    />Store</a
+                >
+            </li>
+
+            <li>
+                <a
                     href="https://www.youtube.com/channel/UCE7x5nm1Iy9KDfXPNrNQ5lA"
                     ><font-awesome-icon
                         :icon="['fab', 'youtube']"
