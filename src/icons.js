@@ -11,12 +11,13 @@ import {
     faExternalLinkAlt,
     faFile,
     faMoon,
+    faRss,
     faSearch,
     faSun,
     faTimes,
     faTools
 } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faPython } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faPython, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 // It's important to load the CSS, otherwise the unsaturated version of the
 // website will be missing these styles.
@@ -37,10 +38,13 @@ library.add(
     faGithub,
     faMoon,
     faPython,
+    faRss,
     faSearch,
     faSun,
     faTimes,
-    faTools
+    faTools,
+    faTwitter,
+    faYoutube
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

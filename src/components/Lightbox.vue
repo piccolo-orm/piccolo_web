@@ -38,19 +38,22 @@ export default {
         let app = this
 
         let links = document.getElementsByClassName("lightbox")
-        links.forEach((link) => {
-            link.addEventListener("click", (event) => {
-                event.preventDefault()
-                console.log("I was clicked")
 
-                link.children.forEach((child) => {
-                    if (child.tagName == "IMG") {
-                        app.imageSrc = child.src
-                        app.visible = true
-                    }
+        if (links) {
+            links.forEach((link) => {
+                link.addEventListener("click", (event) => {
+                    event.preventDefault()
+                    console.log("I was clicked")
+
+                    link.children.forEach((child) => {
+                        if (child.tagName == "IMG") {
+                            app.imageSrc = child.src
+                            app.visible = true
+                        }
+                    })
                 })
             })
-        })
+        }
     },
 }
 </script>

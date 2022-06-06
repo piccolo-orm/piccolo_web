@@ -1,7 +1,9 @@
 <template>
     <div id="app">
         <MainNav />
+        <div class="main_content">
         <slot></slot>
+        </div>
 
         <MainFooter />
         <PermissionPopup />
@@ -33,6 +35,12 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     color: lighten(black, 20%);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+div.main_content {
+    flex-grow: 1;
 }
 
 html {
