@@ -91,7 +91,8 @@ export default {
                 "CSV exports",
                 "Works on mobile and desktop",
                 "Powered by the Piccolo ORM",
-                "Easy to integrate with ASGI apps like FastAPI, and Starlette.",
+                "Easy to integrate with ASGI apps like FastAPI, and Starlette",
+                "Multilingual"
             ],
         }
     },
