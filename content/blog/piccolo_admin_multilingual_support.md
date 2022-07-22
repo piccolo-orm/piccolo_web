@@ -5,6 +5,8 @@ description: Piccolo Admin now supports many languages - Croatian, French, Germa
 draft: false
 ---
 
+<iframe width="726" height="400" src="https://www.youtube.com/embed/VbWnwChVnpM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 After a surprisingly large amount of work, Piccolo Admin has multilingual support!
 
 <figure>
