@@ -25,7 +25,6 @@
                 </ul>
                 <p v-else>No results</p>
             </div>
-            <MainFooter></MainFooter>
         </div>
     </Layout>
 </template>
