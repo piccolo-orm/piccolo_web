@@ -210,6 +210,11 @@ div.blog_single {
         }
     }
 
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+
     p {
         text-align: justify;
     }
