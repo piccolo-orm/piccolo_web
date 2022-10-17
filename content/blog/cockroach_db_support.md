@@ -1,5 +1,5 @@
 ---
-title: Cockroachdb support
+title: CockroachDB support
 date: 2022-10-17
 description: Piccolo, a Python ORM and query builder now support CockroachDB, a highly fault tolerant SQL database.
 draft: false
