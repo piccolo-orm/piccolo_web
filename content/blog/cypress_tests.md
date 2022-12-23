@@ -95,3 +95,11 @@ Now we have some initial Cypress tests, and have it integrated with our CI, wher
 There are lots more Cypress tests left to write, and we want to get to a position where every new feature is accompanied by a set of Cypress tests.
 
 If you want to [get involved](https://github.com/piccolo-orm/piccolo_admin/), and learn more Cypress, then you're welcome to join us. Cypress is suprisingly fun, and a valuable skill to learn.
+
+## Update - now using Playwright!
+
+We ended up migrating to [Playwright](https://playwright.dev/), which is a similar framework, but the tests can be written in Python.
+
+Being able to write the tests in Python is a huge boon for us, as we can test the UI (for example submitting a form), and then use Piccolo to query the database to make sure the data was modified.
+
+I'm still a fan of Cypress, but Playwright is the obvious choice for Python developers.
