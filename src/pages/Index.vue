@@ -90,7 +90,7 @@ export default {
     data: function () {
         return {
             benefits: [
-                "<b>Supports Postgres and SQLite</b>",
+                "<b>Supports Postgres, SQLite and CockroachDB</b>",
                 "<b>Async and sync support</b>",
                 "<b>A builtin playground</b> - which makes learning a breeze",
                 "<b>Tab completion support</b> - works great with iPython and VSCode",
