@@ -92,7 +92,8 @@ export default {
                 "Works on mobile and desktop",
                 "Powered by the Piccolo ORM",
                 "Easy to integrate with ASGI apps like FastAPI, and Starlette",
-                "Multilingual"
+                "Multilingual",
+                "Multi-Factor Authentication"
             ],
         }
     },
