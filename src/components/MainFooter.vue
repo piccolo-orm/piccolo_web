@@ -36,6 +36,14 @@
             </li>
 
             <li>
+                <a href="https://discord.gg/JbXBgPM2GY"
+                    ><font-awesome-icon
+                        :icon="['fab', 'discord']"
+                    />Discord</a
+                >
+            </li>
+
+            <li>
                 <a href="https://piccolo-orm.com/feed.xml"
                     ><font-awesome-icon :icon="'rss'" />Feed</a
                 >
